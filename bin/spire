@@ -1,0 +1,70 @@
+#!/usr/bin/env node
+
+'use strict';
+
+let chalk = require('chalk');
+
+let spire = require('../lib/spire-of-babel');
+
+let input = process.cwd();
+
+let options = {
+    bundle: false
+};
+
+let args = process.argv.slice(2);
+
+if (args.length && !args[0].match(/^\-/)) {
+
+    input = args.shift();
+
+}
+
+while (args.length) {
+
+    switch (args.shift()) {
+
+    case '-b':
+    case '--bundle':
+
+        options.bundle = true;
+
+        break;
+
+    case '-v':
+    case '--version':
+
+        process.stdout.write(require('../package').version + '\n');
+        process.exit();
+
+        break;
+
+    default:
+
+        process.stdout.write('\n');
+        process.stdout.write(chalk.blue(' Usage:') + ' spire <path> [options]' + '\n\n');
+        process.stdout.write(' Options:' + '\n\n');
+        process.stdout.write(chalk.yellow('  -h, --help') + '\t\tDisplay this help message.' + '\n');
+        process.stdout.write(chalk.yellow('  -v, --version') + '\t\tDisplay the current installed version.' + '\n');
+        process.stdout.write(chalk.yellow('  -b, --bundle') + '\t\tUse browserify bundler.' + '\n');
+        process.exit();
+
+        break;
+
+    }
+
+}
+
+if (input) {
+
+    spire.transformFile(input, options).then(function (result) {
+
+        process.stdout.write(`${result}\n`);
+
+    }).catch(function (err) {
+
+        console.error(err);
+
+    });
+
+}

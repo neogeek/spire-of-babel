@@ -1,0 +1,109 @@
+# ![Spire of Babel](logo.png)
+
+> A one stop solution for working with ES2015 and React.
+
+## Installation
+
+```bash
+$ npm install spire-of-babel -g
+```
+
+## Usage
+
+```bash
+Usage: spire <path> [options]
+
+ Options:
+
+  -h, --help        Display this help message.
+  -v, --version     Display the current installed version.
+  -b, --bundle      Use browserify bundler.
+```
+
+### CLI
+
+```bash
+$ spire es6.js
+```
+
+```bash
+$ spire es6.js --bundle
+```
+
+### API
+
+```javascript
+let spire = require('spire-of-babel');
+
+spire.transformFile('react.jsx', {
+    bundle: true
+}).then(function (result) {
+
+    process.stdout.write(result);
+
+}).catch(function (err) {
+
+    console.error(err);
+
+});
+```
+
+## Documentation
+
+{{#each files}}{{#each methods}}
+
+### spire.{{name}}({{params}}) {{#if isPrivate}} *private method*{{/if}}
+
+{{{description}}}
+
+{{{body}}}
+
+{{#if tags.param}}
+
+#### Parameters
+
+{{#each tags.param}}
+- **{{name}}** {{#each types}}`{{.}}` {{/each}} {{#if isOptional}}*Optional*{{/if}} {{{description}}}
+{{/each}}
+
+{{/if}}
+
+{{#if tags.property}}
+
+#### Properties
+
+{{#each tags.property}}
+- **{{name}}** {{#each types}}`{{.}}` {{/each}} {{#if isOptional}}*Optional*{{/if}} {{{description}}}
+{{/each}}
+
+{{/if}}
+
+{{#if tags.example}}
+
+#### Examples
+
+{{#each tags.example}}
+```javascript
+{{{.}}}
+```
+{{/each}}
+
+{{/if}}
+
+#### Returns
+
+{{#if tags.return}}
+
+{{#each tags.return}}
+- {{#each types}}`{{.}}` {{/each}} {{#if isOptional}}*Optional*{{/if}} {{{description}}}
+{{/each}}
+
+{{else}}
+
+- `Void`
+
+{{/if}}
+
+{{/each}}{{/each}}
+
+*Documentation generated with [doxdox](https://github.com/neogeek/doxdox).*
