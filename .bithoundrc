@@ -1,4 +1,7 @@
 {
+  "test": [
+    "**/test/**"
+  ],
   "dependencies": {
     "unused-ignores": [
       "chalk"
