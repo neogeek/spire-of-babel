@@ -43,6 +43,42 @@ describe('transformFile with babel', function () {
 
     });
 
+    it('function_default_attribute_object', function (done) {
+
+        spire.transformFile('./test/fixture/function_default_attribute_object.js').then(function (result) {
+
+            fs.readFile('./test/fixture/transformed/function_default_attribute_object.js', 'utf8', function (err, fixture) {
+
+                if (err) { throw err; }
+
+                assert.equal(result, fixture);
+
+                done();
+
+            });
+
+        });
+
+    });
+
+    it('function_destruct_attributes', function (done) {
+
+        spire.transformFile('./test/fixture/function_destruct_attributes.js').then(function (result) {
+
+            fs.readFile('./test/fixture/transformed/function_destruct_attributes.js', 'utf8', function (err, fixture) {
+
+                if (err) { throw err; }
+
+                assert.equal(result, fixture);
+
+                done();
+
+            });
+
+        });
+
+    });
+
     it('let', function (done) {
 
         spire.transformFile('./test/fixture/let.js').then(function (result) {
