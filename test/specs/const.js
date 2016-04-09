@@ -13,6 +13,8 @@ describe('const', function () {
 
             fs.readFile('./test/fixture/transformed/const.js', 'utf8', function (err, fixture) {
 
+                if (err) { throw err; }
+
                 assert.equal(result, fixture);
 
                 done();
