@@ -11,7 +11,7 @@ $ npm install spire-of-babel -g
 ## Usage
 
 ```bash
-Usage: spire <path> [options]
+Usage: spire-of-babel <path> [options]
 
  Options:
 
@@ -23,11 +23,11 @@ Usage: spire <path> [options]
 ### CLI
 
 ```bash
-$ spire es6.js
+$ spire-of-babel es6.js
 ```
 
 ```bash
-$ spire es6.js --bundle
+$ spire-of-babel es6.js --bundle
 ```
 
 ### API

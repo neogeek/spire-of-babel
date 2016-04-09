@@ -42,7 +42,7 @@ while (args.length) {
     default:
 
         process.stdout.write('\n');
-        process.stdout.write(chalk.blue(' Usage:') + ' spire <path> [options]' + '\n\n');
+        process.stdout.write(chalk.blue(' Usage:') + ' spire-of-babel <path> [options]' + '\n\n');
         process.stdout.write(' Options:' + '\n\n');
         process.stdout.write(chalk.yellow('  -h, --help') + '\t\tDisplay this help message.' + '\n');
         process.stdout.write(chalk.yellow('  -v, --version') + '\t\tDisplay the current installed version.' + '\n');
