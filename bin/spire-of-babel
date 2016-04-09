@@ -59,7 +59,7 @@ if (input) {
 
     spire.transformFile(input, options).then(function (result) {
 
-        process.stdout.write(`${result}\n`);
+        process.stdout.write(`${result}`);
 
     }).catch(function (err) {
 
