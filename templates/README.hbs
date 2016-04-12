@@ -15,7 +15,7 @@ $ npm install spire-of-babel -g
 
 ## Usage
 
-```bash
+```
 Usage: spire-of-babel <path> [options]
 
 Options:
@@ -37,7 +37,7 @@ $ spire-of-babel es6.js
 $ spire-of-babel es6.js --bundle
 ```
 
-```
+```bash
 $ spire-of-babel ./react-project/app.jsx --watch "./react-project/**/*.jsx" --output ./react-project/app.min.js
 ```
 
