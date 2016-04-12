@@ -6,7 +6,19 @@ let chalk = require('chalk');
 
 let spire = require('../lib/spire-of-babel');
 
-let input = process.cwd();
+function displayHelp() {
+
+    process.stdout.write('\n');
+    process.stdout.write(chalk.blue(' Usage:') + ' spire-of-babel <path> [options]' + '\n\n');
+    process.stdout.write(' Options:' + '\n\n');
+    process.stdout.write(chalk.yellow('  -h, --help') + '\t\tDisplay this help message.' + '\n');
+    process.stdout.write(chalk.yellow('  -v, --version') + '\t\tDisplay the current installed version.' + '\n');
+    process.stdout.write(chalk.yellow('  -b, --bundle') + '\t\tUse browserify bundler.' + '\n');
+    process.exit();
+
+}
+
+let input;
 
 let options = {
     bundle: false
@@ -41,13 +53,7 @@ while (args.length) {
 
     default:
 
-        process.stdout.write('\n');
-        process.stdout.write(chalk.blue(' Usage:') + ' spire-of-babel <path> [options]' + '\n\n');
-        process.stdout.write(' Options:' + '\n\n');
-        process.stdout.write(chalk.yellow('  -h, --help') + '\t\tDisplay this help message.' + '\n');
-        process.stdout.write(chalk.yellow('  -v, --version') + '\t\tDisplay the current installed version.' + '\n');
-        process.stdout.write(chalk.yellow('  -b, --bundle') + '\t\tUse browserify bundler.' + '\n');
-        process.exit();
+        displayHelp();
 
         break;
 
@@ -66,5 +72,9 @@ if (input) {
         console.error(err);
 
     });
+
+} else {
+
+    displayHelp();
 
 }
