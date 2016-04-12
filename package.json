@@ -20,6 +20,7 @@
   },
   "devDependencies": {
     "doxdox": "0.1.12",
+    "jshint": "2.9.1",
     "mocha": "2.4.5"
   },
   "scripts": {
