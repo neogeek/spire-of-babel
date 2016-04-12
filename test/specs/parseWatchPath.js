@@ -21,7 +21,7 @@ describe('parseWatchPath', function () {
 
         assert.deepEqual(spire.parseWatchPath('./test/*.jsx'), {
             directory: './test',
-            filename: '*.jsx',
+            filename: '.jsx',
             recursive: false
         });
 
@@ -31,7 +31,7 @@ describe('parseWatchPath', function () {
 
         assert.deepEqual(spire.parseWatchPath('./test/**/*.jsx'), {
             directory: './test',
-            filename: '*.jsx',
+            filename: '.jsx',
             recursive: true
         });
 
