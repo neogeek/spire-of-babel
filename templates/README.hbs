@@ -36,6 +36,10 @@ $ spire-of-babel es6.js
 $ spire-of-babel es6.js --bundle
 ```
 
+```
+$ spire-of-babel ./react-project/app.jsx --watch "./react-project/**/*.jsx" --output ./react-project/app.min.js
+```
+
 ### API
 
 ```javascript
