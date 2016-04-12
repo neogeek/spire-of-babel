@@ -9,7 +9,7 @@ describe('transformFile with babel', function () {
 
     it('const', function (done) {
 
-        spire.transformFile('./test/fixture/const.js').then(function (result) {
+        spire.transformFile('./test/fixture/original/const.js').then(function (result) {
 
             fs.readFile('./test/fixture/transformed/const.js', 'utf8', function (err, fixture) {
 
@@ -27,7 +27,7 @@ describe('transformFile with babel', function () {
 
     it('function_default_attribute', function (done) {
 
-        spire.transformFile('./test/fixture/function_default_attribute.js').then(function (result) {
+        spire.transformFile('./test/fixture/original/function_default_attribute.js').then(function (result) {
 
             fs.readFile('./test/fixture/transformed/function_default_attribute.js', 'utf8', function (err, fixture) {
 
@@ -45,7 +45,7 @@ describe('transformFile with babel', function () {
 
     it('function_default_attribute_object', function (done) {
 
-        spire.transformFile('./test/fixture/function_default_attribute_object.js').then(function (result) {
+        spire.transformFile('./test/fixture/original/function_default_attribute_object.js').then(function (result) {
 
             fs.readFile('./test/fixture/transformed/function_default_attribute_object.js', 'utf8', function (err, fixture) {
 
@@ -63,7 +63,7 @@ describe('transformFile with babel', function () {
 
     it('function_destruct_attributes', function (done) {
 
-        spire.transformFile('./test/fixture/function_destruct_attributes.js').then(function (result) {
+        spire.transformFile('./test/fixture/original/function_destruct_attributes.js').then(function (result) {
 
             fs.readFile('./test/fixture/transformed/function_destruct_attributes.js', 'utf8', function (err, fixture) {
 
@@ -81,7 +81,7 @@ describe('transformFile with babel', function () {
 
     it('let', function (done) {
 
-        spire.transformFile('./test/fixture/let.js').then(function (result) {
+        spire.transformFile('./test/fixture/original/let.js').then(function (result) {
 
             fs.readFile('./test/fixture/transformed/let.js', 'utf8', function (err, fixture) {
 
