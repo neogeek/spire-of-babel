@@ -18,11 +18,12 @@ $ npm install spire-of-babel -g
 ```bash
 Usage: spire-of-babel <path> [options]
 
- Options:
+Options:
 
-  -h, --help        Display this help message.
-  -v, --version     Display the current installed version.
-  -b, --bundle      Use browserify bundler.
+ -h, --help		Display this help message.
+ -v, --version		Display the current installed version.
+ -b, --bundle		Use browserify bundler.
+ -o, --output		Path to save transformed file to. Defaults to stdout.
 ```
 
 ### CLI
@@ -142,6 +143,35 @@ spire.transformFile(file, options).then(function (result) { console.log(result);
 
 
 - `Object`   Promise
+
+
+
+
+### spire.parseWatchPath(input) 
+
+Parses a path into directory and filename or file regular expression pattern.
+
+
+
+
+#### Parameters
+
+- **input** `String`   Path to parse.
+
+
+
+
+#### Examples
+
+```javascript
+console.log(spire.parseWatchPath(input));
+```
+
+
+#### Returns
+
+
+- `Object`   Object with directory, filename (pattern) and boolean flag.
 
 
 

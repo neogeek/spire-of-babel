@@ -21,11 +21,33 @@ function displayHelp() {
 
 }
 
+function transform(input, options) {
+
+    spire.transformFile(input, options).then(function (result) {
+
+        if (options.output) {
+
+            fs.writeFile(options.output, result, 'utf8');
+
+        } else {
+
+            process.stdout.write(`${result}`);
+
+        }
+
+    }).catch(function (err) {
+
+        console.error(err);
+
+    });
+}
+
 let input;
 
 let options = {
     bundle: false,
-    output: null
+    output: null,
+    watch: null
 };
 
 let args = process.argv.slice(2);
@@ -54,6 +76,13 @@ while (args.length) {
 
         break;
 
+    case '-w':
+    case '--watch':
+
+        options.watch = spire.parseWatchPath(args.shift());
+
+        break;
+
     case '-v':
     case '--version':
 
@@ -74,23 +103,32 @@ while (args.length) {
 
 if (input) {
 
-    spire.transformFile(input, options).then(function (result) {
+    if (options.watch) {
 
-        if (options.output) {
+        fs.watch(options.watch.directory, {
+            recursive: options.watch.recursive
+        }, function (event, filename) {
 
-            fs.writeFile(options.output, result, 'utf8');
+            if (event === 'change' && filename.match(options.watch.filename)) {
 
-        } else {
+                if (options.output) {
 
-            process.stdout.write(`${result}`);
+                    console.log(chalk.yellow('File changed: ') + filename);
+                    console.log(chalk.green('Transformed: ') + input);
 
-        }
+                }
 
-    }).catch(function (err) {
+                transform(input, options);
 
-        console.error(err);
+            }
 
-    });
+        });
+
+    } else {
+
+        transform(input, options);
+
+    }
 
 } else {
 
