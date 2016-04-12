@@ -2,6 +2,8 @@
 
 'use strict';
 
+let fs = require('fs');
+
 let chalk = require('chalk');
 
 let spire = require('../lib/spire-of-babel');
@@ -14,6 +16,7 @@ function displayHelp() {
     process.stdout.write(chalk.yellow('  -h, --help') + '\t\tDisplay this help message.' + '\n');
     process.stdout.write(chalk.yellow('  -v, --version') + '\t\tDisplay the current installed version.' + '\n');
     process.stdout.write(chalk.yellow('  -b, --bundle') + '\t\tUse browserify bundler.' + '\n');
+    process.stdout.write(chalk.yellow('  -o, --output') + '\t\tPath to save transformed file to. Defaults to stdout.' + '\n');
     process.exit();
 
 }
@@ -21,7 +24,8 @@ function displayHelp() {
 let input;
 
 let options = {
-    bundle: false
+    bundle: false,
+    output: null
 };
 
 let args = process.argv.slice(2);
@@ -40,6 +44,13 @@ while (args.length) {
     case '--bundle':
 
         options.bundle = true;
+
+        break;
+
+    case '-o':
+    case '--output':
+
+        options.output = args.shift();
 
         break;
 
@@ -65,7 +76,15 @@ if (input) {
 
     spire.transformFile(input, options).then(function (result) {
 
-        process.stdout.write(`${result}`);
+        if (options.output) {
+
+            fs.writeFile(options.output, result, 'utf8');
+
+        } else {
+
+            process.stdout.write(`${result}`);
+
+        }
 
     }).catch(function (err) {
 
