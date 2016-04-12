@@ -17,6 +17,7 @@ function displayHelp() {
     process.stdout.write(chalk.yellow('  -v, --version') + '\t\tDisplay the current installed version.' + '\n');
     process.stdout.write(chalk.yellow('  -b, --bundle') + '\t\tUse browserify bundler.' + '\n');
     process.stdout.write(chalk.yellow('  -o, --output') + '\t\tPath to save transformed file to. Defaults to stdout.' + '\n');
+    process.stdout.write(chalk.yellow('  -w, --watch') + '\t\tFile path to watch for changes. Value must be in quotes. Example: "./test/*.jsx"' + '\n');
     process.exit();
 
 }

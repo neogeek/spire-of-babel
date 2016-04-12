@@ -24,6 +24,7 @@ Options:
  -v, --version		Display the current installed version.
  -b, --bundle		Use browserify bundler.
  -o, --output		Path to save transformed file to. Defaults to stdout.
+ -w, --watch		File path to watch for changes. Value must be in quotes. Example: "./test/*.jsx"
 ```
 
 ### CLI
