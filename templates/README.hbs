@@ -30,11 +30,11 @@ Options:
 ### CLI
 
 ```bash
-$ spire-of-babel es6.js
+$ spire-of-babel app.js > app.min.js
 ```
 
 ```bash
-$ spire-of-babel es6.js --bundle
+$ spire-of-babel app.js --bundle > app.min.js
 ```
 
 ```bash
