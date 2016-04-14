@@ -32,7 +32,7 @@ function transform(input, options) {
 
         } else {
 
-            process.stdout.write(`${result}`);
+            process.stdout.write(result);
 
         }
 
