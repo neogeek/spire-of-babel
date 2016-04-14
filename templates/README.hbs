@@ -38,7 +38,7 @@ $ spire-of-babel es6.js --bundle
 ```
 
 ```bash
-$ spire-of-babel ./react-project/app.jsx --watch "./react-project/**/*.jsx" --output ./react-project/app.min.js
+$ spire-of-babel ./react-project/app.jsx --bundle --watch "./react-project/**/*.jsx" --output ./react-project/app.min.js
 ```
 
 ### API
