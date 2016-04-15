@@ -7,6 +7,26 @@ var spire = require(lib + '/spire-of-babel');
 
 describe('transformFile with babel', function () {
 
+    it('error while transforming', function (done) {
+
+        spire.transformFile('./test/fixture/original/error.js').catch(function () {
+
+            done();
+
+        });
+
+    });
+
+    it('error while transforming with bundle flag', function (done) {
+
+        spire.transformFile('./test/fixture/original/error.js', { bundle: true }).catch(function () {
+
+            done();
+
+        });
+
+    });
+
     it('bundle', function (done) {
 
         spire.transformFile('./test/fixture/original/bundle.js', { bundle: true }).then(function (result) {
