@@ -114,8 +114,8 @@ if (input) {
 
                 if (options.output) {
 
-                    console.log(`${chalk.yellow('File changed: ')}${filename}`);
-                    console.log(`${chalk.green('Transformed: ')}${input}`);
+                    process.stdout.write(`${chalk.yellow('File changed: ')}${filename}`);
+                    process.stdout.write(`${chalk.green('Transformed: ')}${input}`);
 
                 }
 
