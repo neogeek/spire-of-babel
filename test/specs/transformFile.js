@@ -3,7 +3,7 @@ var assert = require('assert');
 
 var lib = process.env.COVERAGE ? '../../lib-cov' : '../../lib';
 
-var spire = require(lib + '/spire-of-babel');
+var spire = require(`${lib}/spire-of-babel`);
 
 describe('transformFile with babel', function () {
 

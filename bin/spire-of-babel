@@ -11,13 +11,13 @@ let spire = require('../lib/spire-of-babel');
 function displayHelp() {
 
     process.stdout.write('\n');
-    process.stdout.write(chalk.blue(' Usage:') + ' spire-of-babel <path> [options]' + '\n\n');
-    process.stdout.write(' Options:' + '\n\n');
-    process.stdout.write(chalk.yellow('  -h, --help') + '\t\tDisplay this help message.' + '\n');
-    process.stdout.write(chalk.yellow('  -v, --version') + '\t\tDisplay the current installed version.' + '\n');
-    process.stdout.write(chalk.yellow('  -b, --bundle') + '\t\tUse browserify bundler.' + '\n');
-    process.stdout.write(chalk.yellow('  -o, --output') + '\t\tPath to save transformed file to. Defaults to stdout.' + '\n');
-    process.stdout.write(chalk.yellow('  -w, --watch') + '\t\tFile path to watch for changes. Value must be in quotes. Example: "./test/*.jsx"' + '\n');
+    process.stdout.write(`${chalk.blue(' Usage:')} spire-of-babel <path> [options]\n\n`);
+    process.stdout.write(' Options:\n\n');
+    process.stdout.write(`${chalk.yellow('  -h, --help')}\t\tDisplay this help message.\n`);
+    process.stdout.write(`${chalk.yellow('  -v, --version')}\t\tDisplay the current installed version.\n`);
+    process.stdout.write(`${chalk.yellow('  -b, --bundle')}\t\tUse browserify bundler.\n`);
+    process.stdout.write(`${chalk.yellow('  -o, --output')}\t\tPath to save transformed file to. Defaults to stdout.\n`);
+    process.stdout.write(`${chalk.yellow('  -w, --watch')}\t\tFile path to watch for changes. Value must be in quotes. Example: "./test/*.jsx"\n`);
     process.exit();
 
 }
@@ -87,7 +87,7 @@ while (args.length) {
     case '-v':
     case '--version':
 
-        process.stdout.write(require('../package').version + '\n');
+        process.stdout.write(`${require('../package').version}\n`);
         process.exit();
 
         break;
@@ -114,8 +114,8 @@ if (input) {
 
                 if (options.output) {
 
-                    console.log(chalk.yellow('File changed: ') + filename);
-                    console.log(chalk.green('Transformed: ') + input);
+                    console.log(`${chalk.yellow('File changed: ')}${filename}`);
+                    console.log(`${chalk.green('Transformed: ')}${input}`);
 
                 }
 
