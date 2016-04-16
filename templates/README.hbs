@@ -16,15 +16,15 @@ $ npm install spire-of-babel -g
 ## Usage
 
 ```
-Usage: spire-of-babel <path> [options]
+ Usage: spire-of-babel <path> [options]
 
-Options:
+ Options:
 
- -h, --help			Display this help message.
- -v, --version		Display the current installed version.
- -b, --bundle		Use browserify bundler.
- -o, --output		Path to save transformed file to. Defaults to stdout.
- -w, --watch		File path to watch for changes. Value must be in quotes. Example: "./test/*.jsx"test/*.jsx"
+  -h, --help		Display this help message.
+  -v, --version		Display the current installed version.
+  -b, --bundle		Use browserify bundler.
+  -o, --output		Path to save transformed file to. Defaults to stdout.
+  -w, --watch		File path to watch for changes. Value must be in quotes. Example: "./test/*.jsx"
 ```
 
 ### CLI
