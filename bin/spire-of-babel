@@ -38,7 +38,7 @@ function transform(input, options) {
 
     }).catch(function (err) {
 
-        console.error(err);
+        process.stderr.write(`${err}\n`);
 
     });
 }

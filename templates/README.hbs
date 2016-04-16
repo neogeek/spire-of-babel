@@ -54,7 +54,7 @@ spire.transformFile('react.jsx', {
 
 }).catch(function (err) {
 
-    console.error(err);
+    process.stderr.write(`${err}\n`);
 
 });
 ```
