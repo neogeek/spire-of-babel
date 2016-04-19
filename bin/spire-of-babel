@@ -114,8 +114,8 @@ if (input) {
 
                 if (options.output) {
 
-                    process.stdout.write(`${chalk.gray('File changed: ')}${filename}\n`);
-                    process.stdout.write(`${chalk.green('Transformed: ')}${input}\n`);
+                    process.stdout.write(`${chalk.gray('Change detected to: ')}${filename}\n`);
+                    process.stdout.write(`${chalk.green('Transformed: ')}${input} -> ${options.output}\n`);
 
                 }
 
