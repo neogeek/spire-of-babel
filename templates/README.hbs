@@ -50,7 +50,7 @@ spire.transformFile('react.jsx', {
     bundle: true
 }).then(function (result) {
 
-    process.stdout.write(result);
+    process.stdout.write(`${result}\n`);
 
 }).catch(function (err) {
 
