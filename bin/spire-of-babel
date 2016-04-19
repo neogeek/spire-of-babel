@@ -28,11 +28,11 @@ function transform(input, options) {
 
         if (options.output) {
 
-            fs.writeFile(options.output, result, 'utf8');
+            fs.writeFile(options.output, `${result}\n`, 'utf8');
 
         } else {
 
-            process.stdout.write(result);
+            process.stdout.write(`${result}\n`);
 
         }
 
@@ -114,8 +114,8 @@ if (input) {
 
                 if (options.output) {
 
-                    process.stdout.write(`${chalk.yellow('File changed: ')}${filename}`);
-                    process.stdout.write(`${chalk.green('Transformed: ')}${input}`);
+                    process.stdout.write(`${chalk.gray('Change detected to: ')}${filename}\n`);
+                    process.stdout.write(`${chalk.green('Transformed: ')}${input} -> ${options.output}\n`);
 
                 }
 
