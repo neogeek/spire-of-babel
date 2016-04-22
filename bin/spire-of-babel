@@ -28,11 +28,11 @@ function transform(input, options) {
 
         if (options.output) {
 
-            fs.writeFile(options.output, `${result}\n`, 'utf8');
+            fs.writeFile(options.output, result, 'utf8');
 
         } else {
 
-            process.stdout.write(`${result}\n`);
+            process.stdout.write(result);
 
         }
 
