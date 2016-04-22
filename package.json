@@ -20,8 +20,8 @@
   },
   "devDependencies": {
     "doxdox": "0.1.12",
+    "eslint": "2.8.0",
     "jscover": "1.0.0",
-    "jshint": "2.9.1",
     "mocha": "2.4.5",
     "mocha-reporter-cov-summary": "0.1.1"
   },
