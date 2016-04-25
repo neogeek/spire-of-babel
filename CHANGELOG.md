@@ -1,5 +1,11 @@
 # Changelog
 
+## 1.1.2 (April 25, 2016)
+
+- Normalized addition of new line at the end of the transformed file.
+- Switched to ESLint for tests.
+- Updated packages.
+
 ## 1.1.1 (April 18, 2016)
 
 - Added new lines to stdout and file output.
