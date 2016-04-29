@@ -1,6 +1,5 @@
 'use strict';
 
-const fs = require('fs');
 const assert = require('assert');
 
 const lib = process.env.COVERAGE ? '../../lib-cov' : '../../lib';
