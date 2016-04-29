@@ -13,6 +13,7 @@
   "rules": {
     "prefer-arrow-callback": 2,
     "prefer-const": 2,
+    "object-shorthand": 2,
     "no-var": 2
   }
 }
