@@ -8,23 +8,38 @@ const chalk = require('chalk');
 
 const spire = require('../lib/spire-of-babel');
 
-function displayHelp() {
+const pkg = require('../package');
 
-    process.stdout.write('\n');
-    process.stdout.write(`${chalk.blue(' Usage:')} spire-of-babel <path> [options]\n\n`);
-    process.stdout.write(' Options:\n\n');
-    process.stdout.write(`${chalk.yellow('  -h, --help')}\t\tDisplay this help message.\n`);
-    process.stdout.write(`${chalk.yellow('  -v, --version')}\t\tDisplay the current installed version.\n`);
-    process.stdout.write(`${chalk.yellow('  -b, --bundle')}\t\tUse browserify bundler.\n`);
-    process.stdout.write(`${chalk.yellow('  -o, --output')}\t\tPath to save transformed file to. Defaults to stdout.\n`);
-    process.stdout.write(`${chalk.yellow('  -w, --watch')}\t\tFile path to watch for changes. Value must be in quotes. Example: "./test/*.jsx"\n`);
+/**
+* Displays help to stdout.
+*/
+
+const displayHelp = () => {
+
+    process.stdout.write(`
+${chalk.blue(' Usage:')} spire-of-babel <path> [options]
+
+ Options:
+
+${chalk.yellow('  -h, --help')}		Display this help message.
+${chalk.yellow('  -v, --version')}		Display the current installed version.
+${chalk.yellow('  -b, --bundle')}		Use browserify bundler.
+${chalk.yellow('  -o, --output')}		Path to save transformed file to. Defaults to stdout.
+${chalk.yellow('  -w, --watch')}		File path to watch for changes. Value must be in quotes. Example: "./test/**/*.jsx"
+
+`);
+
     process.exit();
 
-}
+};
 
-function transform(input, options) {
+/**
+* Transforms input based on options passed to the command and outputs to either stdout or file.
+*/
 
-    spire.transformFile(input, options).then( (result) => {
+const transform = (input, options) => {
+
+    spire.transformFile(input, options).then((result) => {
 
         if (options.output) {
 
@@ -36,19 +51,21 @@ function transform(input, options) {
 
         }
 
-    }).catch( (err) => {
+    })
+    .catch((err) => {
 
         process.stderr.write(`${err}\n`);
 
     });
-}
 
-let input;
+};
+
+let input = null;
 
 const options = {
-    bundle: false,
-    output: null,
-    watch: null
+    'bundle': false,
+    'output': null,
+    'watch': null
 };
 
 const args = process.argv.slice(2);
@@ -87,7 +104,7 @@ while (args.length) {
     case '-v':
     case '--version':
 
-        process.stdout.write(`${require('../package').version}\n`);
+        process.stdout.write(`${pkg.version}\n`);
         process.exit();
 
         break;
@@ -107,15 +124,17 @@ if (input) {
     if (options.watch) {
 
         fs.watch(options.watch.directory, {
-            recursive: options.watch.recursive
+            'recursive': options.watch.recursive
         }, (event, filename) => {
 
             if (event === 'change' && filename.match(options.watch.filename)) {
 
                 if (options.output) {
 
-                    process.stdout.write(`${chalk.gray('Change detected to: ')}${filename}\n`);
-                    process.stdout.write(`${chalk.green('Transformed: ')}${input} -> ${options.output}\n`);
+                    process.stdout.write(`
+${chalk.gray('Change detected to: ')}${filename}
+${chalk.green('Transformed: ')}${input} -> ${options.output}
+`);
 
                 }
 
