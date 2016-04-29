@@ -10,19 +10,15 @@
     "node": true,
     "es6": true
   },
-  "extends": "eslint:recommended",
+  "extends": [
+    "eslint:recommended",
+    "./node_modules/@neogeek/eslint-coding-standards/.eslintrc-best-practice",
+    "./node_modules/@neogeek/eslint-coding-standards/.eslintrc-es6",
+    "./node_modules/@neogeek/eslint-coding-standards/.eslintrc-nodejs-commonjs",
+    "./node_modules/@neogeek/eslint-coding-standards/.eslintrc-stylistic",
+    "./node_modules/@neogeek/eslint-coding-standards/.eslintrc-variables"
+  ],
   "rules": {
-    "arrow-parens": 2,
-    "arrow-spacing": 2,
-    "no-const-assign": 2,
-    "no-duplicate-imports": 2,
-    "no-var": 2,
-    "object-shorthand": 2,
-    "prefer-arrow-callback": 2,
-    "prefer-const": 2,
-    "prefer-rest-params": 2,
-    "prefer-spread": 2,
-    "prefer-template": 2,
-    "template-curly-spacing": 2
+    "valid-jsdoc": 2
   }
 }
