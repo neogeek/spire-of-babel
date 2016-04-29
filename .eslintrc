@@ -9,5 +9,10 @@
   "env": {
     "node": true,
     "es6": true
+  },
+  "rules": {
+    "prefer-arrow-callback": 2,
+    "prefer-const": 2,
+    "no-var": 2
   }
 }

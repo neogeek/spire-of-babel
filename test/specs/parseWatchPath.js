@@ -1,13 +1,15 @@
-var fs = require('fs');
-var assert = require('assert');
+'use strict';
 
-var lib = process.env.COVERAGE ? '../../lib-cov' : '../../lib';
+const fs = require('fs');
+const assert = require('assert');
 
-var spire = require(`${lib}/spire-of-babel`);
+const lib = process.env.COVERAGE ? '../../lib-cov' : '../../lib';
 
-describe('parseWatchPath', function () {
+const spire = require(`${lib}/spire-of-babel`);
 
-    it('basic path', function () {
+describe('parseWatchPath', () => {
+
+    it('basic path', () => {
 
         assert.deepEqual(spire.parseWatchPath('./test/app.jsx'), {
             directory: './test',
@@ -17,7 +19,7 @@ describe('parseWatchPath', function () {
 
     });
 
-    it('path with filename wildcard', function () {
+    it('path with filename wildcard', () => {
 
         assert.deepEqual(spire.parseWatchPath('./test/*.jsx'), {
             directory: './test',
@@ -27,7 +29,7 @@ describe('parseWatchPath', function () {
 
     });
 
-    it('path with directory and filename wildcard', function () {
+    it('path with directory and filename wildcard', () => {
 
         assert.deepEqual(spire.parseWatchPath('./test/**/*.jsx'), {
             directory: './test',

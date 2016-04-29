@@ -2,11 +2,11 @@
 
 'use strict';
 
-let fs = require('fs');
+const fs = require('fs');
 
-let chalk = require('chalk');
+const chalk = require('chalk');
 
-let spire = require('../lib/spire-of-babel');
+const spire = require('../lib/spire-of-babel');
 
 function displayHelp() {
 
@@ -24,7 +24,7 @@ function displayHelp() {
 
 function transform(input, options) {
 
-    spire.transformFile(input, options).then(function (result) {
+    spire.transformFile(input, options).then( (result) => {
 
         if (options.output) {
 
@@ -36,7 +36,7 @@ function transform(input, options) {
 
         }
 
-    }).catch(function (err) {
+    }).catch( (err) => {
 
         process.stderr.write(`${err}\n`);
 
@@ -45,13 +45,13 @@ function transform(input, options) {
 
 let input;
 
-let options = {
+const options = {
     bundle: false,
     output: null,
     watch: null
 };
 
-let args = process.argv.slice(2);
+const args = process.argv.slice(2);
 
 if (args.length && !args[0].match(/^\-/)) {
 
@@ -108,7 +108,7 @@ if (input) {
 
         fs.watch(options.watch.directory, {
             recursive: options.watch.recursive
-        }, function (event, filename) {
+        }, (event, filename) => {
 
             if (event === 'change' && filename.match(options.watch.filename)) {
 

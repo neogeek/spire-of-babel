@@ -1,6 +1,6 @@
-let firstName = 'Scott';
-let lastName = 'Doxey';
+const firstName = 'Scott';
+const lastName = 'Doxey';
 
-let user = { firstName, lastName };
+const user = { firstName, lastName };
 
 console.log(user);

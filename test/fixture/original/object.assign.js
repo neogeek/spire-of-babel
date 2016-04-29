@@ -1,12 +1,12 @@
 function renderPolygon (points, options = {}) {
 
-    let defaults = {
+    const defaults = {
         lineWidth: 1,
         strokeStyle: '#000',
         fillStyle: '#eee'
     };
 
-    let settings = Object.assign({}, defaults, options);
+    const settings = Object.assign({}, defaults, options);
 
     console.log(defaults);
     console.log(options);
