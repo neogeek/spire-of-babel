@@ -29,8 +29,6 @@ ${chalk.yellow('  -w, --watch')}		File path to watch for changes. Value must be 
 
 `);
 
-    process.exit();
-
 };
 
 /**
@@ -112,6 +110,7 @@ while (args.length) {
     default:
 
         displayHelp();
+        process.exit();
 
         break;
 
