@@ -66,53 +66,59 @@ const options = {
     'watch': null
 };
 
-const args = process.argv.slice(2);
+const PROCESS_CMD_LINE_ARGS_LENGTH = 2;
 
-if (args.length && !args[0].match(/^\-/)) {
-
-    input = args.shift();
-
-}
+const args = process.argv.slice(PROCESS_CMD_LINE_ARGS_LENGTH);
 
 while (args.length) {
 
-    switch (args.shift()) {
+    const currentArg = args.shift();
 
-    case '-b':
-    case '--bundle':
+    if (/^(?!\-).*/.test(currentArg)) {
 
-        options.bundle = true;
+        input = currentArg;
 
-        break;
+    } else {
 
-    case '-o':
-    case '--output':
+        switch (currentArg) {
 
-        options.output = args.shift();
+        case '-b':
+        case '--bundle':
 
-        break;
+            options.bundle = true;
 
-    case '-w':
-    case '--watch':
+            break;
 
-        options.watch = spire.parseWatchPath(args.shift());
+        case '-o':
+        case '--output':
 
-        break;
+            options.output = args.shift();
 
-    case '-v':
-    case '--version':
+            break;
 
-        process.stdout.write(`${pkg.version}\n`);
-        process.exit();
+        case '-w':
+        case '--watch':
 
-        break;
+            options.watch = spire.parseWatchPath(args.shift());
 
-    default:
+            break;
 
-        displayHelp();
-        process.exit();
+        case '-v':
+        case '--version':
 
-        break;
+            process.stdout.write(`${pkg.version}\n`);
+            process.exit();
+
+            break;
+
+        default:
+
+            displayHelp();
+            process.exit();
+
+            break;
+
+        }
 
     }
 
