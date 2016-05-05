@@ -1,5 +1,11 @@
 # Changelog
 
+## 1.1.3 (May 4, 2016)
+
+- Updated codebase to use ES6 syntax supported by Node.js >= 4.0
+- Updated tests.
+- Updated packages.
+
 ## 1.1.2 (April 25, 2016)
 
 - Normalized addition of new line at the end of the transformed file.
