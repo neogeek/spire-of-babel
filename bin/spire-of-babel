@@ -2,29 +2,42 @@
 
 'use strict';
 
-let fs = require('fs');
+const fs = require('fs');
 
-let chalk = require('chalk');
+const chalk = require('chalk');
 
-let spire = require('../lib/spire-of-babel');
+const spire = require('../lib/spire-of-babel');
 
-function displayHelp() {
+const pkg = require('../package');
 
-    process.stdout.write('\n');
-    process.stdout.write(`${chalk.blue(' Usage:')} spire-of-babel <path> [options]\n\n`);
-    process.stdout.write(' Options:\n\n');
-    process.stdout.write(`${chalk.yellow('  -h, --help')}\t\tDisplay this help message.\n`);
-    process.stdout.write(`${chalk.yellow('  -v, --version')}\t\tDisplay the current installed version.\n`);
-    process.stdout.write(`${chalk.yellow('  -b, --bundle')}\t\tUse browserify bundler.\n`);
-    process.stdout.write(`${chalk.yellow('  -o, --output')}\t\tPath to save transformed file to. Defaults to stdout.\n`);
-    process.stdout.write(`${chalk.yellow('  -w, --watch')}\t\tFile path to watch for changes. Value must be in quotes. Example: "./test/*.jsx"\n`);
-    process.exit();
+/**
+* Displays help to stdout.
+*/
 
-}
+const displayHelp = () => {
 
-function transform(input, options) {
+    process.stdout.write(`
+${chalk.blue(' Usage:')} spire-of-babel <path> [options]
 
-    spire.transformFile(input, options).then(function (result) {
+ Options:
+
+${chalk.yellow('  -h, --help')}		Display this help message.
+${chalk.yellow('  -v, --version')}		Display the current installed version.
+${chalk.yellow('  -b, --bundle')}		Use browserify bundler.
+${chalk.yellow('  -o, --output')}		Path to save transformed file to. Defaults to stdout.
+${chalk.yellow('  -w, --watch')}		File path to watch for changes. Value must be in quotes. Example: "./test/**/*.jsx"
+
+`);
+
+};
+
+/**
+* Transforms input based on options passed to the command and outputs to either stdout or file.
+*/
+
+const transform = (input, options) => {
+
+    spire.transformFile(input, options).then((result) => {
 
         if (options.output) {
 
@@ -36,67 +49,76 @@ function transform(input, options) {
 
         }
 
-    }).catch(function (err) {
+    })
+    .catch((err) => {
 
         process.stderr.write(`${err}\n`);
 
     });
-}
 
-let input;
-
-let options = {
-    bundle: false,
-    output: null,
-    watch: null
 };
 
-let args = process.argv.slice(2);
+let input = null;
 
-if (args.length && !args[0].match(/^\-/)) {
+const options = {
+    'bundle': false,
+    'output': null,
+    'watch': null
+};
 
-    input = args.shift();
+const PROCESS_CMD_LINE_ARGS_LENGTH = 2;
 
-}
+const args = process.argv.slice(PROCESS_CMD_LINE_ARGS_LENGTH);
 
 while (args.length) {
 
-    switch (args.shift()) {
+    const currentArg = args.shift();
 
-    case '-b':
-    case '--bundle':
+    if (/^(?!\-).*/.test(currentArg)) {
 
-        options.bundle = true;
+        input = currentArg;
 
-        break;
+    } else {
 
-    case '-o':
-    case '--output':
+        switch (currentArg) {
 
-        options.output = args.shift();
+        case '-b':
+        case '--bundle':
 
-        break;
+            options.bundle = true;
 
-    case '-w':
-    case '--watch':
+            break;
 
-        options.watch = spire.parseWatchPath(args.shift());
+        case '-o':
+        case '--output':
 
-        break;
+            options.output = args.shift();
 
-    case '-v':
-    case '--version':
+            break;
 
-        process.stdout.write(`${require('../package').version}\n`);
-        process.exit();
+        case '-w':
+        case '--watch':
 
-        break;
+            options.watch = spire.parseWatchPath(args.shift());
 
-    default:
+            break;
 
-        displayHelp();
+        case '-v':
+        case '--version':
 
-        break;
+            process.stdout.write(`${pkg.version}\n`);
+            process.exit();
+
+            break;
+
+        default:
+
+            displayHelp();
+            process.exit();
+
+            break;
+
+        }
 
     }
 
@@ -107,15 +129,17 @@ if (input) {
     if (options.watch) {
 
         fs.watch(options.watch.directory, {
-            recursive: options.watch.recursive
-        }, function (event, filename) {
+            'recursive': options.watch.recursive
+        }, (event, filename) => {
 
             if (event === 'change' && filename.match(options.watch.filename)) {
 
                 if (options.output) {
 
-                    process.stdout.write(`${chalk.gray('Change detected to: ')}${filename}\n`);
-                    process.stdout.write(`${chalk.green('Transformed: ')}${input} -> ${options.output}\n`);
+                    process.stdout.write(`
+${chalk.gray('Change detected to: ')}${filename}
+${chalk.green('Transformed: ')}${input} -> ${options.output}
+`);
 
                 }
 

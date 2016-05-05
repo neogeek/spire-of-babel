@@ -1,8 +1,9 @@
+config/
 templates/
 test/
 
 .bithoundrc
-.jshintrc
+.eslintrc
 .travis.yml
 
 Makefile

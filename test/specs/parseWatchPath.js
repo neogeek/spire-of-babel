@@ -1,38 +1,45 @@
-var fs = require('fs');
-var assert = require('assert');
+'use strict';
 
-var lib = process.env.COVERAGE ? '../../lib-cov' : '../../lib';
+const assert = require('assert');
 
-var spire = require(`${lib}/spire-of-babel`);
+let lib = '../../lib';
 
-describe('parseWatchPath', function () {
+if (process.env.COVERAGE) {
 
-    it('basic path', function () {
+    lib = '../../lib-cov';
+
+}
+
+const spire = require(`${lib}/spire-of-babel`);
+
+describe('parseWatchPath', () => {
+
+    it('basic path', () => {
 
         assert.deepEqual(spire.parseWatchPath('./test/app.jsx'), {
-            directory: './test',
-            filename: 'app.jsx',
-            recursive: false
+            'directory': './test',
+            'filename': 'app.jsx',
+            'recursive': false
         });
 
     });
 
-    it('path with filename wildcard', function () {
+    it('path with filename wildcard', () => {
 
         assert.deepEqual(spire.parseWatchPath('./test/*.jsx'), {
-            directory: './test',
-            filename: '.jsx',
-            recursive: false
+            'directory': './test',
+            'filename': '.jsx',
+            'recursive': false
         });
 
     });
 
-    it('path with directory and filename wildcard', function () {
+    it('path with directory and filename wildcard', () => {
 
         assert.deepEqual(spire.parseWatchPath('./test/**/*.jsx'), {
-            directory: './test',
-            filename: '.jsx',
-            recursive: true
+            'directory': './test',
+            'filename': '.jsx',
+            'recursive': true
         });
 
     });

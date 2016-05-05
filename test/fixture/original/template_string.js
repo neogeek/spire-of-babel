@@ -1,6 +1,6 @@
-let first = 'Scott';
-let last = 'Doxey';
+const first = 'Scott';
+const last = 'Doxey';
 
-let fullName = `${first} ${last}`;
+const fullName = `${first} ${last}`;
 
 console.log(fullName);

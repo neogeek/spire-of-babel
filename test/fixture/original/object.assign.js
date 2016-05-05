@@ -1,17 +1,21 @@
-function renderPolygon (points, options = {}) {
+const renderPolygon = (points, options = {}) => {
 
-    let defaults = {
-        lineWidth: 1,
-        strokeStyle: '#000',
-        fillStyle: '#eee'
+    const defaults = {
+        'lineWidth': 1,
+        'strokeStyle': '#000',
+        'fillStyle': '#eee'
     };
 
-    let settings = Object.assign({}, defaults, options);
+    const settings = Object.assign({}, defaults, options);
 
     console.log(defaults);
     console.log(options);
     console.log(settings);
 
-}
+};
 
-renderPolygon([[0, 0], [100, 100]], { lineWidth: 2, strokeStyle: '#aaa', fillStyle: '#000' });
+renderPolygon([[0, 0], [100, 100]], {
+    'lineWidth': 2,
+    'strokeStyle': '#aaa',
+    'fillStyle': '#000'
+});

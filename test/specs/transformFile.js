@@ -1,25 +1,23 @@
-var fs = require('fs');
-var assert = require('assert');
+'use strict';
 
-var lib = process.env.COVERAGE ? '../../lib-cov' : '../../lib';
+const fs = require('fs');
+const assert = require('assert');
 
-var spire = require(`${lib}/spire-of-babel`);
+let lib = '../../lib';
 
-describe('transformFile with babel', function () {
+if (process.env.COVERAGE) {
 
-    it('error while transforming', function (done) {
+    lib = '../../lib-cov';
 
-        spire.transformFile('./test/fixture/original/error.js').catch(function () {
+}
 
-            done();
+const spire = require(`${lib}/spire-of-babel`);
 
-        });
+describe('transformFile with babel', () => {
 
-    });
+    it('error while transforming', (done) => {
 
-    it('error while transforming with bundle flag', function (done) {
-
-        spire.transformFile('./test/fixture/original/error.js', { bundle: true }).catch(function () {
+        spire.transformFile('./test/fixture/original/error.js').catch(() => {
 
             done();
 
@@ -27,13 +25,27 @@ describe('transformFile with babel', function () {
 
     });
 
-    it('bundle', function (done) {
+    it('error while transforming with bundle flag', (done) => {
 
-        spire.transformFile('./test/fixture/original/bundle.js', { bundle: true }).then(function (result) {
+        spire.transformFile('./test/fixture/original/error.js', {'bundle': true}).catch(() => {
 
-            fs.readFile('./test/fixture/transformed/bundle.js', 'utf8', function (err, fixture) {
+            done();
 
-                if (err) { throw err; }
+        });
+
+    });
+
+    it('bundle', (done) => {
+
+        spire.transformFile('./test/fixture/original/bundle.js', {'bundle': true}).then((result) => {
+
+            fs.readFile('./test/fixture/transformed/bundle.js', 'utf8', (err, fixture) => {
+
+                if (err) {
+
+                    throw err;
+
+                }
 
                 assert.equal(result, fixture);
 
@@ -45,31 +57,17 @@ describe('transformFile with babel', function () {
 
     });
 
-    it('const', function (done) {
+    it('const', (done) => {
 
-        spire.transformFile('./test/fixture/original/const.js').then(function (result) {
+        spire.transformFile('./test/fixture/original/const.js').then((result) => {
 
-            fs.readFile('./test/fixture/transformed/const.js', 'utf8', function (err, fixture) {
+            fs.readFile('./test/fixture/transformed/const.js', 'utf8', (err, fixture) => {
 
-                if (err) { throw err; }
+                if (err) {
 
-                assert.equal(result, fixture);
+                    throw err;
 
-                done();
-
-            });
-
-        });
-
-    });
-
-    it('function_default_attribute', function (done) {
-
-        spire.transformFile('./test/fixture/original/function_default_attribute.js').then(function (result) {
-
-            fs.readFile('./test/fixture/transformed/function_default_attribute.js', 'utf8', function (err, fixture) {
-
-                if (err) { throw err; }
+                }
 
                 assert.equal(result, fixture);
 
@@ -81,31 +79,17 @@ describe('transformFile with babel', function () {
 
     });
 
-    it('function_default_attribute_object', function (done) {
+    it('function_default_attribute', (done) => {
 
-        spire.transformFile('./test/fixture/original/function_default_attribute_object.js').then(function (result) {
+        spire.transformFile('./test/fixture/original/function_default_attribute.js').then((result) => {
 
-            fs.readFile('./test/fixture/transformed/function_default_attribute_object.js', 'utf8', function (err, fixture) {
+            fs.readFile('./test/fixture/transformed/function_default_attribute.js', 'utf8', (err, fixture) => {
 
-                if (err) { throw err; }
+                if (err) {
 
-                assert.equal(result, fixture);
+                    throw err;
 
-                done();
-
-            });
-
-        });
-
-    });
-
-    it('function_destruct_attributes', function (done) {
-
-        spire.transformFile('./test/fixture/original/function_destruct_attributes.js').then(function (result) {
-
-            fs.readFile('./test/fixture/transformed/function_destruct_attributes.js', 'utf8', function (err, fixture) {
-
-                if (err) { throw err; }
+                }
 
                 assert.equal(result, fixture);
 
@@ -117,31 +101,17 @@ describe('transformFile with babel', function () {
 
     });
 
-    it('let', function (done) {
+    it('function_default_attribute_object', (done) => {
 
-        spire.transformFile('./test/fixture/original/let.js').then(function (result) {
+        spire.transformFile('./test/fixture/original/function_default_attribute_object.js').then((result) => {
 
-            fs.readFile('./test/fixture/transformed/let.js', 'utf8', function (err, fixture) {
+            fs.readFile('./test/fixture/transformed/function_default_attribute_object.js', 'utf8', (err, fixture) => {
 
-                if (err) { throw err; }
+                if (err) {
 
-                assert.equal(result, fixture);
+                    throw err;
 
-                done();
-
-            });
-
-        });
-
-    });
-
-    it('object_destruct', function (done) {
-
-        spire.transformFile('./test/fixture/original/object_destruct.js').then(function (result) {
-
-            fs.readFile('./test/fixture/transformed/object_destruct.js', 'utf8', function (err, fixture) {
-
-                if (err) { throw err; }
+                }
 
                 assert.equal(result, fixture);
 
@@ -153,31 +123,17 @@ describe('transformFile with babel', function () {
 
     });
 
-    it('object_initialize', function (done) {
+    it('function_destruct_attributes', (done) => {
 
-        spire.transformFile('./test/fixture/original/object_initialize.js').then(function (result) {
+        spire.transformFile('./test/fixture/original/function_destruct_attributes.js').then((result) => {
 
-            fs.readFile('./test/fixture/transformed/object_initialize.js', 'utf8', function (err, fixture) {
+            fs.readFile('./test/fixture/transformed/function_destruct_attributes.js', 'utf8', (err, fixture) => {
 
-                if (err) { throw err; }
+                if (err) {
 
-                assert.equal(result, fixture);
+                    throw err;
 
-                done();
-
-            });
-
-        });
-
-    });
-
-    it('object.assign', function (done) {
-
-        spire.transformFile('./test/fixture/original/object.assign.js').then(function (result) {
-
-            fs.readFile('./test/fixture/transformed/object.assign.js', 'utf8', function (err, fixture) {
-
-                if (err) { throw err; }
+                }
 
                 assert.equal(result, fixture);
 
@@ -189,13 +145,105 @@ describe('transformFile with babel', function () {
 
     });
 
-    it('template_string', function (done) {
+    it('let', (done) => {
 
-        spire.transformFile('./test/fixture/original/template_string.js').then(function (result) {
+        spire.transformFile('./test/fixture/original/let.js').then((result) => {
 
-            fs.readFile('./test/fixture/transformed/template_string.js', 'utf8', function (err, fixture) {
+            fs.readFile('./test/fixture/transformed/let.js', 'utf8', (err, fixture) => {
 
-                if (err) { throw err; }
+                if (err) {
+
+                    throw err;
+
+                }
+
+                assert.equal(result, fixture);
+
+                done();
+
+            });
+
+        });
+
+    });
+
+    it('object_destruct', (done) => {
+
+        spire.transformFile('./test/fixture/original/object_destruct.js').then((result) => {
+
+            fs.readFile('./test/fixture/transformed/object_destruct.js', 'utf8', (err, fixture) => {
+
+                if (err) {
+
+                    throw err;
+
+                }
+
+                assert.equal(result, fixture);
+
+                done();
+
+            });
+
+        });
+
+    });
+
+    it('object_initialize', (done) => {
+
+        spire.transformFile('./test/fixture/original/object_initialize.js').then((result) => {
+
+            fs.readFile('./test/fixture/transformed/object_initialize.js', 'utf8', (err, fixture) => {
+
+                if (err) {
+
+                    throw err;
+
+                }
+
+                assert.equal(result, fixture);
+
+                done();
+
+            });
+
+        });
+
+    });
+
+    it('object.assign', (done) => {
+
+        spire.transformFile('./test/fixture/original/object.assign.js').then((result) => {
+
+            fs.readFile('./test/fixture/transformed/object.assign.js', 'utf8', (err, fixture) => {
+
+                if (err) {
+
+                    throw err;
+
+                }
+
+                assert.equal(result, fixture);
+
+                done();
+
+            });
+
+        });
+
+    });
+
+    it('template_string', (done) => {
+
+        spire.transformFile('./test/fixture/original/template_string.js').then((result) => {
+
+            fs.readFile('./test/fixture/transformed/template_string.js', 'utf8', (err, fixture) => {
+
+                if (err) {
+
+                    throw err;
+
+                }
 
                 assert.equal(result, fixture);
 

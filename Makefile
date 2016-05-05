@@ -1,9 +1,12 @@
 test:
+	make lint
+	./node_modules/.bin/mocha ./test/specs/**.js
+
+lint:
 	./node_modules/.bin/eslint ./bin/spire-of-babel
 	./node_modules/.bin/eslint ./lib/spire-of-babel.js
 	./node_modules/.bin/eslint ./test/fixture/original
 	./node_modules/.bin/eslint ./test/specs
-	./node_modules/.bin/mocha ./test/specs/**.js
 
 coverage:
 	mkdir lib-es5 || exit 0;
@@ -20,5 +23,9 @@ transform:
 
 docs:
 	./node_modules/.bin/doxdox lib/ --layout templates/README.hbs --output README.md
+
+setup:
+	rm -rf config/eslint-coding-standards || exit 0;
+	(cd config && curl -L https://github.com/neogeek/eslint-coding-standards/archive/master.tar.gz | tar -xz && mv eslint-coding-standards-master eslint-coding-standards)
 
 .PHONY: test

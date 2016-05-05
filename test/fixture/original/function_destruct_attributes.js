@@ -1,6 +1,8 @@
-function displayQuotes(...quotes) {
+const displayQuotes = (...quotes) => {
+
     console.log(...quotes);
-}
+
+};
 
 displayQuotes(
     'Hello, friend.',

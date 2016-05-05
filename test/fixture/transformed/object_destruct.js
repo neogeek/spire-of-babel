@@ -1,6 +1,6 @@
 'use strict';
 
-var user = { firstName: 'Scott', lastName: 'Doxey' };
+var user = { 'firstName': 'Scott', 'lastName': 'Doxey' };
 
 var firstName = user.firstName;
 var lastName = user.lastName;
