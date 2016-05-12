@@ -18,7 +18,7 @@ coverage:
 	rm -rf lib-es5
 
 transform:
-	rm test/fixture/transformed/*.js || exit 0;
+	rm test/fixture/transformed/* || exit 0;
 	test/transform.sh
 
 docs:

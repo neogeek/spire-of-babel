@@ -107,6 +107,28 @@ describe('transformFile with babel', () => {
 
     });
 
+    it('sourcemap inline', (done) => {
+
+        spire.transformFile('./test/fixture/original/sourcemap_inline.js', {'sourcemap': true}).then((result) => {
+
+            fs.readFile('./test/fixture/transformed/sourcemap_inline.js', 'utf8', (err, fixture) => {
+
+                if (err) {
+
+                    throw err;
+
+                }
+
+                assert.equal(result.code, fixture);
+
+                done();
+
+            });
+
+        });
+
+    });
+
     it('const', (done) => {
 
         spire.transformFile('./test/fixture/original/const.js').then((result) => {
