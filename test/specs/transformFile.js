@@ -47,7 +47,7 @@ describe('transformFile with babel', () => {
 
                 }
 
-                assert.equal(result, fixture);
+                assert.equal(result.code, fixture);
 
                 done();
 
@@ -69,7 +69,7 @@ describe('transformFile with babel', () => {
 
                 }
 
-                assert.equal(result, fixture);
+                assert.equal(result.code, fixture);
 
                 done();
 
@@ -91,7 +91,7 @@ describe('transformFile with babel', () => {
 
                 }
 
-                assert.equal(result, fixture);
+                assert.equal(result.code, fixture);
 
                 done();
 
@@ -113,7 +113,7 @@ describe('transformFile with babel', () => {
 
                 }
 
-                assert.equal(result, fixture);
+                assert.equal(result.code, fixture);
 
                 done();
 
@@ -135,7 +135,7 @@ describe('transformFile with babel', () => {
 
                 }
 
-                assert.equal(result, fixture);
+                assert.equal(result.code, fixture);
 
                 done();
 
@@ -157,7 +157,7 @@ describe('transformFile with babel', () => {
 
                 }
 
-                assert.equal(result, fixture);
+                assert.equal(result.code, fixture);
 
                 done();
 
@@ -179,7 +179,7 @@ describe('transformFile with babel', () => {
 
                 }
 
-                assert.equal(result, fixture);
+                assert.equal(result.code, fixture);
 
                 done();
 
@@ -201,7 +201,7 @@ describe('transformFile with babel', () => {
 
                 }
 
-                assert.equal(result, fixture);
+                assert.equal(result.code, fixture);
 
                 done();
 
@@ -223,7 +223,7 @@ describe('transformFile with babel', () => {
 
                 }
 
-                assert.equal(result, fixture);
+                assert.equal(result.code, fixture);
 
                 done();
 
@@ -245,7 +245,7 @@ describe('transformFile with babel', () => {
 
                 }
 
-                assert.equal(result, fixture);
+                assert.equal(result.code, fixture);
 
                 done();
 

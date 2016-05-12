@@ -25,6 +25,7 @@ $ npm install spire-of-babel -g
   -b, --bundle		Use browserify bundler.
   -o, --output		Path to save transformed file to. Defaults to stdout.
   -w, --watch		File path to watch for changes. Value must be in quotes. Example: "./test/*.jsx"
+  -s, --sourcemap	Generate sourcemap.
 ```
 
 ### CLI
@@ -63,7 +64,7 @@ spire.transformFile('react.jsx', {
 
 
 
-### spire.transformFileWithBabel(file) 
+### spire.transformFileWithBabel(file[, options]) 
 
 Transforms a file with babel.
 
@@ -73,6 +74,8 @@ Transforms a file with babel.
 #### Parameters
 
 - **file** `String`   File path.
+- **options** `Object`  *Optional* Options object.
+- **options.sourcemap** `Boolean`  *Optional* Generate sourcemap.
 
 
 
@@ -133,6 +136,7 @@ Transforms a file.
 - **file** `String`   File path.
 - **options** `Object`  *Optional* Options object.
 - **options.bundle** `Boolean`  *Optional* Use browserify bundler.
+- **options.sourcemap** `Boolean`  *Optional* Generate sourcemap.
 
 
 

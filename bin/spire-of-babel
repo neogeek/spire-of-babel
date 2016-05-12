@@ -26,6 +26,7 @@ ${chalk.yellow('  -v, --version')}		Display the current installed version.
 ${chalk.yellow('  -b, --bundle')}		Use browserify bundler.
 ${chalk.yellow('  -o, --output')}		Path to save transformed file to. Defaults to stdout.
 ${chalk.yellow('  -w, --watch')}		File path to watch for changes. Value must be in quotes. Example: "./test/**/*.jsx"
+${chalk.yellow('  -s, --sourcemap')}	Generate sourcemap.
 
 `);
 
@@ -41,11 +42,20 @@ const transform = (input, options) => {
 
         if (options.output) {
 
-            fs.writeFile(options.output, result, 'utf8');
+            if (options.sourcemap) {
+
+                fs.writeFile(options.output, result.code, 'utf8');
+                fs.writeFile(`${options.output}.map`, result.map, 'utf8');
+
+            } else {
+
+                fs.writeFile(options.output, result.code, 'utf8');
+
+            }
 
         } else {
 
-            process.stdout.write(result);
+            process.stdout.write(result.code);
 
         }
 
@@ -63,7 +73,8 @@ let input = null;
 const options = {
     'bundle': false,
     'output': null,
-    'watch': null
+    'watch': null,
+    'sourcemap': false
 };
 
 const PROCESS_CMD_LINE_ARGS_LENGTH = 2;
@@ -100,6 +111,13 @@ while (args.length) {
         case '--watch':
 
             options.watch = spire.parseWatchPath(args.shift());
+
+            break;
+
+        case '-s':
+        case '--sourcemap':
+
+            options.sourcemap = true;
 
             break;
 
