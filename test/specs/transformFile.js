@@ -57,6 +57,56 @@ describe('transformFile with babel', () => {
 
     });
 
+    it('sourcemap code', (done) => {
+
+        spire.transformFile('./test/fixture/original/sourcemap.js', {
+            'sourcemap': true,
+            'output': './test/fixture/transformed/sourcemap.js'
+        }).then((result) => {
+
+            fs.readFile('./test/fixture/transformed/sourcemap.js', 'utf8', (err, fixture) => {
+
+                if (err) {
+
+                    throw err;
+
+                }
+
+                assert.equal(result.code, fixture);
+
+                done();
+
+            });
+
+        });
+
+    });
+
+    it('sourcemap map', (done) => {
+
+        spire.transformFile('./test/fixture/original/sourcemap.js', {
+            'sourcemap': true,
+            'output': './test/fixture/transformed/sourcemap.js'
+        }).then((result) => {
+
+            fs.readFile('./test/fixture/transformed/sourcemap.js.map', 'utf8', (err, fixture) => {
+
+                if (err) {
+
+                    throw err;
+
+                }
+
+                assert.equal(result.map, fixture);
+
+                done();
+
+            });
+
+        });
+
+    });
+
     it('const', (done) => {
 
         spire.transformFile('./test/fixture/original/const.js').then((result) => {
