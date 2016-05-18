@@ -63,15 +63,17 @@ spire.transformFile('react.jsx', {
 ## Documentation
 
 
+### spire-of-babel.js
 
-### spire.transformFileWithBabel(file[, options]) 
+
+#### transformFileWithBabel(file[, options]) 
 
 Transforms a file with babel.
 
 
 
 
-#### Parameters
+##### Parameters
 
 - **file** `String`   File path.
 - **options** `Object`  *Optional* Options object.
@@ -80,29 +82,28 @@ Transforms a file with babel.
 
 
 
-#### Examples
+##### Examples
 
 ```javascript
 spire.transformFileWithBabel(file).then(function (result) { console.log(result); });
 ```
 
 
-#### Returns
+##### Returns
 
 
 - `Object`   Promise
 
 
 
-
-### spire.transformFileWithBrowserify(file[, options]) 
+#### transformFileWithBrowserify(file[, options]) 
 
 Transforms a file with browserify.
 
 
 
 
-#### Parameters
+##### Parameters
 
 - **file** `String`   File path.
 - **options** `Object`  *Optional* Options object.
@@ -111,29 +112,28 @@ Transforms a file with browserify.
 
 
 
-#### Examples
+##### Examples
 
 ```javascript
 spire.transformFileWithBrowserify(file).then(function (result) { console.log(result); });
 ```
 
 
-#### Returns
+##### Returns
 
 
 - `Object`   Promise
 
 
 
-
-### spire.transformFile(file[, options]) 
+#### transformFile(file[, options]) 
 
 Transforms a file.
 
 
 
 
-#### Parameters
+##### Parameters
 
 - **file** `String`   File path.
 - **options** `Object`  *Optional* Options object.
@@ -143,43 +143,45 @@ Transforms a file.
 
 
 
-#### Examples
+##### Examples
 
 ```javascript
 spire.transformFile(file, options).then(function (result) { console.log(result); });
 ```
 
 
-#### Returns
+##### Returns
 
 
 - `Object`   Promise
 
 
 
+### utils.js
 
-### spire.parseWatchPath(input) 
+
+#### parseWatchPath(input) 
 
 Parses a path into directory and filename or file regular expression pattern.
 
 
 
 
-#### Parameters
+##### Parameters
 
 - **input** `String`   Path to parse.
 
 
 
 
-#### Examples
+##### Examples
 
 ```javascript
 console.log(spire.parseWatchPath(input));
 ```
 
 
-#### Returns
+##### Returns
 
 
 - `Object`   Object with directory, filename (pattern) and boolean flag.
