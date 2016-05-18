@@ -95,7 +95,7 @@ spire.transformFileWithBabel(file).then(function (result) { console.log(result);
 
 
 
-### spire.transformFileWithBrowserify(file) 
+### spire.transformFileWithBrowserify(file[, options]) 
 
 Transforms a file with browserify.
 
@@ -105,6 +105,8 @@ Transforms a file with browserify.
 #### Parameters
 
 - **file** `String`   File path.
+- **options** `Object`  *Optional* Options object.
+- **options.sourcemap** `Boolean`  *Optional* Generate sourcemap.
 
 
 
