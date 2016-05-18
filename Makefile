@@ -13,6 +13,7 @@ lint:
 coverage:
 	mkdir lib-es5 || exit 0;
 	./bin/spire-of-babel ./lib/spire-of-babel.js > ./lib-es5/spire-of-babel.js
+	./bin/spire-of-babel ./lib/utils.js > ./lib-es5/utils.js
 	$(BIN)/jscover lib-es5 lib-cov
 	COVERAGE=1 $(BIN)/mocha ./test/specs/**/*.js -R html-cov > coverage.html || exit 0;
 	COVERAGE=1 $(BIN)/mocha ./test/specs/**/*.js -R mocha-reporter-cov-summary || exit 0;
