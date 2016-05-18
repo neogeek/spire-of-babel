@@ -43,14 +43,11 @@ const transform = (input, options) => {
 
         if (options.output) {
 
+            fs.writeFile(options.output, result.code, 'utf8');
+
             if (options.sourcemap) {
 
-                fs.writeFile(options.output, result.code, 'utf8');
                 fs.writeFile(`${options.output}.map`, result.map, 'utf8');
-
-            } else {
-
-                fs.writeFile(options.output, result.code, 'utf8');
 
             }
 
