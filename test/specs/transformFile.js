@@ -109,7 +109,7 @@ describe('transformFile with babel', () => {
 
     it('sourcemap inline', (done) => {
 
-        spire.transformFile('./test/fixture/original/sourcemap_inline.js', {'sourcemap': true}).then((result) => {
+        spire.transformFile('./test/fixture/original/sourcemap.js', {'sourcemap': true}).then((result) => {
 
             fs.readFile('./test/fixture/transformed/sourcemap_inline.js', 'utf8', (err, fixture) => {
 
