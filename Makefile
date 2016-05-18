@@ -24,7 +24,7 @@ transform:
 	test/transform.sh
 
 docs:
-	$(BIN)/doxdox lib/ --layout templates/README.hbs --output README.md
+	$(BIN)/doxdox lib/ --layout templates/DOCUMENTATION.hbs --output DOCUMENTATION.md
 
 setup:
 	rm -rf config/eslint-coding-standards || exit 0;
