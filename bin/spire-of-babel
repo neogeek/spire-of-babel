@@ -26,7 +26,7 @@ ${chalk.yellow('  -h, --help')}		Display this help message.
 ${chalk.yellow('  -v, --version')}		Display the current installed version.
 ${chalk.yellow('  -b, --bundle')}		Use browserify bundler.
 ${chalk.yellow('  -o, --output')}		Path to save transformed file to. Defaults to stdout.
-${chalk.yellow('  -w, --watch')}		File path to watch for changes. Value must be in quotes. Example: "./test/**/*.jsx"
+${chalk.yellow('  -w, --watch')}		File path to watch for changes. Example: ./test/**/*.jsx
 ${chalk.yellow('  -s, --sourcemap')}	Generate sourcemap.
 
 `);
