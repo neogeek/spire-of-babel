@@ -10,13 +10,13 @@ if (process.env.COVERAGE) {
 
 }
 
-const spire = require(`${lib}/spire-of-babel`);
+const utils = require(`${lib}/utils`);
 
 describe('parseWatchPath', () => {
 
     it('basic path', () => {
 
-        assert.deepEqual(spire.parseWatchPath('./test/app.jsx'), {
+        assert.deepEqual(utils.parseWatchPath('./test/app.jsx'), {
             'directory': './test',
             'filename': 'app.jsx',
             'recursive': false
@@ -26,7 +26,7 @@ describe('parseWatchPath', () => {
 
     it('path with filename wildcard', () => {
 
-        assert.deepEqual(spire.parseWatchPath('./test/*.jsx'), {
+        assert.deepEqual(utils.parseWatchPath('./test/*.jsx'), {
             'directory': './test',
             'filename': '.jsx',
             'recursive': false
@@ -36,7 +36,7 @@ describe('parseWatchPath', () => {
 
     it('path with directory and filename wildcard', () => {
 
-        assert.deepEqual(spire.parseWatchPath('./test/**/*.jsx'), {
+        assert.deepEqual(utils.parseWatchPath('./test/**/*.jsx'), {
             'directory': './test',
             'filename': '.jsx',
             'recursive': true

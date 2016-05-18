@@ -7,6 +7,7 @@ const fs = require('fs');
 const chalk = require('chalk');
 
 const spire = require('../lib/spire-of-babel');
+const utils = require('../lib/utils');
 
 const pkg = require('../package');
 
@@ -110,7 +111,7 @@ while (args.length) {
         case '-w':
         case '--watch':
 
-            options.watch = spire.parseWatchPath(args.shift());
+            options.watch = utils.parseWatchPath(args.shift());
 
             break;
 
