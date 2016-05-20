@@ -1,5 +1,11 @@
 # Changelog
 
+## 1.1.4 (May 20, 2016)
+
+- Added sourcemap flag.
+- Updated tests.
+- Updated packages.
+
 ## 1.1.3 (May 4, 2016)
 
 - Updated codebase to use ES6 syntax supported by Node.js >= 4.0
