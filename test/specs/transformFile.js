@@ -57,7 +57,7 @@ describe('transformFile with babel', () => {
 
     });
 
-    it('sourcemap code', (done) => {
+    it('sourcemap output code', (done) => {
 
         spire.transformFile('./test/fixture/original/sourcemap.js', {
             'sourcemap': true,
@@ -82,7 +82,7 @@ describe('transformFile with babel', () => {
 
     });
 
-    it('sourcemap file', (done) => {
+    it('sourcemap output map', (done) => {
 
         spire.transformFile('./test/fixture/original/sourcemap.js', {
             'sourcemap': true,
@@ -107,7 +107,7 @@ describe('transformFile with babel', () => {
 
     });
 
-    it('sourcemap inline', (done) => {
+    it('sourcemap inline code/map', (done) => {
 
         spire.transformFile('./test/fixture/original/sourcemap.js', {'sourcemap': true}).then((result) => {
 
@@ -129,7 +129,33 @@ describe('transformFile with babel', () => {
 
     });
 
-    it('bundled sourcemap file', (done) => {
+    it('bundled sourcemap output code', (done) => {
+
+        spire.transformFile('./test/fixture/original/sourcemap_bundle.js', {
+            'bundle': true,
+            'sourcemap': true,
+            'output': './test/fixture/transformed/sourcemap_bundle.js'
+        }).then((result) => {
+
+            fs.readFile('./test/fixture/transformed/sourcemap_bundle.js', 'utf8', (err, fixture) => {
+
+                if (err) {
+
+                    throw err;
+
+                }
+
+                assert.equal(result.code, fixture);
+
+                done();
+
+            });
+
+        });
+
+    });
+
+    it('bundled sourcemap output map', (done) => {
 
         spire.transformFile('./test/fixture/original/sourcemap_bundle.js', {
             'bundle': true,
