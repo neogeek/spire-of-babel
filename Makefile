@@ -1,28 +1,31 @@
+BIN=node_modules/.bin
+
 test:
 	make lint
-	./node_modules/.bin/mocha ./test/specs/**.js
+	$(BIN)/mocha ./test/specs/**.js
 
 lint:
-	./node_modules/.bin/eslint ./bin/spire-of-babel
-	./node_modules/.bin/eslint ./lib/spire-of-babel.js
-	./node_modules/.bin/eslint ./test/fixture/original
-	./node_modules/.bin/eslint ./test/specs
+	$(BIN)/eslint ./bin/spire-of-babel
+	$(BIN)/eslint ./lib/spire-of-babel.js
+	$(BIN)/eslint ./test/fixture/original
+	$(BIN)/eslint ./test/specs
 
 coverage:
 	mkdir lib-es5 || exit 0;
 	./bin/spire-of-babel ./lib/spire-of-babel.js > ./lib-es5/spire-of-babel.js
-	./node_modules/.bin/jscover lib-es5 lib-cov
-	COVERAGE=1 ./node_modules/.bin/mocha ./test/specs/**/*.js -R html-cov > coverage.html || exit 0;
-	COVERAGE=1 ./node_modules/.bin/mocha ./test/specs/**/*.js -R mocha-reporter-cov-summary || exit 0;
+	./bin/spire-of-babel ./lib/utils.js > ./lib-es5/utils.js
+	$(BIN)/jscover lib-es5 lib-cov
+	COVERAGE=1 $(BIN)/mocha ./test/specs/**/*.js -R html-cov > coverage.html || exit 0;
+	COVERAGE=1 $(BIN)/mocha ./test/specs/**/*.js -R mocha-reporter-cov-summary || exit 0;
 	rm -rf lib-cov
 	rm -rf lib-es5
 
 transform:
-	rm test/fixture/transformed/*.js || exit 0;
+	rm test/fixture/transformed/* || exit 0;
 	test/transform.sh
 
 docs:
-	./node_modules/.bin/doxdox lib/ --layout templates/README.hbs --output README.md
+	$(BIN)/doxdox lib/ --layout templates/DOCUMENTATION.hbs --output DOCUMENTATION.md
 
 setup:
 	rm -rf config/eslint-coding-standards || exit 0;

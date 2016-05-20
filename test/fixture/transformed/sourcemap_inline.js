@@ -1,0 +1,8 @@
+'use strict';
+
+var greeting = 'Hello, friend.';
+
+greeting = 'Hello, friend?';
+
+console.log(greeting);
+//# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbInNvdXJjZW1hcC5qcyJdLCJuYW1lcyI6W10sIm1hcHBpbmdzIjoiOztBQUFBLElBQUksV0FBVyxnQkFBZjs7QUFFQSxXQUFXLGdCQUFYOztBQUVBLFFBQVEsR0FBUixDQUFZLFFBQVoiLCJmaWxlIjoic291cmNlbWFwLmpzIiwic291cmNlc0NvbnRlbnQiOlsibGV0IGdyZWV0aW5nID0gJ0hlbGxvLCBmcmllbmQuJztcblxuZ3JlZXRpbmcgPSAnSGVsbG8sIGZyaWVuZD8nO1xuXG5jb25zb2xlLmxvZyhncmVldGluZyk7XG4iXX0=

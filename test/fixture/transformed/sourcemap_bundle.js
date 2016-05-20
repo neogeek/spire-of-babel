@@ -12,4 +12,13 @@ function logMessage() {
     console.log(message);
 }
 
-},{}]},{},[1]);
+},{}],2:[function(require,module,exports){
+'use strict';
+
+var _bundle_include = require('./bundle_include.js');
+
+(0, _bundle_include.logMessage)('Hello, friend.');
+
+},{"./bundle_include.js":1}]},{},[2])
+//# sourceMappingURL=./test/fixture/transformed/sourcemap_bundle.js.map
+
