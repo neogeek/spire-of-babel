@@ -39,7 +39,7 @@ $ spire-of-babel app.js --bundle > app.min.js
 ```
 
 ```bash
-$ spire-of-babel ./react-project/app.jsx --bundle --watch "./react-project/**/*.jsx" --output ./react-project/app.min.js
+$ spire-of-babel ./react-project/app.jsx --bundle --watch ./react-project/**/*.jsx --output ./react-project/app.min.js
 ```
 
 ### API
@@ -48,10 +48,11 @@ $ spire-of-babel ./react-project/app.jsx --bundle --watch "./react-project/**/*.
 let spire = require('spire-of-babel');
 
 spire.transformFile('react.jsx', {
-    bundle: true
+    bundle: true,
+    sourcemap: true
 }).then(function (result) {
 
-    process.stdout.write(result);
+    process.stdout.write(result.code);
 
 }).catch(function (err) {
 
