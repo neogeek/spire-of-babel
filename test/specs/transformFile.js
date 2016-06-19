@@ -27,7 +27,9 @@ describe('transformFile with babel', () => {
 
     it('error while transforming with bundle flag', (done) => {
 
-        spire.transformFile('./test/fixture/original/error.js', {'bundle': true}).catch(() => {
+        spire.transformFile('./test/fixture/original/error.js', {
+            'bundle': true
+        }).catch(() => {
 
             done();
 
@@ -37,7 +39,9 @@ describe('transformFile with babel', () => {
 
     it('bundle', (done) => {
 
-        spire.transformFile('./test/fixture/original/bundle.js', {'bundle': true}).then((result) => {
+        spire.transformFile('./test/fixture/original/bundle.js', {
+            'bundle': true
+        }).then((result) => {
 
             fs.readFile('./test/fixture/transformed/bundle.js', 'utf8', (err, fixture) => {
 
@@ -183,7 +187,10 @@ describe('transformFile with babel', () => {
 
     it('bundled sourcemap inline', (done) => {
 
-        spire.transformFile('./test/fixture/original/sourcemap_bundle.js', {'bundle': true, 'sourcemap': true}).then((result) => {
+        spire.transformFile('./test/fixture/original/sourcemap_bundle.js', {
+            'bundle': true,
+            'sourcemap': true
+        }).then((result) => {
 
             fs.readFile('./test/fixture/transformed/sourcemap_bundle_inline.js', 'utf8', (err, fixture) => {
 

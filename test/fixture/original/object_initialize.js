@@ -1,6 +1,9 @@
 const firstName = 'Scott';
 const lastName = 'Doxey';
 
-const user = {firstName, lastName};
+const user = {
+    firstName,
+    lastName
+};
 
 console.log(user);

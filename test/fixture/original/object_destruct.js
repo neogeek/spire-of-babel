@@ -1,4 +1,7 @@
-const user = {'firstName': 'Scott', 'lastName': 'Doxey'};
+const user = {
+    'firstName': 'Scott',
+    'lastName': 'Doxey'
+};
 
 const {firstName, lastName} = user;
 
