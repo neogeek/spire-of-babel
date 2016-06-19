@@ -15,7 +15,7 @@ Before submitting a pull request, be sure that the following requirements are me
 - Additional tests have been added to validate the changes.
 - Relevant documentation has been added.
 - The build passes.
-- There are no jshint errors using the included `.jshintrc` configuration.
+- There are no eslint errors using the included `.eslintrc` configuration.
 
 ## Code Style
 
