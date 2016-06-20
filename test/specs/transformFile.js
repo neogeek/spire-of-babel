@@ -408,4 +408,26 @@ describe('transformFile with babel', () => {
 
     });
 
+    it('React JSX', (done) => {
+
+        spire.transformFile('./test/fixture/original/react.jsx').then((result) => {
+
+            fs.readFile('./test/fixture/transformed/react.js', 'utf8', (err, fixture) => {
+
+                if (err) {
+
+                    throw err;
+
+                }
+
+                assert.equal(result.code, fixture);
+
+                done();
+
+            });
+
+        });
+
+    });
+
 });
