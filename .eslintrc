@@ -12,11 +12,11 @@
   },
   "extends": [
     "eslint:recommended",
-    "../config/eslint-coding-standards/.eslintrc-best-practice",
-    "../config/eslint-coding-standards/.eslintrc-es6",
-    "../config/eslint-coding-standards/.eslintrc-nodejs-commonjs",
-    "../config/eslint-coding-standards/.eslintrc-stylistic",
-    "../config/eslint-coding-standards/.eslintrc-variables"
+    "./config/eslint-coding-standards/.eslintrc-best-practice",
+    "./config/eslint-coding-standards/.eslintrc-es6",
+    "./config/eslint-coding-standards/.eslintrc-nodejs-commonjs",
+    "./config/eslint-coding-standards/.eslintrc-stylistic",
+    "./config/eslint-coding-standards/.eslintrc-variables"
   ],
   "rules": {
     "valid-jsdoc": 2
