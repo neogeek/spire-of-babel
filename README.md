@@ -45,7 +45,7 @@ $ spire-of-babel ./react-project/app.jsx --bundle --watch ./react-project/**/*.j
 ### API
 
 ```javascript
-let spire = require('spire-of-babel');
+const spire = require('spire-of-babel');
 
 spire.transformFile('react.jsx', {
     bundle: true,
