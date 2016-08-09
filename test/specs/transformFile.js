@@ -3,15 +3,7 @@
 const fs = require('fs');
 const assert = require('assert');
 
-let lib = '../../lib';
-
-if (process.env.COVERAGE) {
-
-    lib = '../../lib-cov';
-
-}
-
-const spire = require(`${lib}/spire-of-babel`);
+const spire = require('../../lib/spire-of-babel');
 
 describe('transformFile with babel', () => {
 
