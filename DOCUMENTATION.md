@@ -116,7 +116,7 @@ Parses a path into directory and filename or file regular expression pattern.
 #### Examples
 
 ```javascript
-console.log(spire.parseWatchPath(input));
+console.log(utils.parseWatchPath(input));
 ```
 
 
