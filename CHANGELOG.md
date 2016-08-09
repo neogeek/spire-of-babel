@@ -1,5 +1,12 @@
 # Changelog
 
+## 1.1.5 (August 8, 2016)
+
+- Added lint flag.
+- Updated tests.
+- Updated packages.
+- Updated logo.
+
 ## 1.1.4 (May 20, 2016)
 
 - Added sourcemap flag.
