@@ -2,15 +2,7 @@
 
 const assert = require('assert');
 
-let lib = '../../lib';
-
-if (process.env.COVERAGE) {
-
-    lib = '../../lib-cov';
-
-}
-
-const utils = require(`${lib}/utils`);
+const utils = require('../../lib/utils');
 
 describe('parseWatchPath', () => {
 

@@ -95,6 +95,35 @@ spire.transformFile(file, options).then(function (result) { console.log(result);
 
 
 
+### lintFile(file, configFile) 
+
+Lint a file.
+
+
+
+
+#### Parameters
+
+- **file** `String`   File path.
+- **configFile** `String`   Config file.
+
+
+
+
+#### Examples
+
+```javascript
+spire.lintFile(file, configFile).then(function (results) { console.log(results); });
+```
+
+
+#### Returns
+
+
+- `Object`   Promise
+
+
+
 
 ## utils.js
 
@@ -116,7 +145,7 @@ Parses a path into directory and filename or file regular expression pattern.
 #### Examples
 
 ```javascript
-console.log(spire.parseWatchPath(input));
+console.log(utils.parseWatchPath(input));
 ```
 
 
@@ -124,6 +153,34 @@ console.log(spire.parseWatchPath(input));
 
 
 - `Object`   Object with directory, filename (pattern) and boolean flag.
+
+
+
+### findESLintConfigFile(input) 
+
+Find local .eslintrc file.
+
+
+
+
+#### Parameters
+
+- **input** `String`   Directory or file.
+
+
+
+
+#### Examples
+
+```javascript
+utils.findESLintConfigFile(input).then((path) => console.log(path));
+```
+
+
+#### Returns
+
+
+- `Object`   Promise
 
 
 

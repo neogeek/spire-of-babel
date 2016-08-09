@@ -3,6 +3,7 @@
 'use strict';
 
 const fs = require('fs');
+const path = require('path');
 
 const chalk = require('chalk');
 
@@ -25,8 +26,10 @@ ${chalk.blue(' Usage:')} spire-of-babel <path> [options]
 ${chalk.yellow('  -h, --help')}		Display this help message.
 ${chalk.yellow('  -v, --version')}		Display the current installed version.
 ${chalk.yellow('  -b, --bundle')}		Use browserify bundler.
+${chalk.yellow('  -d, --dir')}		Directory to run linter on.
 ${chalk.yellow('  -o, --output')}		Path to save transformed file to. Defaults to stdout.
 ${chalk.yellow('  -w, --watch')}		File path to watch for changes. Example: ./test/**/*.jsx
+${chalk.yellow('  -l, --lint')}		Lint files before transpiling.
 ${chalk.yellow('  -s, --sourcemap')}	Generate sourcemap.
 
 `);
@@ -37,32 +40,61 @@ ${chalk.yellow('  -s, --sourcemap')}	Generate sourcemap.
 * Transforms input based on options passed to the command and outputs to either stdout or file.
 */
 
-const transform = (input, options) => {
+const transform = (input, options) => spire.transformFile(input, options).then((result) => {
 
-    spire.transformFile(input, options).then((result) => {
+    if (options.output) {
 
-        if (options.output) {
+        fs.writeFile(options.output, result.code, 'utf8');
 
-            fs.writeFile(options.output, result.code, 'utf8');
+        if (options.sourcemap) {
 
-            if (options.sourcemap) {
-
-                fs.writeFile(`${options.output}.map`, result.map, 'utf8');
-
-            }
-
-        } else {
-
-            process.stdout.write(result.code);
+            fs.writeFile(`${options.output}.map`, result.map, 'utf8');
 
         }
 
-    })
-    .catch((err) => {
+    } else {
 
-        process.stderr.write(`${err}\n`);
+        process.stdout.write(result.code);
 
-    });
+    }
+
+});
+
+/**
+* Lints input based on options passed to the command.
+*/
+
+const lint = (options) => utils.findESLintConfigFile(process.cwd()).then((configFile) =>
+
+    spire.lintFile(options.dir, configFile)
+
+);
+
+/**
+* Lints and transforms input based on options passed to the command.
+*/
+
+const lintAndTransform = (input, options) => {
+
+    if (options.lint) {
+
+        lint(options).then(() => transform(input, options))
+            .catch((err) => {
+
+                process.stderr.write(`${err}\n`);
+
+            });
+
+    } else {
+
+        transform(input, options)
+            .catch((err) => {
+
+                process.stderr.write(`${err}\n`);
+
+            });
+
+    }
 
 };
 
@@ -70,8 +102,10 @@ let input = null;
 
 const options = {
     'bundle': false,
+    'dir': null,
     'output': null,
     'watch': null,
+    'lint': false,
     'sourcemap': false
 };
 
@@ -98,6 +132,13 @@ while (args.length) {
 
             break;
 
+        case '-d':
+        case '--dir':
+
+            options.dir = args.shift();
+
+            break;
+
         case '-o':
         case '--output':
 
@@ -109,6 +150,13 @@ while (args.length) {
         case '--watch':
 
             options.watch = utils.parseWatchPath(args.shift());
+
+            break;
+
+        case '-l':
+        case '--lint':
+
+            options.lint = true;
 
             break;
 
@@ -142,6 +190,12 @@ while (args.length) {
 
 if (input) {
 
+    if (!options.dir) {
+
+        options.dir = path.resolve(path.dirname(input));
+
+    }
+
     if (options.watch) {
 
         fs.watch(options.watch.directory, {
@@ -159,7 +213,7 @@ ${chalk.green('Transformed: ')}${input} -> ${options.output}
 
                 }
 
-                transform(input, options);
+                lintAndTransform(input, options);
 
             }
 
@@ -167,7 +221,7 @@ ${chalk.green('Transformed: ')}${input} -> ${options.output}
 
     } else {
 
-        transform(input, options);
+        lintAndTransform(input, options);
 
     }
 
