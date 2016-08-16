@@ -66,3 +66,7 @@ spire.transformFile('react.jsx', {
 ## Documentation
 
 View full documentation [here](DOCUMENTATION.md).
+
+## Talk
+
+[![](http://i.imgur.com/uiHG5zf.png)](https://speakerdeck.com/neogeek/es2015)
