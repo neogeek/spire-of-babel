@@ -23,14 +23,14 @@ ${chalk.blue(' Usage:')} spire-of-babel <path> [options]
 
  Options:
 
-${chalk.yellow('  -h, --help')}		Display this help message.
-${chalk.yellow('  -v, --version')}		Display the current installed version.
-${chalk.yellow('  -b, --bundle')}		Use browserify bundler.
-${chalk.yellow('  -d, --dir')}		Directory to run linter on.
-${chalk.yellow('  -o, --output')}		Path to save transformed file to. Defaults to stdout.
-${chalk.yellow('  -w, --watch')}		File path to watch for changes. Example: ./test/**/*.jsx
-${chalk.yellow('  -l, --lint')}		Lint files before transpiling.
-${chalk.yellow('  -s, --sourcemap')}	Generate sourcemap.
+${chalk.yellow('  -h, --help')}         Display this help message.
+${chalk.yellow('  -v, --version')}      Display the current installed version.
+${chalk.yellow('  -b, --bundle')}       Use browserify bundler.
+${chalk.yellow('  -d, --dir')}          Directory to run linter on.
+${chalk.yellow('  -o, --output')}       Path to save transformed file to. Defaults to stdout.
+${chalk.yellow('  -w, --watch')}        File path to watch for changes. Example: ./test/**/*.jsx
+${chalk.yellow('  -l, --lint')}         Lint files before transpiling.
+${chalk.yellow('  -s, --sourcemap')}    Generate sourcemap.
 
 `);
 
@@ -103,10 +103,10 @@ let input = null;
 const options = {
     'bundle': false,
     'dir': null,
-    'output': null,
-    'watch': null,
     'lint': false,
-    'sourcemap': false
+    'output': null,
+    'sourcemap': false,
+    'watch': null
 };
 
 const PROCESS_CMD_LINE_ARGS_LENGTH = 2;

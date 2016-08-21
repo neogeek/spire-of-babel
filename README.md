@@ -20,14 +20,14 @@ Usage: spire-of-babel <path> [options]
 
 Options:
 
- -h, --help            Display this help message.
- -v, --version         Display the current installed version.
- -b, --bundle          Use browserify bundler.
- -d, --dir             Directory to run linter on.
- -o, --output          Path to save transformed file to. Defaults to stdout.
- -w, --watch           File path to watch for changes. Example: ./test/**/*.jsx
- -l, --lint            Lint files before transpiling.
- -s, --sourcemap       Generate sourcemap.
+ -h, --help         Display this help message.
+ -v, --version      Display the current installed version.
+ -b, --bundle       Use browserify bundler.
+ -d, --dir          Directory to run linter on.
+ -o, --output       Path to save transformed file to. Defaults to stdout.
+ -w, --watch        File path to watch for changes. Example: ./test/**/*.jsx
+ -l, --lint         Lint files before transpiling.
+ -s, --sourcemap    Generate sourcemap.
 ```
 
 ### CLI

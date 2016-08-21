@@ -56,8 +56,8 @@ describe('transformFile with babel', () => {
     it('sourcemap output code', (done) => {
 
         spire.transformFile('./test/fixture/original/sourcemap.js', {
-            'sourcemap': true,
-            'output': './test/fixture/transformed/sourcemap.js'
+            'output': './test/fixture/transformed/sourcemap.js',
+            'sourcemap': true
         }).then((result) => {
 
             fs.readFile('./test/fixture/transformed/sourcemap.js', 'utf8', (err, fixture) => {
@@ -81,8 +81,8 @@ describe('transformFile with babel', () => {
     it('sourcemap output map', (done) => {
 
         spire.transformFile('./test/fixture/original/sourcemap.js', {
-            'sourcemap': true,
-            'output': './test/fixture/transformed/sourcemap.js'
+            'output': './test/fixture/transformed/sourcemap.js',
+            'sourcemap': true
         }).then((result) => {
 
             fs.readFile('./test/fixture/transformed/sourcemap.js.map', 'utf8', (err, fixture) => {
@@ -129,8 +129,8 @@ describe('transformFile with babel', () => {
 
         spire.transformFile('./test/fixture/original/sourcemap_bundle.js', {
             'bundle': true,
-            'sourcemap': true,
-            'output': './test/fixture/transformed/sourcemap_bundle.js'
+            'output': './test/fixture/transformed/sourcemap_bundle.js',
+            'sourcemap': true
         }).then((result) => {
 
             fs.readFile('./test/fixture/transformed/sourcemap_bundle.js', 'utf8', (err, fixture) => {
@@ -155,8 +155,8 @@ describe('transformFile with babel', () => {
 
         spire.transformFile('./test/fixture/original/sourcemap_bundle.js', {
             'bundle': true,
-            'sourcemap': true,
-            'output': './test/fixture/transformed/sourcemap_bundle.js'
+            'output': './test/fixture/transformed/sourcemap_bundle.js',
+            'sourcemap': true
         }).then((result) => {
 
             fs.readFile('./test/fixture/transformed/sourcemap_bundle.js.map', 'utf8', (err, fixture) => {

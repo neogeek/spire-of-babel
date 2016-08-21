@@ -5,9 +5,9 @@ var renderPolygon = function renderPolygon(points) {
 
 
     var defaults = {
+        'fillStyle': '#eee',
         'lineWidth': 1,
-        'strokeStyle': '#000',
-        'fillStyle': '#eee'
+        'strokeStyle': '#000'
     };
 
     var settings = Object.assign({}, defaults, options);
@@ -18,7 +18,7 @@ var renderPolygon = function renderPolygon(points) {
 };
 
 renderPolygon([[0, 0], [100, 100]], {
+    'fillStyle': '#000',
     'lineWidth': 2,
-    'strokeStyle': '#aaa',
-    'fillStyle': '#000'
+    'strokeStyle': '#aaa'
 });
