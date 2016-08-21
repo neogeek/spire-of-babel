@@ -15,6 +15,7 @@
     "./config/eslint-coding-standards/.eslintrc-best-practice",
     "./config/eslint-coding-standards/.eslintrc-es6",
     "./config/eslint-coding-standards/.eslintrc-nodejs-commonjs",
+    "./config/eslint-coding-standards/.eslintrc-possible-errors",
     "./config/eslint-coding-standards/.eslintrc-stylistic",
     "./config/eslint-coding-standards/.eslintrc-variables"
   ],
