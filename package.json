@@ -21,8 +21,8 @@
     "eslint": "3.3.1"
   },
   "devDependencies": {
-    "doxdox": "0.1.14",
-    "istanbul": "0.4.4",
+    "doxdox": "0.1.15",
+    "istanbul": "0.4.5",
     "mocha": "3.0.2"
   },
   "scripts": {
