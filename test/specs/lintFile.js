@@ -4,9 +4,11 @@ const spire = require('../../lib/spire-of-babel');
 
 describe('lint file', () => {
 
-    it('find lint errors', (done) => {
+    it('found lint errors', (done) => {
 
-        spire.lintFile('./test/fixture/original/lint.js').catch(() => {
+        spire.lintFile('./test/fixture/original/lint.js').catch((err) => {
+
+            console.log(err);
 
             done();
 
