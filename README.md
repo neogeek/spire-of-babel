@@ -23,6 +23,7 @@ Options:
  -h, --help         Display this help message.
  -v, --version      Display the current installed version.
  -b, --bundle       Use browserify bundler.
+ -m, --minify       Minify output.
  -d, --dir          Directory to run linter on.
  -o, --output       Path to save transformed file to. Defaults to stdout.
  -w, --watch        File path to watch for changes. Example: ./test/**/*.jsx
@@ -37,7 +38,7 @@ $ spire-of-babel app.js > app.min.js
 ```
 
 ```bash
-$ spire-of-babel app.js --bundle > app.min.js
+$ spire-of-babel app.js --bundle --minify > app.min.js
 ```
 
 ```bash
@@ -51,6 +52,7 @@ const spire = require('spire-of-babel');
 
 spire.transformFile('react.jsx', {
     bundle: true,
+    minify: true,
     sourcemap: true
 }).then(function (result) {
 

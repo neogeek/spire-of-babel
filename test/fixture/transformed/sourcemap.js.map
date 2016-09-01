@@ -1,1 +1,1 @@
-{"version":3,"sources":["sourcemap.js"],"names":[],"mappings":";;AAAA,IAAI,WAAW,gBAAf;;AAEA,WAAW,gBAAX;;AAEA,QAAQ,GAAR,CAAY,QAAZ","file":"sourcemap.js","sourcesContent":["let greeting = 'Hello, friend.';\n\ngreeting = 'Hello, friend?';\n\nconsole.log(greeting);\n"]}
+{"version":3,"sources":["sourcemap.js"],"names":["greeting","console","log"],"mappings":";;AAAA,IAAIA,WAAW,gBAAf;;AAEAA,WAAW,gBAAX;;AAEAC,QAAQC,GAAR,CAAYF,QAAZ","file":"sourcemap.js","sourcesContent":["let greeting = 'Hello, friend.';\n\ngreeting = 'Hello, friend?';\n\nconsole.log(greeting);\n"]}

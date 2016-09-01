@@ -202,6 +202,31 @@ describe('transformFile with babel', () => {
 
     });
 
+    it('bundled minified', (done) => {
+
+        spire.transformFile('./test/fixture/original/minify_bundle.js', {
+            'bundle': true,
+            'minify': true
+        }).then((result) => {
+
+            fs.readFile('./test/fixture/transformed/minify_bundle.js', 'utf8', (err, fixture) => {
+
+                if (err) {
+
+                    throw err;
+
+                }
+
+                assert.equal(result.code, fixture);
+
+                done();
+
+            });
+
+        });
+
+    });
+
     it('const', (done) => {
 
         spire.transformFile('./test/fixture/original/const.js').then((result) => {
