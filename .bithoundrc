@@ -10,6 +10,7 @@
   ],
   "dependencies": {
     "unused-ignores": [
+      "@neogeek/eslint-config-standards",
       "chalk"
     ]
   }
