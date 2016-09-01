@@ -1,5 +1,11 @@
 # Changelog
 
+## 1.1.6 (August 31, 2016)
+
+- Added minify flag.
+- Updated tests.
+- Updated packages.
+
 ## 1.1.5 (August 8, 2016)
 
 - Added lint flag.
