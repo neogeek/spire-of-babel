@@ -11,7 +11,7 @@
   },
   "license": "MIT",
   "dependencies": {
-    "@neogeek/eslint-config-standards": "1.1.0",
+    "@neogeek/eslint-config-standards": "1.2.0",
     "atob": "2.0.3",
     "babel-core": "6.14.0",
     "babel-preset-babili": "0.0.2",
