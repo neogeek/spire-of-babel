@@ -1,5 +1,9 @@
 # Changelog
 
+## 1.1.8 (September 7, 2016)
+
+- Added flow syntax support.
+
 ## 1.1.7 (September 6, 2016)
 
 - Fixed issue with .eslintrc file not being installed with package.
