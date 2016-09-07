@@ -1,5 +1,10 @@
 # Changelog
 
+## 1.1.7 (September 6, 2016)
+
+- Fixed issue with .eslintrc file not being installed with package.
+- Updated packages.
+
 ## 1.1.6 (August 31, 2016)
 
 - Added minify flag.
