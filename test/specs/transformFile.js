@@ -227,6 +227,28 @@ describe('transformFile with babel', () => {
 
     });
 
+    it('flow', (done) => {
+
+        spire.transformFile('./test/fixture/original/flow.js').then((result) => {
+
+            fs.readFile('./test/fixture/transformed/flow.js', 'utf8', (err, fixture) => {
+
+                if (err) {
+
+                    throw err;
+
+                }
+
+                assert.equal(result.code, fixture);
+
+                done();
+
+            });
+
+        });
+
+    });
+
     it('const', (done) => {
 
         spire.transformFile('./test/fixture/original/const.js').then((result) => {

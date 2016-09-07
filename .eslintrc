@@ -1,5 +1,6 @@
 {
   "extends": [
     "@neogeek/eslint-config-standards"
-  ]
+  ],
+  "parser": "babel-eslint"
 }
