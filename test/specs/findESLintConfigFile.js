@@ -7,9 +7,9 @@ const PKG_ESLINT_PATH_REGEX = /\/((?!test).)*\/\.eslintrc/;
 
 describe('findESLintConfigFile', () => {
 
-    it('found config', (done) => {
+    it('found config', done => {
 
-        utils.findESLintConfigFile('./test').then((path) => {
+        utils.findESLintConfigFile('./test').then(path => {
 
             if (path.match(TEST_ESLINT_PATH_REGEX)) {
 
@@ -21,9 +21,9 @@ describe('findESLintConfigFile', () => {
 
     });
 
-    it('found package config', (done) => {
+    it('found package config', done => {
 
-        utils.findESLintConfigFile('./').then((path) => {
+        utils.findESLintConfigFile('./').then(path => {
 
             if (path.match(PKG_ESLINT_PATH_REGEX)) {
 
@@ -35,9 +35,9 @@ describe('findESLintConfigFile', () => {
 
     });
 
-    it('don\'t find config', (done) => {
+    it('don\'t find config', done => {
 
-        utils.findESLintConfigFile('./bin').then((path) => {
+        utils.findESLintConfigFile('./bin').then(path => {
 
             if (path.match(PKG_ESLINT_PATH_REGEX)) {
 
