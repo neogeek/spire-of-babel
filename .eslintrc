@@ -1,6 +1,10 @@
 {
   "extends": [
-    "@neogeek/eslint-config-standards"
+    "@neogeek/eslint-config-standards",
+    "plugin:flowtype/recommended"
   ],
-  "parser": "babel-eslint"
+  "parser": "babel-eslint",
+  "plugins": [
+    "flowtype"
+  ]
 }

@@ -23,7 +23,8 @@
     "babelify": "7.3.0",
     "browserify": "13.1.0",
     "chalk": "1.1.3",
-    "eslint": "3.4.0"
+    "eslint": "3.5.0",
+    "eslint-plugin-flowtype": "2.17.1"
   },
   "devDependencies": {
     "doxdox": "0.1.15",
