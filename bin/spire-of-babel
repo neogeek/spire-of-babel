@@ -41,7 +41,7 @@ ${chalk.yellow('  -s, --sourcemap')}    Generate sourcemap.
 * Transforms input based on options passed to the command and outputs to either stdout or file.
 */
 
-const transform = (input, options) => spire.transformFile(input, options).then((result) => {
+const transform = (input, options) => spire.transformFile(input, options).then(result => {
 
     if (options.output) {
 
@@ -65,7 +65,7 @@ const transform = (input, options) => spire.transformFile(input, options).then((
 * Lints input based on options passed to the command.
 */
 
-const lint = (options) => utils.findESLintConfigFile(process.cwd()).then((configFile) =>
+const lint = options => utils.findESLintConfigFile(process.cwd()).then(configFile =>
 
     spire.lintFile(options.dir, configFile)
 
@@ -80,7 +80,7 @@ const lintAndTransform = (input, options) => {
     if (options.lint) {
 
         lint(options).then(() => transform(input, options))
-            .catch((err) => {
+            .catch(err => {
 
                 process.stderr.write(`${err}\n`);
 
@@ -89,7 +89,7 @@ const lintAndTransform = (input, options) => {
     } else {
 
         transform(input, options)
-            .catch((err) => {
+            .catch(err => {
 
                 process.stderr.write(`${err}\n`);
 
