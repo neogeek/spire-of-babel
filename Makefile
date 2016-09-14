@@ -11,7 +11,7 @@ lint:
 	$(BIN)/eslint ./test/specs
 
 coverage:
-	$(BIN)/istanbul cover $(BIN)/_mocha ./test/specs
+	$(BIN)/istanbul cover $(BIN)/_mocha ./test/specs && $(BIN)/codecov
 
 transform:
 	rm test/fixture/transformed/* || exit 0;
