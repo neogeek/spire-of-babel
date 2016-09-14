@@ -14,4 +14,5 @@ done
 ./bin/spire-of-babel test/fixture/original/sourcemap_bundle.js --bundle --sourcemap --output ./test/fixture/transformed/sourcemap_bundle.js
 ./bin/spire-of-babel test/fixture/original/sourcemap_bundle.js --bundle --sourcemap > ./test/fixture/transformed/sourcemap_bundle_inline.js
 
+./bin/spire-of-babel test/fixture/original/minify.js --minify > ./test/fixture/transformed/minify.js
 ./bin/spire-of-babel test/fixture/original/minify_bundle.js --minify --bundle > ./test/fixture/transformed/minify_bundle.js

@@ -202,6 +202,30 @@ describe('transformFile with babel', () => {
 
     });
 
+    it('minified', done => {
+
+        spire.transformFile('./test/fixture/original/minify.js', {
+            'minify': true
+        }).then(result => {
+
+            fs.readFile('./test/fixture/transformed/minify.js', 'utf8', (err, fixture) => {
+
+                if (err) {
+
+                    throw err;
+
+                }
+
+                assert.equal(result.code, fixture);
+
+                done();
+
+            });
+
+        });
+
+    });
+
     it('bundled minified', done => {
 
         spire.transformFile('./test/fixture/original/minify_bundle.js', {
