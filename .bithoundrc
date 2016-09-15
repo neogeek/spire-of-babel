@@ -12,7 +12,8 @@
     "unused-ignores": [
       "@neogeek/eslint-config-standards",
       "babel-eslint",
-      "chalk"
+      "chalk",
+      "eslint-plugin-flowtype"
     ]
   }
 }
