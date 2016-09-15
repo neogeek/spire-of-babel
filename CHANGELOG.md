@@ -1,5 +1,11 @@
 # Changelog
 
+## 1.1.9 (September 14, 2016)
+
+- Added ESLint flow plugin.
+- Updated tests.
+- Updated packages.
+
 ## 1.1.8 (September 7, 2016)
 
 - Added flow syntax support.
