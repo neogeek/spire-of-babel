@@ -1,3 +1,23 @@
+const logMessage = (message = '', {type = 'log', display = true} = {}) => {
+
+    if (display) {
+
+        if (type === 'log') {
+
+            console.log(message);
+
+        } else if (type === 'error') {
+
+            console.error(message);
+
+        }
+
+    }
+
+};
+
+logMessage('Hello, friend.');
+
 const displayQuotes = (...quotes) => {
 
     console.log(...quotes);

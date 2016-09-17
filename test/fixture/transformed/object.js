@@ -1,5 +1,33 @@
 'use strict';
 
+{
+
+    var firstName = 'Scott';
+    var lastName = 'Doxey';
+
+    var user = {
+        firstName: firstName,
+        lastName: lastName
+    };
+
+    console.log(user);
+}
+
+{
+
+    var _user = {
+        'firstName': 'Scott',
+        'lastName': 'Doxey'
+    };
+
+    var _firstName = _user.firstName;
+    var _lastName = _user.lastName;
+
+
+    console.log(_firstName);
+    console.log(_lastName);
+}
+
 var renderPolygon = function renderPolygon(points) {
     var options = arguments.length <= 1 || arguments[1] === undefined ? {} : arguments[1];
 

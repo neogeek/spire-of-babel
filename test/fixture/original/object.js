@@ -1,3 +1,31 @@
+{
+
+    const firstName = 'Scott';
+    const lastName = 'Doxey';
+
+    const user = {
+        firstName,
+        lastName
+    };
+
+    console.log(user);
+
+}
+
+{
+
+    const user = {
+        'firstName': 'Scott',
+        'lastName': 'Doxey'
+    };
+
+    const {firstName, lastName} = user;
+
+    console.log(firstName);
+    console.log(lastName);
+
+}
+
 const renderPolygon = (points, options = {}) => {
 
     const defaults = {
