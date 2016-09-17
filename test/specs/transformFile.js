@@ -40,8 +40,8 @@ describe('transformFile with babel', () => {
         },
         {
             'label': 'Functions',
-            'original': './test/fixture/original/function.js',
-            'transformed': './test/fixture/transformed/function.js'
+            'original': './test/fixture/original/functions.js',
+            'transformed': './test/fixture/transformed/functions.js'
         },
         {
             'label': 'Classes',
@@ -50,8 +50,8 @@ describe('transformFile with babel', () => {
         },
         {
             'label': 'Objects',
-            'original': './test/fixture/original/object.js',
-            'transformed': './test/fixture/transformed/object.js'
+            'original': './test/fixture/original/objects.js',
+            'transformed': './test/fixture/transformed/objects.js'
         },
         {
             'label': 'Maps',
