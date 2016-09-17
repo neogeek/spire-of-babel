@@ -29,9 +29,24 @@ describe('transformFile with babel', () => {
             'transformed': './test/fixture/transformed/const.js'
         },
         {
+            'label': 'Arrays',
+            'original': './test/fixture/original/arrays.js',
+            'transformed': './test/fixture/transformed/arrays.js'
+        },
+        {
+            'label': 'Template String',
+            'original': './test/fixture/original/template_string.js',
+            'transformed': './test/fixture/transformed/template_string.js'
+        },
+        {
             'label': 'Functions',
             'original': './test/fixture/original/function.js',
             'transformed': './test/fixture/transformed/function.js'
+        },
+        {
+            'label': 'Classes',
+            'original': './test/fixture/original/classes.js',
+            'transformed': './test/fixture/transformed/classes.js'
         },
         {
             'label': 'Objects',
@@ -39,9 +54,14 @@ describe('transformFile with babel', () => {
             'transformed': './test/fixture/transformed/object.js'
         },
         {
-            'label': 'Template String',
-            'original': './test/fixture/original/template_string.js',
-            'transformed': './test/fixture/transformed/template_string.js'
+            'label': 'Maps',
+            'original': './test/fixture/original/maps.js',
+            'transformed': './test/fixture/transformed/maps.js'
+        },
+        {
+            'label': 'Sets',
+            'original': './test/fixture/original/sets.js',
+            'transformed': './test/fixture/transformed/sets.js'
         },
         {
             'label': 'Flow',
