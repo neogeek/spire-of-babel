@@ -1,11 +1,5 @@
 'use strict';
 
-/* eslint id-length: 0 */
-/* eslint no-shadow: 0 */
-/* eslint no-undef: 0 */
-/* eslint no-undefined: 0 */
-/* eslint prefer-const: 0 */
-
 var greeting = 'Hello, friend.';
 
 greeting = 'Hello, friend?';
