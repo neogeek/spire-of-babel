@@ -36,7 +36,7 @@ Options:
 ### CLI
 
 ```bash
-$ spire-of-babel app.js > app.min.js
+$ spire-of-babel es6.js > es5.js
 ```
 
 ```bash
@@ -44,7 +44,7 @@ $ spire-of-babel app.js --bundle --minify > app.min.js
 ```
 
 ```bash
-$ spire-of-babel ./react-project/app.jsx --bundle --watch ./react-project/**/*.jsx --output ./react-project/app.min.js
+$ spire-of-babel ./react-project/app.jsx --bundle --minify --watch ./react-project/**/*.jsx --output ./react-project/app.min.js
 ```
 
 ### API
