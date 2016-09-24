@@ -1,5 +1,9 @@
 # Changelog
 
+## 1.1.11 (September 24, 2016)
+
+- Fixed issue with recursion in build process.
+
 ## 1.1.10 (September 23, 2016)
 
 - Removed comments from build files.
