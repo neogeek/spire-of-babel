@@ -211,12 +211,20 @@ if (input) {
             'recursive': options.watch.recursive
         }, (event, filename) => {
 
-            if (event === 'change' && filename.match(options.watch.filename)) {
+            const file = `${options.watch.directory}/${filename}`;
+
+            if (event === 'change' && file.match(options.watch.filename)) {
 
                 if (options.output) {
 
+                    if (file === options.output) {
+
+                        return false;
+
+                    }
+
                     process.stdout.write(`
-${chalk.gray('Change detected to: ')}${filename}
+${chalk.gray('Change detected to: ')}${file}
 ${chalk.green('Transformed: ')}${input} -> ${options.output}
 `);
 
@@ -225,6 +233,8 @@ ${chalk.green('Transformed: ')}${input} -> ${options.output}
                 lintAndTransform(input, options);
 
             }
+
+            return false;
 
         });
 
