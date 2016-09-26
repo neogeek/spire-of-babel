@@ -1,5 +1,10 @@
 # Changelog
 
+## 1.1.12 (September 26, 2016)
+
+- Fixed issue with sourceMappingURL filenames.
+- Fixed issue with watch flag and matching filenames.
+
 ## 1.1.11 (September 24, 2016)
 
 - Fixed issue with recursion in build process.
