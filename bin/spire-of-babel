@@ -213,7 +213,7 @@ if (input) {
 
             const file = `${options.watch.directory}/${filename}`;
 
-            if (event === 'change' && file.match(options.watch.filename)) {
+            if (event === 'change' && file.match(new RegExp(`${options.watch.filename}$`))) {
 
                 if (options.output) {
 
