@@ -20,5 +20,5 @@ var _bundle_include = require('./bundle_include.js');
 (0, _bundle_include.logMessage)('Hello, friend.');
 
 },{"./bundle_include.js":1}]},{},[2])
-//# sourceMappingURL=./test/fixture/transformed/sourcemap_bundle.js.map
+//# sourceMappingURL=sourcemap_bundle.js.map
 
