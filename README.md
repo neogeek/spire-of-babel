@@ -73,4 +73,4 @@ View full documentation [here](DOCUMENTATION.md).
 
 ## Talk
 
-[![](http://i.imgur.com/uiHG5zf.png)](https://speakerdeck.com/neogeek/es2015)
+[![](http://i.imgur.com/2ST0FoI.png)](https://speakerdeck.com/neogeek/intro-to-es2015)
