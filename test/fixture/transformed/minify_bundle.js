@@ -2,6 +2,6 @@
 'use strict';var _minify_bundle_include=require('./minify_bundle_include.js');(0,_minify_bundle_include.logMessage)('Hello, friend.');
 
 },{"./minify_bundle_include.js":2}],2:[function(require,module,exports){
-'use strict';Object.defineProperty(exports,'__esModule',{value:!0});exports.default=logMessage;function logMessage(){var a=0>=arguments.length||void 0===arguments[0]?'':arguments[0];console.log(a)}
+'use strict';Object.defineProperty(exports,'__esModule',{value:!0});exports.default=logMessage;function logMessage(){var a=0<arguments.length&&void 0!==arguments[0]?arguments[0]:'';console.log(a)}
 
 },{}]},{},[1]);
