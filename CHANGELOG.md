@@ -1,5 +1,9 @@
 # Changelog
 
+## 1.1.13 (September 28, 2016)
+
+- Updated packages.
+
 ## 1.1.12 (September 26, 2016)
 
 - Fixed issue with sourceMappingURL filenames.
