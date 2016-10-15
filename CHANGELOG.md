@@ -1,5 +1,10 @@
 # Changelog
 
+## 1.1.14 (October 15, 2016)
+
+- Removed custom code in favor of parse-cmd-args package.
+- Updated packages.
+
 ## 1.1.13 (September 28, 2016)
 
 - Updated packages.
