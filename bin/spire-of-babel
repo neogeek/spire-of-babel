@@ -10,32 +10,9 @@ const chalk = require('chalk');
 const spire = require('../lib/spire-of-babel');
 const utils = require('../lib/utils');
 
-const pkg = require('../package');
-
-/**
-* Displays help to stdout.
-*/
-
-const displayHelp = () => {
-
-    process.stdout.write(`
-${chalk.blue(' Usage:')} spire-of-babel <path> [options]
-
- Options:
-
-${chalk.yellow('  -h, --help')}         Display this help message.
-${chalk.yellow('  -v, --version')}      Display the current installed version.
-${chalk.yellow('  -b, --bundle')}       Use browserify bundler.
-${chalk.yellow('  -m, --minify')}       Minify output.
-${chalk.yellow('  -d, --dir')}          Directory to run linter on.
-${chalk.yellow('  -o, --output')}       Path to save transformed file to. Defaults to stdout.
-${chalk.yellow('  -w, --watch')}        File path to watch for changes. Example: ./test/**/*.jsx
-${chalk.yellow('  -l, --lint')}         Lint files before transpiling.
-${chalk.yellow('  -s, --sourcemap')}    Generate sourcemap.
-
-`);
-
-};
+const args = require('parse-cmd-args')(null, {
+    'requireUserInput': true
+});
 
 /**
 * Transforms input based on options passed to the command and outputs to either stdout or file.
@@ -99,113 +76,52 @@ const lintAndTransform = (input, options) => {
 
 };
 
-let input = null;
-
 const options = {
-    'bundle': false,
-    'dir': null,
-    'lint': false,
-    'minify': false,
-    'output': null,
-    'sourcemap': false,
-    'watch': null
+    'bundle': args.flags['--bundle'] || args.flags['-b'] || false,
+    'dir': args.flags['--dir'] || args.flags['-d'] || null,
+    'lint': args.flags['--lint'] || args.flags['-l'] || false,
+    'minify': args.flags['--minify'] || args.flags['-m'] || false,
+    'output': args.flags['--output'] || args.flags['-o'] || null,
+    'sourcemap': args.flags['--sourcemap'] || args.flags['-s'] || false,
+    'watch': args.flags['--watch'] || args.flags['-w'] || null
 };
 
-const PROCESS_CMD_LINE_ARGS_LENGTH = 2;
+if (args.flags['--version'] || args.flags['-v']) {
 
-const args = process.argv.slice(PROCESS_CMD_LINE_ARGS_LENGTH);
+    process.stdout.write(`${require('../package').version}\n`);
+    process.exit();
 
-while (args.length) {
+} else if (!args.input || args.flags['--help'] || args.flags['-h']) {
 
-    const currentArg = args.shift();
+    process.stdout.write(`
+${chalk.blue(' Usage:')} spire-of-babel <path> [options]
 
-    if (/^(?!\-).*/.test(currentArg)) {
+ Options:
 
-        input = currentArg;
+${chalk.yellow('  -h, --help')}         Display this help message.
+${chalk.yellow('  -v, --version')}      Display the current installed version.
+${chalk.yellow('  -b, --bundle')}       Use browserify bundler.
+${chalk.yellow('  -d, --dir')}          Directory to run linter on.
+${chalk.yellow('  -l, --lint')}         Lint files before transpiling.
+${chalk.yellow('  -m, --minify')}       Minify output.
+${chalk.yellow('  -o, --output')}       Path to save transformed file to. Defaults to stdout.
+${chalk.yellow('  -s, --sourcemap')}    Generate sourcemap.
+${chalk.yellow('  -w, --watch')}        File path to watch for changes. Example: ./test/**/*.jsx
 
-    } else {
+`);
+    process.exit();
 
-        switch (currentArg) {
-
-        case '-b':
-        case '--bundle':
-
-            options.bundle = true;
-
-            break;
-
-        case '-m':
-        case '--minify':
-
-            options.minify = true;
-
-            break;
-
-        case '-d':
-        case '--dir':
-
-            options.dir = args.shift();
-
-            break;
-
-        case '-o':
-        case '--output':
-
-            options.output = args.shift();
-
-            break;
-
-        case '-w':
-        case '--watch':
-
-            options.watch = utils.parseWatchPath(args.shift());
-
-            break;
-
-        case '-l':
-        case '--lint':
-
-            options.lint = true;
-
-            break;
-
-        case '-s':
-        case '--sourcemap':
-
-            options.sourcemap = true;
-
-            break;
-
-        case '-v':
-        case '--version':
-
-            process.stdout.write(`${pkg.version}\n`);
-            process.exit();
-
-            break;
-
-        default:
-
-            displayHelp();
-            process.exit();
-
-            break;
-
-        }
-
-    }
-
-}
-
-if (input) {
+} else {
 
     if (!options.dir) {
 
-        options.dir = path.resolve(path.dirname(input));
+        options.dir = path.resolve(path.dirname(args.input));
 
     }
 
     if (options.watch) {
+
+        options.watch = utils.parseWatchPath(options.watch);
 
         fs.watch(options.watch.directory, {
             'recursive': options.watch.recursive
@@ -225,12 +141,12 @@ if (input) {
 
                     process.stdout.write(`
 ${chalk.gray('Change detected to: ')}${file}
-${chalk.green('Transformed: ')}${input} -> ${options.output}
+${chalk.green('Transformed: ')}${args.input} -> ${options.output}
 `);
 
                 }
 
-                lintAndTransform(input, options);
+                lintAndTransform(args.input, options);
 
             }
 
@@ -240,12 +156,8 @@ ${chalk.green('Transformed: ')}${input} -> ${options.output}
 
     } else {
 
-        lintAndTransform(input, options);
+        lintAndTransform(args.input, options);
 
     }
-
-} else {
-
-    displayHelp();
 
 }

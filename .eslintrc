@@ -6,5 +6,8 @@
   "parser": "babel-eslint",
   "plugins": [
     "flowtype"
-  ]
+  ],
+  "rules": {
+    "global-require": 0
+  }
 }
