@@ -25,12 +25,12 @@ Options:
  -h, --help         Display this help message.
  -v, --version      Display the current installed version.
  -b, --bundle       Use browserify bundler.
- -m, --minify       Minify output.
  -d, --dir          Directory to run linter on.
- -o, --output       Path to save transformed file to. Defaults to stdout.
- -w, --watch        File path to watch for changes. Example: ./test/**/*.jsx
  -l, --lint         Lint files before transpiling.
+ -m, --minify       Minify output.
+ -o, --output       Path to save transformed file to. Defaults to stdout.
  -s, --sourcemap    Generate sourcemap.
+ -w, --watch        File path to watch for changes. Example: ./test/**/*.jsx
 ```
 
 ### CLI
