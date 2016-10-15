@@ -15,7 +15,8 @@
       "@neogeek/eslint-config-standards",
       "babel-eslint",
       "chalk",
-      "eslint-plugin-flowtype"
+      "eslint-plugin-flowtype",
+      "parse-cmd-args"
     ]
   }
 }
