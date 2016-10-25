@@ -3,13 +3,11 @@
 var logMessage = function logMessage() {
     var message = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : '';
 
-    var _ref = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : {};
-
-    var _ref$type = _ref.type;
-    var type = _ref$type === undefined ? 'log' : _ref$type;
-    var _ref$display = _ref.display;
-    var display = _ref$display === undefined ? true : _ref$display;
-
+    var _ref = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : {},
+        _ref$type = _ref.type,
+        type = _ref$type === undefined ? 'log' : _ref$type,
+        _ref$display = _ref.display,
+        display = _ref$display === undefined ? true : _ref$display;
 
     if (display) {
 

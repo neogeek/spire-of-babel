@@ -20,8 +20,8 @@
         'lastName': 'Doxey'
     };
 
-    var _firstName = _user.firstName;
-    var _lastName = _user.lastName;
+    var _firstName = _user.firstName,
+        _lastName = _user.lastName;
 
 
     console.log(_firstName);

@@ -28,11 +28,9 @@ var _slicedToArray = function () { function sliceIterator(arr, i) { var _arr = [
 
     try {
         for (var _iterator = totalReplies[Symbol.iterator](), _step; !(_iteratorNormalCompletion = (_step = _iterator.next()).done); _iteratorNormalCompletion = true) {
-            var _step$value = _slicedToArray(_step.value, 2);
-
-            var key = _step$value[0];
-            var value = _step$value[1];
-
+            var _step$value = _slicedToArray(_step.value, 2),
+                key = _step$value[0],
+                value = _step$value[1];
 
             console.log(key + ' = ' + value);
         }

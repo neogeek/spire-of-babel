@@ -3,25 +3,25 @@
 var languages = ['JavaScript', 'HTML', 'CSS'];
 
 {
-    var a = languages[0];
-    var b = languages[1];
-    var c = languages[2];
+    var a = languages[0],
+        b = languages[1],
+        c = languages[2];
 
 
     console.log(a, b, c);
 }
 
 {
-    var _a = languages[0];
-    var _c = languages[2];
+    var _a = languages[0],
+        _c = languages[2];
 
 
     console.log(_a, _c);
 }
 
 {
-    var first = languages[0];
-    var remaining = languages.slice(1);
+    var first = languages[0],
+        remaining = languages.slice(1);
 
 
     console.log(first, remaining);
