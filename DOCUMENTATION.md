@@ -1,7 +1,7 @@
 # Documentation
 
 
-## spire-of-babel.js
+## lib/spire-of-babel.js
 
 
 ### transformFileWithBabel(file[, options]) 
@@ -45,6 +45,7 @@ Transforms a file with browserify.
 
 - **file** `String`   File path.
 - **options** `Object`  *Optional* Options object.
+- **options.output** `Boolean`  *Optional* Path to save transformed file to.
 - **options.sourcemap** `Boolean`  *Optional* Generate sourcemap.
 
 
@@ -76,7 +77,6 @@ Transforms a file.
 - **file** `String`   File path.
 - **options** `Object`  *Optional* Options object.
 - **options.bundle** `Boolean`  *Optional* Use browserify bundler.
-- **options.sourcemap** `Boolean`  *Optional* Generate sourcemap.
 
 
 
@@ -125,7 +125,7 @@ spire.lintFile(file, configFile).then(function (results) { console.log(results);
 
 
 
-## utils.js
+## lib/utils.js
 
 
 ### parseWatchPath(input) 

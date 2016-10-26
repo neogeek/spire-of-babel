@@ -18,6 +18,6 @@ transform:
 	test/transform.sh
 
 docs:
-	$(BIN)/doxdox lib/ --layout templates/DOCUMENTATION.hbs --output DOCUMENTATION.md
+	$(BIN)/doxdox 'lib/**/*.js' --layout templates/DOCUMENTATION.hbs --output DOCUMENTATION.md
 
 .PHONY: test coverage
