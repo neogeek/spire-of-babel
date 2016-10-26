@@ -14,7 +14,7 @@
     "@neogeek/eslint-config-standards": "1.6.3",
     "atob": "2.0.3",
     "babel-core": "6.18.0",
-    "babel-eslint": "7.0.0",
+    "babel-eslint": "7.1.0",
     "babel-plugin-syntax-flow": "6.18.0",
     "babel-plugin-transform-flow-strip-types": "6.18.0",
     "babel-preset-babili": "0.0.5",
