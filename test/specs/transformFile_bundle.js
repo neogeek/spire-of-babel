@@ -9,7 +9,7 @@ describe('transformFile with babel (bundle)', () => {
 
     it('error while transforming with bundle flag', done => {
 
-        spire.transformFile('./test/fixture/original/error.js', {
+        spire.transformFile('./test/fixtures/original/error.js', {
             'bundle': true
         }).catch(() => {
 
@@ -21,11 +21,11 @@ describe('transformFile with babel (bundle)', () => {
 
     it('bundle', done => {
 
-        spire.transformFile('./test/fixture/original/bundle.js', {
+        spire.transformFile('./test/fixtures/original/bundle.js', {
             'bundle': true
         }).then(result => {
 
-            fs.readFile('./test/fixture/transformed/bundle.js', 'utf8', (err, fixture) => {
+            fs.readFile('./test/fixtures/transformed/bundle.js', 'utf8', (err, fixture) => {
 
                 if (err) {
 

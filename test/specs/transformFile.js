@@ -9,7 +9,7 @@ describe('transformFile with babel', () => {
 
     it('error while transforming', done => {
 
-        spire.transformFile('./test/fixture/original/error.js').catch(() => {
+        spire.transformFile('./test/fixtures/original/error.js').catch(() => {
 
             done();
 
@@ -20,58 +20,58 @@ describe('transformFile with babel', () => {
     [
         {
             'label': 'let',
-            'original': './test/fixture/original/let.js',
-            'transformed': './test/fixture/transformed/let.js'
+            'original': './test/fixtures/original/let.js',
+            'transformed': './test/fixtures/transformed/let.js'
         },
         {
             'label': 'const',
-            'original': './test/fixture/original/const.js',
-            'transformed': './test/fixture/transformed/const.js'
+            'original': './test/fixtures/original/const.js',
+            'transformed': './test/fixtures/transformed/const.js'
         },
         {
             'label': 'Arrays',
-            'original': './test/fixture/original/arrays.js',
-            'transformed': './test/fixture/transformed/arrays.js'
+            'original': './test/fixtures/original/arrays.js',
+            'transformed': './test/fixtures/transformed/arrays.js'
         },
         {
             'label': 'Template String',
-            'original': './test/fixture/original/template_string.js',
-            'transformed': './test/fixture/transformed/template_string.js'
+            'original': './test/fixtures/original/template_string.js',
+            'transformed': './test/fixtures/transformed/template_string.js'
         },
         {
             'label': 'Functions',
-            'original': './test/fixture/original/functions.js',
-            'transformed': './test/fixture/transformed/functions.js'
+            'original': './test/fixtures/original/functions.js',
+            'transformed': './test/fixtures/transformed/functions.js'
         },
         {
             'label': 'Classes',
-            'original': './test/fixture/original/classes.js',
-            'transformed': './test/fixture/transformed/classes.js'
+            'original': './test/fixtures/original/classes.js',
+            'transformed': './test/fixtures/transformed/classes.js'
         },
         {
             'label': 'Objects',
-            'original': './test/fixture/original/objects.js',
-            'transformed': './test/fixture/transformed/objects.js'
+            'original': './test/fixtures/original/objects.js',
+            'transformed': './test/fixtures/transformed/objects.js'
         },
         {
             'label': 'Maps',
-            'original': './test/fixture/original/maps.js',
-            'transformed': './test/fixture/transformed/maps.js'
+            'original': './test/fixtures/original/maps.js',
+            'transformed': './test/fixtures/transformed/maps.js'
         },
         {
             'label': 'Sets',
-            'original': './test/fixture/original/sets.js',
-            'transformed': './test/fixture/transformed/sets.js'
+            'original': './test/fixtures/original/sets.js',
+            'transformed': './test/fixtures/transformed/sets.js'
         },
         {
             'label': 'Flow',
-            'original': './test/fixture/original/flow.js',
-            'transformed': './test/fixture/transformed/flow.js'
+            'original': './test/fixtures/original/flow.js',
+            'transformed': './test/fixtures/transformed/flow.js'
         },
         {
             'label': 'React JSX',
-            'original': './test/fixture/original/react.jsx',
-            'transformed': './test/fixture/transformed/react.js'
+            'original': './test/fixtures/original/react.jsx',
+            'transformed': './test/fixtures/transformed/react.js'
         }
     ].forEach(file => {
 

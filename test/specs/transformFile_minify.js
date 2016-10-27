@@ -9,11 +9,11 @@ describe('transformFile with babel (minify)', () => {
 
     it('minified', done => {
 
-        spire.transformFile('./test/fixture/original/minify.js', {
+        spire.transformFile('./test/fixtures/original/minify.js', {
             'minify': true
         }).then(result => {
 
-            fs.readFile('./test/fixture/transformed/minify.js', 'utf8', (err, fixture) => {
+            fs.readFile('./test/fixtures/transformed/minify.js', 'utf8', (err, fixture) => {
 
                 if (err) {
 
@@ -33,12 +33,12 @@ describe('transformFile with babel (minify)', () => {
 
     it('bundled minified', done => {
 
-        spire.transformFile('./test/fixture/original/minify_bundle.js', {
+        spire.transformFile('./test/fixtures/original/minify_bundle.js', {
             'bundle': true,
             'minify': true
         }).then(result => {
 
-            fs.readFile('./test/fixture/transformed/minify_bundle.js', 'utf8', (err, fixture) => {
+            fs.readFile('./test/fixtures/transformed/minify_bundle.js', 'utf8', (err, fixture) => {
 
                 if (err) {
 

@@ -6,7 +6,7 @@ describe('lint file', () => {
 
     it('found lint errors', done => {
 
-        spire.lintFile('./test/fixture/original/lint.js').catch(err => {
+        spire.lintFile('./test/fixtures/original/lint.js').catch(err => {
 
             console.log(err);
 
@@ -18,7 +18,7 @@ describe('lint file', () => {
 
     it('don\'t find lint errors', done => {
 
-        spire.lintFile('./test/fixture/original/const.js').then(() => {
+        spire.lintFile('./test/fixtures/original/const.js').then(() => {
 
             done();
 
