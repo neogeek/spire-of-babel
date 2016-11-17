@@ -2,7 +2,7 @@ BIN=node_modules/.bin
 
 test:
 	make lint
-	$(BIN)/mocha test/specs/**.js
+	$(BIN)/mocha 'test/specs/**.js'
 	make docs && git diff master:DOCUMENTATION.md DOCUMENTATION.md
 
 lint:
