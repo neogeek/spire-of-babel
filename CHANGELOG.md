@@ -1,5 +1,11 @@
 # Changelog
 
+## 1.1.16 (December 8, 2016)
+
+- Fixed logic around generating sourcemaps.
+- Updated tests.
+- Updated packages.
+
 ## 1.1.15 (October 24, 2016)
 
 - Updated packages.
