@@ -1,186 +1,198 @@
 # Documentation
 
 
-## lib/spire-of-babel.js
+### lib/spire-of-babel.js
 
 
-### transformFileWithBabel(file[, options]) 
+#### transformFileWithBabel(file[, options]) 
 
 Transforms a file with babel.
 
 
 
 
-#### Parameters
+##### Parameters
 
-- **file** `String`   File path.
-- **options** `Object`  *Optional* Options object.
-- **options.sourcemap** `Boolean`  *Optional* Generate sourcemap.
+| Name | Type | Description |  |
+| ---- | ---- | ----------- | -------- |
+| file | `String`  | File path. | &nbsp; |
+| options | `Object`  | Options object. | *Optional* |
+| options.sourcemap | `Boolean`  | Generate sourcemap. | *Optional* |
 
 
 
 
-#### Examples
+##### Examples
 
 ```javascript
 spire.transformFileWithBabel(file).then(function (result) { console.log(result); });
 ```
 
 
-#### Returns
+##### Returns
 
 
-- `Object`   Promise
+- `Object`  Promise
 
 
 
-### transformFileWithBrowserify(file[, options]) 
+#### transformFileWithBrowserify(file[, options]) 
 
 Transforms a file with browserify.
 
 
 
 
-#### Parameters
+##### Parameters
 
-- **file** `String`   File path.
-- **options** `Object`  *Optional* Options object.
-- **options.output** `Boolean`  *Optional* Path to save transformed file to.
-- **options.sourcemap** `Boolean`  *Optional* Generate sourcemap.
+| Name | Type | Description |  |
+| ---- | ---- | ----------- | -------- |
+| file | `String`  | File path. | &nbsp; |
+| options | `Object`  | Options object. | *Optional* |
+| options.output | `Boolean`  | Path to save transformed file to. | *Optional* |
+| options.sourcemap | `Boolean`  | Generate sourcemap. | *Optional* |
 
 
 
 
-#### Examples
+##### Examples
 
 ```javascript
 spire.transformFileWithBrowserify(file).then(function (result) { console.log(result); });
 ```
 
 
-#### Returns
+##### Returns
 
 
-- `Object`   Promise
+- `Object`  Promise
 
 
 
-### transformFile(file[, options]) 
+#### transformFile(file[, options]) 
 
 Transforms a file.
 
 
 
 
-#### Parameters
+##### Parameters
 
-- **file** `String`   File path.
-- **options** `Object`  *Optional* Options object.
-- **options.bundle** `Boolean`  *Optional* Use browserify bundler.
+| Name | Type | Description |  |
+| ---- | ---- | ----------- | -------- |
+| file | `String`  | File path. | &nbsp; |
+| options | `Object`  | Options object. | *Optional* |
+| options.bundle | `Boolean`  | Use browserify bundler. | *Optional* |
 
 
 
 
-#### Examples
+##### Examples
 
 ```javascript
 spire.transformFile(file, options).then(function (result) { console.log(result); });
 ```
 
 
-#### Returns
+##### Returns
 
 
-- `Object`   Promise
+- `Object`  Promise
 
 
 
-### lintFile(file, configFile) 
+#### lintFile(file, configFile) 
 
 Lint a file.
 
 
 
 
-#### Parameters
+##### Parameters
 
-- **file** `String`   File path.
-- **configFile** `String`   Config file.
+| Name | Type | Description |  |
+| ---- | ---- | ----------- | -------- |
+| file | `String`  | File path. | &nbsp; |
+| configFile | `String`  | Config file. | &nbsp; |
 
 
 
 
-#### Examples
+##### Examples
 
 ```javascript
 spire.lintFile(file, configFile).then(function (results) { console.log(results); });
 ```
 
 
-#### Returns
+##### Returns
 
 
-- `Object`   Promise
+- `Object`  Promise
 
 
 
 
-## lib/utils.js
+### lib/utils.js
 
 
-### parseWatchPath(input) 
+#### parseWatchPath(input) 
 
 Parses a path into directory and filename or file regular expression pattern.
 
 
 
 
-#### Parameters
+##### Parameters
 
-- **input** `String`   Path to parse.
+| Name | Type | Description |  |
+| ---- | ---- | ----------- | -------- |
+| input | `String`  | Path to parse. | &nbsp; |
 
 
 
 
-#### Examples
+##### Examples
 
 ```javascript
 console.log(utils.parseWatchPath(input));
 ```
 
 
-#### Returns
+##### Returns
 
 
-- `Object`   Object with directory, filename (pattern) and boolean flag.
+- `Object`  Object with directory, filename (pattern) and boolean flag.
 
 
 
-### findESLintConfigFile(input) 
+#### findESLintConfigFile(input) 
 
 Find local .eslintrc file.
 
 
 
 
-#### Parameters
+##### Parameters
 
-- **input** `String`   Directory or file.
+| Name | Type | Description |  |
+| ---- | ---- | ----------- | -------- |
+| input | `String`  | Directory or file. | &nbsp; |
 
 
 
 
-#### Examples
+##### Examples
 
 ```javascript
 utils.findESLintConfigFile(input).then((path) => console.log(path));
 ```
 
 
-#### Returns
+##### Returns
 
 
-- `Object`   Promise
+- `Object`  Promise
 
 
 

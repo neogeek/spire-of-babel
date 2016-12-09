@@ -2,11 +2,11 @@
 
 {{#each files}}
 
-## {{name}}
+### {{name}}
 
 {{#each methods}}
 
-### {{name}}({{params}}) {{#if isPrivate}} *private method*{{/if}}
+#### {{name}}({{params}}) {{#if isPrivate}} *private method*{{/if}}
 
 {{{description}}}
 
@@ -14,27 +14,31 @@
 
 {{#if tags.param}}
 
-#### Parameters
+##### Parameters
 
+| Name | Type | Description |  |
+| ---- | ---- | ----------- | -------- |
 {{#each tags.param}}
-- **{{name}}** {{#each types}}`{{.}}` {{/each}} {{#if isOptional}}*Optional*{{/if}} {{{description}}}
+| {{name}} | {{#each types}}`{{.}}` {{/each}} | {{{description}}} | {{#if isOptional}}*Optional*{{else}}&nbsp;{{/if}} |
 {{/each}}
 
 {{/if}}
 
 {{#if tags.property}}
 
-#### Properties
+##### Properties
 
-{{#each tags.property}}
-- **{{name}}** {{#each types}}`{{.}}` {{/each}} {{#if isOptional}}*Optional*{{/if}} {{{description}}}
+| Name | Type | Description |  |
+| ---- | ---- | ----------- | -------- |
+{{#each tags.param}}
+| {{name}} | {{#each types}}`{{.}}` {{/each}} | {{{description}}} | {{#if isOptional}}*Optional*{{else}}&nbsp;{{/if}} |
 {{/each}}
 
 {{/if}}
 
 {{#if tags.example}}
 
-#### Examples
+##### Examples
 
 {{#each tags.example}}
 ```javascript
@@ -44,12 +48,12 @@
 
 {{/if}}
 
-#### Returns
+##### Returns
 
 {{#if tags.return}}
 
 {{#each tags.return}}
-- {{#each types}}`{{.}}` {{/each}} {{#if isOptional}}*Optional*{{/if}} {{{description}}}
+- {{#each types}}`{{.}}` {{/each}} {{{description}}}
 {{/each}}
 
 {{else}}
