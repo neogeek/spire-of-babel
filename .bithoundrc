@@ -15,7 +15,11 @@
       "@neogeek/eslint-config-standards",
       "babel-eslint",
       "chalk",
+      "codecov",
+      "doxdox",
       "eslint-plugin-flowtype",
+      "istanbul",
+      "mocha",
       "parse-cmd-args"
     ]
   }
