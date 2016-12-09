@@ -8,6 +8,7 @@
 [![Known Vulnerabilities](https://snyk.io/test/npm/spire-of-babel/badge.svg)](https://snyk.io/test/npm/spire-of-babel)
 [![bitHound Overall Score](https://www.bithound.io/github/neogeek/spire-of-babel/badges/score.svg)](https://www.bithound.io/github/neogeek/spire-of-babel)
 [![NPM Version](http://img.shields.io/npm/v/spire-of-babel.svg?style=flat)](https://www.npmjs.org/package/spire-of-babel)
+[![Latest Documentation](https://doxdox.org/images/badge-flat.svg)](https://doxdox.org/neogeek/spire-of-babel)
 
 ## Installation
 
@@ -69,7 +70,7 @@ spire.transformFile('react.jsx', {
 
 ## Documentation
 
-View full documentation [here](DOCUMENTATION.md).
+View full documentation [here](https://doxdox.org/neogeek/spire-of-babel).
 
 ## Talk
 
