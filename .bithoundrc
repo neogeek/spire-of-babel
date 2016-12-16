@@ -20,7 +20,8 @@
       "eslint-plugin-flowtype",
       "istanbul",
       "mocha",
-      "parse-cmd-args"
+      "parse-cmd-args",
+      "update-notifier"
     ]
   }
 }
