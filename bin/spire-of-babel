@@ -6,13 +6,18 @@ const fs = require('fs');
 const path = require('path');
 
 const chalk = require('chalk');
+const updateNotifier = require('update-notifier');
 
 const spire = require('../lib/spire-of-babel');
 const utils = require('../lib/utils');
 
+const pkg = require('../package');
+
 const args = require('parse-cmd-args')(null, {
     'requireUserInput': true
 });
+
+updateNotifier({pkg}).notify();
 
 /**
 * Transforms input based on options passed to the command and outputs to either stdout or file.
@@ -102,7 +107,7 @@ const options = {
 
 if (args.flags['--version'] || args.flags['-v']) {
 
-    process.stdout.write(`${require('../package').version}\n`);
+    process.stdout.write(`${pkg.version}\n`);
     process.exit();
 
 } else if (!args.input || args.flags['--help'] || args.flags['-h']) {
