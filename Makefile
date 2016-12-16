@@ -2,17 +2,17 @@ BIN=node_modules/.bin
 
 test:
 	make lint
-	$(BIN)/mocha 'test/specs/**.js'
+	$(BIN)/mocha test/specs/
 	$(BIN)/doxdox 'lib/**/*.js' --layout templates/DOCUMENTATION.hbs | diff DOCUMENTATION.md -
 
 lint:
 	$(BIN)/eslint bin/spire-of-babel
 	$(BIN)/eslint lib/spire-of-babel.js
 	$(BIN)/eslint test/fixtures/original --ignore-pattern test/fixtures/original/lint.js
-	$(BIN)/eslint test/specs
+	$(BIN)/eslint test/specs/
 
 coverage:
-	$(BIN)/istanbul cover $(BIN)/_mocha test/specs && $(BIN)/codecov
+	$(BIN)/istanbul cover $(BIN)/_mocha test/specs/ && $(BIN)/codecov
 
 fixtures:
 	rm test/fixtures/transformed/* || exit 0;
