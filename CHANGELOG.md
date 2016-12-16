@@ -1,5 +1,9 @@
 # Changelog
 
+## 1.1.18 (December 15, 2016)
+
+- Added update-notifier package.
+
 ## 1.1.17 (December 15, 2016)
 
 - [#63](https://github.com/neogeek/spire-of-babel/issues/63) Added missing callback to asynchronous function in CLI.
