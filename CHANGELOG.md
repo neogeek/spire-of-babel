@@ -1,5 +1,10 @@
 # Changelog
 
+## 1.1.17 (December 15, 2016)
+
+- [#63](https://github.com/neogeek/spire-of-babel/issues/63) Added missing callback to asynchronous function in CLI.
+- Updated packages.
+
 ## 1.1.16 (December 8, 2016)
 
 - Fixed logic around generating sourcemaps.
