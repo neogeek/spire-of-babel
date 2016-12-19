@@ -3,7 +3,7 @@ BIN=node_modules/.bin
 test:
 	make lint
 	$(BIN)/mocha test/specs/
-	$(BIN)/doxdox 'lib/**/*.js' --layout templates/DOCUMENTATION.hbs | diff DOCUMENTATION.md -
+	$(BIN)/doxdox 'lib/**/*.js' --layout markdown | diff DOCUMENTATION.md -
 
 lint:
 	$(BIN)/eslint bin/spire-of-babel
@@ -19,6 +19,6 @@ fixtures:
 	test/transform.sh
 
 docs:
-	$(BIN)/doxdox 'lib/**/*.js' --layout templates/DOCUMENTATION.hbs --output DOCUMENTATION.md
+	$(BIN)/doxdox 'lib/**/*.js' --layout markdown --output DOCUMENTATION.md
 
 .PHONY: test coverage
