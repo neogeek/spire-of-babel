@@ -50,6 +50,22 @@ $ spire-of-babel app.js --bundle --minify > app.min.js
 $ spire-of-babel ./react-project/app.jsx --bundle --minify --watch './react-project/**/*.jsx' --output ./react-project/app.min.js
 ```
 
+### [Babel Plugins](https://babeljs.io/docs/plugins/) via `.babelrc`
+
+Spire of Babel works in the same way that Babel would in that it will use a `.babelrc` file located within your project for additional configuration.
+
+To add plugins not [already included](package.json) in Spire of Babel, add them to a `.babelrc` file located in the root of your project.
+
+**.babelrc**
+
+```json
+{
+  "plugins": ["transform-async-generator-functions"]
+}
+```
+
+See <https://babeljs.io/docs/plugins/transform-async-generator-functions/> for more information about the above example.
+
 ### API
 
 ```javascript
