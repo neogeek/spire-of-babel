@@ -47,7 +47,7 @@ $ spire-of-babel app.js --bundle --minify > app.min.js
 ```
 
 ```bash
-$ spire-of-babel ./react-project/app.jsx --bundle --minify --watch './react-project/**/*.jsx' --output ./react-project/app.min.js
+$ spire-of-babel ./src/app.jsx --bundle --minify --watch './src/**/*.jsx' --output ./src/app.min.js
 ```
 
 ### [Babel Plugins](https://babeljs.io/docs/plugins/) via `.babelrc`
