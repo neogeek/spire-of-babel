@@ -50,6 +50,21 @@ $ spire-of-babel app.js --bundle --minify > app.min.js
 $ spire-of-babel ./src/app.jsx --bundle --minify --watch './src/**/*.jsx' --output ./src/app.min.js
 ```
 
+### Makefile
+
+This is an example build process using a `Makefile` and the NPM package [onchange](https://www.npmjs.com/package/onchange). When a change is detected, `make build` is run automatically. Upon completion, the computer will beep to signal that it is done with the current build (note will only work on a Mac).
+
+```bash
+BIN=node_modules/.bin
+
+build:
+	$(BIN)/spire-of-babel ./src/app.jsx --bundle --minify --output ./src/app.min.js && tput bel
+
+watch:
+	make build
+	$(BIN)/onchange './src/**/*.jsx' -- make build
+```
+
 ### [Babel Plugins](https://babeljs.io/docs/plugins/) via `.babelrc`
 
 Spire of Babel works in the same way that Babel would in that it will use a `.babelrc` file located within your project for additional configuration.
