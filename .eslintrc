@@ -8,6 +8,7 @@
     "flowtype"
   ],
   "rules": {
-    "global-require": 0
+    "global-require": 0,
+    "prefer-destructuring": 0
   }
 }
