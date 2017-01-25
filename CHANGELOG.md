@@ -1,5 +1,9 @@
 # Changelog
 
+## 1.1.20 (January 24, 2017)
+
+- Updated packages.
+
 ## 1.1.19 (January 8, 2017)
 
 - Updated packages.
