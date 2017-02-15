@@ -1,5 +1,10 @@
 # Changelog
 
+## 1.1.22 (February 15, 2017)
+
+- Updated packages.
+- Added yarn support.
+
 ## 1.1.21 (February 4, 2017)
 
 - Added .jsx as an omittable import/require extension.
