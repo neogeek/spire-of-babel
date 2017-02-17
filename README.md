@@ -1,5 +1,7 @@
 # ![Spire of Babel](logo.png)
 
+[![Greenkeeper badge](https://badges.greenkeeper.io/neogeek/spire-of-babel.svg)](https://greenkeeper.io/)
+
 > A one stop solution for working with ES2015 and React.
 
 [![Build Status](https://travis-ci.org/neogeek/spire-of-babel.svg?branch=master)](https://travis-ci.org/neogeek/spire-of-babel)
