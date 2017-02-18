@@ -8,6 +8,7 @@
 [![Known Vulnerabilities](https://snyk.io/test/npm/spire-of-babel/badge.svg)](https://snyk.io/test/npm/spire-of-babel)
 [![bitHound Overall Score](https://www.bithound.io/github/neogeek/spire-of-babel/badges/score.svg)](https://www.bithound.io/github/neogeek/spire-of-babel)
 [![NPM Version](http://img.shields.io/npm/v/spire-of-babel.svg?style=flat)](https://www.npmjs.org/package/spire-of-babel)
+[![Greenkeeper badge](https://badges.greenkeeper.io/neogeek/spire-of-babel.svg)](https://greenkeeper.io/)
 [![Latest Documentation](https://doxdox.org/images/badge-flat.svg)](https://doxdox.org/neogeek/spire-of-babel)
 
 Spire of Babel is a zero-config tool takes the guesswork out of setting up a project written in ES2015 and React. In addition to converting ES2015 with [Babel](https://babeljs.io/), Spire of Babel also comes with a [bundler](https://github.com/babel/babelify) for using both `require('')` and `import` styled module loaders, minification, linting with [ESLint](http://eslint.org/), and auto-generated sourcemaps.
