@@ -1,7 +1,7 @@
 #!/bin/bash
 
 for file in test/fixtures/original/*.js; do
-    if [[ ! "${file}" =~ .bundle|sourcemap|minify. ]]; then
+    if [[ ! "${file}" =~ .bundle|sourcemap|minify|presets. ]]; then
         ./bin/spire-of-babel "${file}" --output ./test/fixtures/transformed/"$(basename "$file")"
     fi
 done
@@ -16,3 +16,5 @@ done
 
 ./bin/spire-of-babel test/fixtures/original/minify.js --minify > ./test/fixtures/transformed/minify.js
 ./bin/spire-of-babel test/fixtures/original/minify_bundle.js --minify --bundle > ./test/fixtures/transformed/minify_bundle.js
+
+./bin/spire-of-babel test/fixtures/original/presets-latest-stage-2.jsx --presets latest,stage-2 --output ./test/fixtures/transformed/presets-latest-stage-2.js

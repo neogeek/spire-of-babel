@@ -6,6 +6,38 @@
 ### lib/spire-of-babel.js
 
 
+#### createPresetArray(settings) 
+
+Creates array of presets based on user settings.
+
+
+
+
+##### Parameters
+
+| Name | Type | Description |  |
+| ---- | ---- | ----------- | -------- |
+| settings | `Object`  | Settings object. | &nbsp; |
+| settings.presets | `String`  | Custom presets to load. Comma delimited value. | &nbsp; |
+| settings.minify | `Boolean`  | Minify output. | &nbsp; |
+
+
+
+
+##### Examples
+
+```javascript
+spire.createPresetArray({'presets': 'es2015', 'minify': true});
+```
+
+
+##### Returns
+
+
+- `Array`  
+
+
+
 #### transformFileWithBabel(file[, options]) 
 
 Transforms a file with babel.

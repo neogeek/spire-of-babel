@@ -33,6 +33,7 @@ Options:
  -l, --lint         Lint files before transpiling.
  -m, --minify       Minify output.
  -o, --output       Path to save transformed file to. Defaults to stdout.
+ -p, --presets      Load custom presets (es2015, es2016, es2017, latest). Defaults to es2015. Comma delimited value.
  -s, --sourcemap    Generate sourcemap.
  -w, --watch        File path to watch for changes. Example: ./test/**/*.jsx
 ```
