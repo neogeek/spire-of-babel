@@ -104,6 +104,7 @@ const options = {
     'lint': args.flags['--lint'] || args.flags['-l'] || false,
     'minify': args.flags['--minify'] || args.flags['-m'] || false,
     'output': args.flags['--output'] || args.flags['-o'] || null,
+    'presets': args.flags['--presets'] || args.flags['-p'] || 'es2015',
     'sourcemap': args.flags['--sourcemap'] || args.flags['-s'] || false,
     'watch': args.flags['--watch'] || args.flags['-w'] || null
 };
@@ -127,6 +128,7 @@ ${chalk.yellow('  -d, --dir')}          Directory to run linter on.
 ${chalk.yellow('  -l, --lint')}         Lint files before transpiling.
 ${chalk.yellow('  -m, --minify')}       Minify output.
 ${chalk.yellow('  -o, --output')}       Path to save transformed file to. Defaults to stdout.
+${chalk.yellow('  -p, --presets')}      Load custom presets (es2015, es2016, es2017, latest). Defaults to es2015. Comma delimited value.
 ${chalk.yellow('  -s, --sourcemap')}    Generate sourcemap.
 ${chalk.yellow('  -w, --watch')}        File path to watch for changes. Example: ./test/**/*.jsx
 
