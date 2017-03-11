@@ -89,9 +89,9 @@ See <https://babeljs.io/docs/plugins/transform-async-generator-functions/> for m
 const spire = require('spire-of-babel');
 
 spire.transformFile('react.jsx', {
-    bundle: true,
-    minify: true,
-    sourcemap: true
+    'bundle': true,
+    'minify': true,
+    'sourcemap': true
 }).then(function (result) {
 
     process.stdout.write(result.code);
