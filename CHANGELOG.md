@@ -1,5 +1,11 @@
 # Changelog
 
+## 1.2.0 (March 11, 2017)
+
+- Added custom presets option.
+- Added tests.
+- Updated packages.
+
 ## 1.1.22 (February 15, 2017)
 
 - Updated packages.
