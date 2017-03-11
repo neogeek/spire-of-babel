@@ -91,6 +91,7 @@ const spire = require('spire-of-babel');
 spire.transformFile('react.jsx', {
     'bundle': true,
     'minify': true,
+    'presets': 'latest,stage-2',
     'sourcemap': true
 }).then(function (result) {
 
