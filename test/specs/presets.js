@@ -7,6 +7,18 @@ const spire = require('../../lib/spire-of-babel');
 
 describe('custom presets', () => {
 
+    it('error while using missing preset', done => {
+
+        spire.transformFile('./test/fixtures/original/presets-latest-stage-2.jsx', {
+            'presets': 'latest,stage-1'
+        }).catch(() => {
+
+            done();
+
+        });
+
+    });
+
     [
         {
             'label': 'latest,stage-2',
