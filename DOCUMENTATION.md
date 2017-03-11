@@ -27,7 +27,7 @@ Creates array of presets based on user settings.
 ##### Examples
 
 ```javascript
-spire.createPresetArray({'preset': 'es2015', 'minify': true});
+spire.createPresetArray({'presets': 'es2015', 'minify': true});
 ```
 
 
