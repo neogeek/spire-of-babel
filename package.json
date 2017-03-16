@@ -31,7 +31,7 @@
   "devDependencies": {
     "babel-preset-latest": "6.24.0",
     "babel-preset-stage-2": "6.22.0",
-    "codecov": "2.0.1",
+    "codecov": "2.0.2",
     "doxdox": "2.0.2",
     "istanbul": "0.4.5",
     "mocha": "3.2.0"
