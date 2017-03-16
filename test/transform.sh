@@ -18,3 +18,5 @@ done
 ./bin/spire-of-babel test/fixtures/original/minify_bundle.js --minify --bundle > ./test/fixtures/transformed/minify_bundle.js
 
 ./bin/spire-of-babel test/fixtures/original/presets-latest-stage-2.jsx --presets latest,stage-2 --output ./test/fixtures/transformed/presets-latest-stage-2.js
+
+./bin/spire-of-babel test/fixtures/original/typescript.ts > ./test/fixtures/transformed/typescript.js
