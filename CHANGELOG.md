@@ -1,5 +1,9 @@
 # Changelog
 
+## 1.2.2 (March 17, 2017)
+
+- Added support for TypeScript with .ts and .tsx extensions.
+
 ## 1.2.1 (March 13, 2017)
 
 - Updated packages.
