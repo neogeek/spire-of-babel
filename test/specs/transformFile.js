@@ -72,6 +72,11 @@ describe('transformFile with babel', () => {
             'label': 'React JSX',
             'original': './test/fixtures/original/react.jsx',
             'transformed': './test/fixtures/transformed/react.js'
+        },
+        {
+            'label': 'TypeScript',
+            'original': './test/fixtures/original/typescript.ts',
+            'transformed': './test/fixtures/transformed/typescript.js'
         }
     ].forEach(file => {
 
