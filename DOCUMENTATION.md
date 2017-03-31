@@ -1,4 +1,4 @@
-# [spire-of-babel](https://github.com/neogeek/spire-of-babel) *1.2.2*
+# [spire-of-babel](https://github.com/neogeek/spire-of-babel) *1.2.3*
 
 > A one stop solution for working with ES2015 and React.
 
