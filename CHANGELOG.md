@@ -1,5 +1,9 @@
 # Changelog
 
+## 1.2.4 (May 4, 2017)
+
+- Updated packages.
+
 ## 1.2.3 (March 31, 2017)
 
 - Updated packages.
