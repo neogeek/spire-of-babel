@@ -9,8 +9,8 @@ describe('custom presets', () => {
 
     it('error while using missing preset', done => {
 
-        spire.transformFile('./test/fixtures/original/presets-latest-stage-2.jsx', {
-            'presets': 'latest,stage-1'
+        spire.transformFile('./test/fixtures/original/presets-env-stage-2.jsx', {
+            'presets': 'env,stage-1'
         }).catch(() => {
 
             done();
@@ -21,9 +21,9 @@ describe('custom presets', () => {
 
     [
         {
-            'label': 'latest,stage-2',
-            'original': './test/fixtures/original/presets-latest-stage-2.jsx',
-            'transformed': './test/fixtures/transformed/presets-latest-stage-2.js'
+            'label': 'env,stage-2',
+            'original': './test/fixtures/original/presets-env-stage-2.jsx',
+            'transformed': './test/fixtures/transformed/presets-env-stage-2.js'
         }
     ].forEach(file => {
 
