@@ -40,16 +40,50 @@ Options:
 
 ### CLI
 
+#### Transpile ES6 to ES5
+
 ```bash
 $ spire-of-babel es6.js > es5.js
 ```
 
-```bash
-$ spire-of-babel app.js --bundle --minify > app.min.js
-```
+#### Bundle and Minify
 
 ```bash
-$ spire-of-babel ./src/app.jsx --bundle --minify --watch './src/**/*.jsx' --output ./src/app.min.js
+$ spire-of-babel ./src/js/app.js --bundle --minify > ./static/js/bundle.min.js
+```
+
+#### Watch for Changes
+
+```bash
+$ spire-of-babel ./src/js/app.jsx --bundle --minify --watch './src/js/**/*.jsx' --output ./static/js/bundle.min.js
+```
+
+#### Transpile With Custom Presets
+
+```bash
+$ spire-of-babel ./src/js/app.jsx --bundle --presets env,stage-2 --output ./static/js/bundle.min.js
+```
+
+### NPM Scripts
+
+This is an example build process using [NPM scripts](https://docs.npmjs.com/misc/scripts). Running `npm run build` will transpile the `src/js/app.jsx` file and output the contents to `static/js/bundle.min.js`.
+
+```json
+{
+  "dependencies": {
+    "babel-preset-env": "1.4.0",
+    "babel-preset-stage-2": "6.24.1",
+    "prop-types": "15.5.9",
+    "react": "15.5.4",
+    "react-dom": "15.5.4"
+  },
+  "devDependencies": {
+    "spire-of-babel": "1.2.4"
+  },
+  "scripts": {
+    "build": "spire-of-babel ./src/js/app.jsx --bundle --minify --presets env,stage-2 --output ./static/js/bundle.min.js"
+  }
+}
 ```
 
 ### Makefile
@@ -60,11 +94,11 @@ This is an example build process using a `Makefile` and the NPM package [onchang
 BIN=node_modules/.bin
 
 build:
-	$(BIN)/spire-of-babel ./src/app.jsx --bundle --minify --output ./src/app.min.js && tput bel
+	$(BIN)/spire-of-babel ./src/js/app.jsx --bundle --minify --output ./static/js/bundle.min.js && tput bel
 
 watch:
 	make build
-	$(BIN)/onchange './src/**/*.jsx' -- make build
+	$(BIN)/onchange './src/js/**/*.jsx' -- make build
 ```
 
 ### [Babel Plugins](https://babeljs.io/docs/plugins/) via `.babelrc`
@@ -107,7 +141,3 @@ spire.transformFile('react.jsx', {
 ## Documentation
 
 View full documentation [here](https://doxdox.org/neogeek/spire-of-babel).
-
-## Talk
-
-[![](http://i.imgur.com/2ST0FoI.png)](https://speakerdeck.com/neogeek/intro-to-es2015)
