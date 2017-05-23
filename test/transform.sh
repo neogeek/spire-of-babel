@@ -21,5 +21,5 @@ done
 
 ./bin/spire-of-babel test/fixtures/original/typescript.ts > ./test/fixtures/transformed/typescript.js
 
-./bin/spire-of-babel test/fixtures/original/process_env_bundle.js --bundle > ./test/fixtures/transformed/process_env_bundle_development.js
-NODE_ENV=production ./bin/spire-of-babel test/fixtures/original/process_env_bundle.js --bundle > ./test/fixtures/transformed/process_env_bundle_production.js
+./bin/spire-of-babel test/fixtures/original/process_env_bundle.js --bundle --minify > ./test/fixtures/transformed/process_env_bundle_development.js
+NODE_ENV=production ./bin/spire-of-babel test/fixtures/original/process_env_bundle.js --bundle --minify > ./test/fixtures/transformed/process_env_bundle_production.js
