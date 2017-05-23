@@ -64,6 +64,14 @@ $ spire-of-babel ./src/js/app.jsx --bundle --minify --watch './src/js/**/*.jsx' 
 $ spire-of-babel ./src/js/app.jsx --bundle --presets env,stage-2 --output ./static/js/bundle.min.js
 ```
 
+#### Build for Production Use
+
+**Notice:** This only works with the bundle flag.
+
+```bash
+$ NODE_ENV=production spire-of-babel ./src/js/app.jsx --bundle --output ./static/js/bundle.min.js
+```
+
 ### NPM Scripts
 
 This is an example build process using [NPM scripts](https://docs.npmjs.com/misc/scripts). Running `npm run build` will transpile the `src/js/app.jsx` file and output the contents to `static/js/bundle.min.js`.
