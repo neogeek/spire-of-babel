@@ -17,6 +17,10 @@ describe('findESLintConfigFile', () => {
 
                 done();
 
+            } else {
+
+                done(new Error(`${filepath} did not match the test pattern`));
+
             }
 
         });
@@ -31,6 +35,10 @@ describe('findESLintConfigFile', () => {
 
                 done();
 
+            } else {
+
+                done(new Error(`${filepath} did not match the test pattern`));
+
             }
 
         });
@@ -44,6 +52,10 @@ describe('findESLintConfigFile', () => {
             if (filepath.match(PKG_ESLINT_PATH_REGEX)) {
 
                 done();
+
+            } else {
+
+                done(new Error(`${filepath} did not match the test pattern`));
 
             }
 
