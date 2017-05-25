@@ -1,7 +1,5 @@
 #!/bin/bash
 
-rm test/fixtures/transformed/* || exit 0;
-
 for file in test/fixtures/original/*.js; do
     if [[ ! "${file}" =~ .bundle|sourcemap|minify|presets. ]]; then
         node ./bin/spire-of-babel "${file}" --output ./test/fixtures/transformed/"$(basename "$file")"
