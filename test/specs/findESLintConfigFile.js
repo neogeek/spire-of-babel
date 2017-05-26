@@ -6,7 +6,7 @@ const utils = require('../../lib/utils');
 
 const ESLINT_PATH_REGEX = new RegExp('.eslintrc$');
 
-describe.only('findESLintConfigFile', () => {
+describe('findESLintConfigFile', () => {
 
     it('found config', done => {
 
