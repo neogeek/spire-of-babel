@@ -52,6 +52,7 @@ Transforms a file with babel.
 | file | `String`  | File path. | &nbsp; |
 | options | `Object`  | Options object. | *Optional* |
 | options.sourcemap | `Boolean`  | Generate sourcemap. | *Optional* |
+| options.minify | `Boolean`  | Minify output. | *Optional* |
 
 
 
@@ -85,6 +86,7 @@ Transforms a file with browserify.
 | options | `Object`  | Options object. | *Optional* |
 | options.output | `Boolean`  | Path to save transformed file to. | *Optional* |
 | options.sourcemap | `Boolean`  | Generate sourcemap. | *Optional* |
+| options.minify | `Boolean`  | Minify output. | *Optional* |
 
 
 
