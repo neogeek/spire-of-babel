@@ -1,19 +1,24 @@
 'use strict';
 
+const path = require('path');
+
 const utils = require('../../lib/utils');
 
-const TEST_ESLINT_PATH_REGEX = /test\/\.eslintrc$/;
-const PKG_ESLINT_PATH_REGEX = /\/((?!test).)*\/\.eslintrc/;
+const ESLINT_PATH_REGEX = new RegExp('.eslintrc$');
 
 describe('findESLintConfigFile', () => {
 
     it('found config', done => {
 
-        utils.findESLintConfigFile('./test').then(path => {
+        utils.findESLintConfigFile('./test').then(filepath => {
 
-            if (path.match(TEST_ESLINT_PATH_REGEX)) {
+            if (filepath.match(ESLINT_PATH_REGEX) && filepath.match(path.join('.', 'test'))) {
 
                 done();
+
+            } else {
+
+                done(new Error(`${filepath} did not match the test pattern`));
 
             }
 
@@ -23,11 +28,15 @@ describe('findESLintConfigFile', () => {
 
     it('found package config', done => {
 
-        utils.findESLintConfigFile('./').then(path => {
+        utils.findESLintConfigFile('./').then(filepath => {
 
-            if (path.match(PKG_ESLINT_PATH_REGEX)) {
+            if (filepath.match(ESLINT_PATH_REGEX)) {
 
                 done();
+
+            } else {
+
+                done(new Error(`${filepath} did not match the test pattern`));
 
             }
 
@@ -37,9 +46,13 @@ describe('findESLintConfigFile', () => {
 
     it('don\'t find config', done => {
 
-        utils.findESLintConfigFile('./bin').then(path => {
+        utils.findESLintConfigFile('./bin').then(filepath => {
 
-            if (path.match(PKG_ESLINT_PATH_REGEX)) {
+            if (filepath.match(ESLINT_PATH_REGEX) && filepath.match(path.join('.', 'bin'))) {
+
+                done(new Error(`${filepath} did not match the test pattern`));
+
+            } else {
 
                 done();
 

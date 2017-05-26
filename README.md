@@ -3,6 +3,7 @@
 > A one stop solution for working with ES2015 and React.
 
 [![Build Status](https://travis-ci.org/neogeek/spire-of-babel.svg?branch=master)](https://travis-ci.org/neogeek/spire-of-babel)
+[![AppVeyor branch](https://img.shields.io/appveyor/ci/neogeek/spire-of-babel/master.svg)]()
 [![codecov](https://img.shields.io/codecov/c/github/neogeek/spire-of-babel/master.svg)](https://codecov.io/gh/neogeek/spire-of-babel)
 [![Dependency Status](https://david-dm.org/neogeek/spire-of-babel.svg)](https://david-dm.org/neogeek/spire-of-babel)
 [![Known Vulnerabilities](https://snyk.io/test/npm/spire-of-babel/badge.svg)](https://snyk.io/test/npm/spire-of-babel)

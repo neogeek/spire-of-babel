@@ -1,0 +1,3 @@
+coverage/
+test/fixtures/original/lint.js
+test/fixtures/transformed/
