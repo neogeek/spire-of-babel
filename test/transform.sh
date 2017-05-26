@@ -20,3 +20,4 @@ node ./bin/spire-of-babel test/fixtures/original/minify_bundle.js --minify --bun
 node ./bin/spire-of-babel test/fixtures/original/presets-env-stage-2.jsx --presets env,stage-2 --output ./test/fixtures/transformed/presets-env-stage-2.js
 
 node ./bin/spire-of-babel test/fixtures/original/typescript.ts > ./test/fixtures/transformed/typescript.js
+NODE_ENV=production node ./bin/spire-of-babel test/fixtures/original/process_env_bundle.js --bundle --minify > ./test/fixtures/transformed/process_env_bundle_production.js
