@@ -37,7 +37,7 @@
     "mocha": "^3.4.2"
   },
   "scripts": {
-    "test": "npm run lint && mocha test/specs/ && npm run test:docs",
+    "test": "npm run lint && mocha test/specs/",
     "test:docs": "doxdox 'lib/**/*.js' --layout markdown | diff DOCUMENTATION.md -",
     "lint": "eslint .",
     "coverage": "istanbul cover _mocha test/specs/ && codecov",
