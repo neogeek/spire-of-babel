@@ -50,7 +50,7 @@ describe('findESLintConfigFile', () => {
 
             if (filepath.match(ESLINT_PATH_REGEX) && filepath.match(path.join('.', 'bin'))) {
 
-                done(new Error(`${filepath} did not match the test pattern`));
+                done(new Error(`${filepath} incorrectly matched the test pattern`));
 
             } else {
 
