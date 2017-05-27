@@ -93,7 +93,7 @@ This is an example build process using [NPM scripts](https://docs.npmjs.com/misc
     "react-dom": "15.5.4"
   },
   "devDependencies": {
-    "spire-of-babel": "1.2.4"
+    "spire-of-babel": "1.3.0"
   },
   "scripts": {
     "build": "spire-of-babel ./src/js/app.jsx --bundle --minify --presets env,stage-2 --output ./static/js/bundle.min.js"
