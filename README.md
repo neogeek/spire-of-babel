@@ -86,9 +86,9 @@ This is an example build process using [NPM scripts](https://docs.npmjs.com/misc
 ```json
 {
   "dependencies": {
-    "babel-preset-env": "1.4.0",
+    "babel-preset-env": "1.5.1",
     "babel-preset-stage-2": "6.24.1",
-    "prop-types": "15.5.9",
+    "prop-types": "15.5.10",
     "react": "15.5.4",
     "react-dom": "15.5.4"
   },
