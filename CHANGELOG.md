@@ -1,5 +1,12 @@
 # Changelog
 
+## 1.3.0 (May 27, 2017)
+
+- Added support for transpiling with NODE_ENV.
+- Switched from babel preset-latest to preset-env.
+- Updated tests.
+- Updated packages.
+
 ## 1.2.4 (May 4, 2017)
 
 - Updated packages.
