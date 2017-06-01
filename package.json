@@ -33,7 +33,7 @@
     "babel-preset-env": "^1.5.1",
     "babel-preset-stage-2": "^6.24.1",
     "codecov": "^2.2.0",
-    "doxdox": "^2.0.2",
+    "doxdox": "^2.0.3",
     "istanbul": "^0.4.5",
     "mocha": "^3.4.2"
   },
