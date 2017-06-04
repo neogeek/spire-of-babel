@@ -6,5 +6,3 @@ test/
 
 .travis.yml
 appveyor.yml
-
-Makefile
