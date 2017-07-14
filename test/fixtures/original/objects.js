@@ -42,7 +42,16 @@ const renderPolygon = (points, options = {}) => {
 
 };
 
-renderPolygon([[0, 0], [100, 100]], {
+renderPolygon([
+    [
+        0,
+        0
+    ],
+    [
+        100,
+        100
+    ]
+], {
     'fillStyle': '#000',
     'lineWidth': 2,
     'strokeStyle': '#aaa'

@@ -18,7 +18,10 @@
     console.log(totalReplies.get(user1));
     console.log(totalReplies.get(user2));
 
-    for (const [key, value] of totalReplies) {
+    for (const [
+        key,
+        value
+    ] of totalReplies) {
 
         console.log(`${key} = ${value}`);
 

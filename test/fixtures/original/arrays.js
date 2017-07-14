@@ -1,8 +1,16 @@
-const languages = ['JavaScript', 'HTML', 'CSS'];
+const languages = [
+    'JavaScript',
+    'HTML',
+    'CSS'
+];
 
 {
 
-    const [a, b, c] = languages;
+    const [
+        a,
+        b,
+        c
+    ] = languages;
 
     console.log(a, b, c);
 
@@ -18,7 +26,10 @@ const languages = ['JavaScript', 'HTML', 'CSS'];
 
 {
 
-    const [first, ...remaining] = languages;
+    const [
+        first,
+        ...remaining
+    ] = languages;
 
     console.log(first, remaining);
 
