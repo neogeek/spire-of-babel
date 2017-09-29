@@ -24,7 +24,7 @@
     "browserify": "14.4.0",
     "chalk": "2.1.0",
     "envify": "4.1.0",
-    "eslint": "4.7.2",
+    "eslint": "4.8.0",
     "eslint-plugin-flowtype": "2.36.0",
     "parse-cmd-args": "2.0.0",
     "update-notifier": "2.2.0"
