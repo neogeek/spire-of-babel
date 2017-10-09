@@ -27,7 +27,7 @@
     "eslint": "4.7.2",
     "eslint-plugin-flowtype": "2.36.0",
     "parse-cmd-args": "2.0.0",
-    "update-notifier": "2.2.0"
+    "update-notifier": "2.3.0"
   },
   "devDependencies": {
     "babel-preset-env": "^1.5.1",
