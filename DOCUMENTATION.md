@@ -202,9 +202,9 @@ console.log(utils.parseWatchPath(input));
 
 
 
-#### findESLintConfigFile(input) 
+#### findConfigFile(input[, filename]) 
 
-Find local .eslintrc file.
+Find local config file.
 
 
 
@@ -214,6 +214,7 @@ Find local .eslintrc file.
 | Name | Type | Description |  |
 | ---- | ---- | ----------- | -------- |
 | input | `String`  | Directory or file. | &nbsp; |
+| filename | `String`  | Config file name. | *Optional* |
 
 
 
@@ -221,7 +222,7 @@ Find local .eslintrc file.
 ##### Examples
 
 ```javascript
-utils.findESLintConfigFile(input).then((path) => console.log(path));
+utils.findConfigFile(input).then((path) => console.log(path));
 ```
 
 
