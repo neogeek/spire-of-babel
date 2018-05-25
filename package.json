@@ -35,13 +35,15 @@
     "codecov": "^3.0.0",
     "doxdox": "^2.0.3",
     "istanbul": "^0.4.5",
-    "mocha": "^5.2.0"
+    "mocha": "^5.2.0",
+    "prettier-eslint-cli": "^4.7.1"
   },
   "scripts": {
     "test": "npm run lint && mocha test/specs/",
     "test:docs": "doxdox 'lib/**/*.js' --layout markdown | diff DOCUMENTATION.md -",
     "lint": "eslint .",
     "coverage": "istanbul cover _mocha test/specs/ && codecov",
+    "format": "prettier-eslint 'lib/**/*.js' --write --tab-width 4",
     "fixtures": "test/transform.sh",
     "docs": "doxdox 'lib/**/*.js' --layout markdown --output DOCUMENTATION.md"
   },
