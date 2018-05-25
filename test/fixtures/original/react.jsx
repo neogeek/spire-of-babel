@@ -1,4 +1,1 @@
-ReactDOM.render(
-    <h1>Hello, world!</h1>,
-    document.querySelector('.example')
-);
+ReactDOM.render(<h1>Hello, world!</h1>, document.querySelector('.example'));
