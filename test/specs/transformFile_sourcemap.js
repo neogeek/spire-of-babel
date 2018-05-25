@@ -113,7 +113,7 @@ describe('transformFile with babel (sourcemap)', () => {
             'sourcemap': true
         }).then(result => {
 
-            let testOutputFile = './test/fixtures/transformed/sourcemap_bundle.js.map';
+            const testOutputFile = './test/fixtures/transformed/sourcemap_bundle.js.map';
 
             fs.readFile(testOutputFile, 'utf8', (err, fixture) => {
 
@@ -140,7 +140,7 @@ describe('transformFile with babel (sourcemap)', () => {
             'sourcemap': true
         }).then(result => {
 
-            let testOutputFile = './test/fixtures/transformed/sourcemap_bundle_inline.js';
+            const testOutputFile = './test/fixtures/transformed/sourcemap_bundle_inline.js';
 
             fs.readFile(testOutputFile, 'utf8', (err, fixture) => {
 
