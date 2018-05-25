@@ -115,12 +115,6 @@ describe('transformFile with babel (sourcemap)', () => {
 
             let testOutputFile = './test/fixtures/transformed/sourcemap_bundle.js.map';
 
-            if (process.env.APPVEYOR) {
-
-                testOutputFile = './test/fixtures/transformed/windows/sourcemap_bundle.js.map';
-
-            }
-
             fs.readFile(testOutputFile, 'utf8', (err, fixture) => {
 
                 if (err) {
@@ -147,12 +141,6 @@ describe('transformFile with babel (sourcemap)', () => {
         }).then(result => {
 
             let testOutputFile = './test/fixtures/transformed/sourcemap_bundle_inline.js';
-
-            if (process.env.APPVEYOR) {
-
-                testOutputFile = './test/fixtures/transformed/windows/sourcemap_bundle_inline.js';
-
-            }
 
             fs.readFile(testOutputFile, 'utf8', (err, fixture) => {
 
