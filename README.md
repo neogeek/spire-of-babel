@@ -86,11 +86,11 @@ This is an example build process using [NPM scripts](https://docs.npmjs.com/misc
 ```json
 {
   "dependencies": {
-    "babel-preset-env": "1.5.1",
+    "babel-preset-env": "1.7.0",
     "babel-preset-stage-2": "6.24.1",
-    "prop-types": "15.5.10",
-    "react": "15.5.4",
-    "react-dom": "15.5.4"
+    "prop-types": "15.6.1",
+    "react": "16.4.0",
+    "react-dom": "16.4.0"
   },
   "devDependencies": {
     "spire-of-babel": "1.3.0"
