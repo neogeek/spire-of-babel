@@ -1,5 +1,12 @@
 # Changelog
 
+## 1.4.0 (June 8, 2018)
+
+- Minimum Node.js version is now 6.
+- Switched from babel-preset-babili to babel-preset-minify.
+- Changed method findESLintConfigFile name to findConfigFile.
+- Updated packages.
+
 ## 1.3.0 (May 27, 2017)
 
 - Added support for transpiling with NODE_ENV.
