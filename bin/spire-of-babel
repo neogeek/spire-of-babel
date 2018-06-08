@@ -51,7 +51,7 @@ const transform = (input, options) =>
 
 const lint = options =>
     utils
-        .findESLintConfigFile(process.cwd())
+        .findConfigFile(process.cwd())
         .then(configFile => spire.lintFile(options.dir, configFile));
 
 /**
