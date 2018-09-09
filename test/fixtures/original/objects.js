@@ -34,7 +34,10 @@ const renderPolygon = (points, options = {}) => {
         'strokeStyle': '#000'
     };
 
-    const settings = Object.assign({}, defaults, options);
+    const settings = {
+        ...defaults,
+        ...options
+    };
 
     console.log(defaults);
     console.log(options);

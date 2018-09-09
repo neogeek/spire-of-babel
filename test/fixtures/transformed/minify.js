@@ -1,1 +1,1 @@
-'use strict';var logMessage=function(){var a=0<arguments.length&&arguments[0]!==void 0?arguments[0]:'';console.log(a)};logMessage('Hello, friend.');
+"use strict";var logMessage=function logMessage(){var message=arguments.length>0&&arguments[0]!==undefined?arguments[0]:"";console.log(message)};logMessage("Hello, friend.");
