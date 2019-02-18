@@ -35,7 +35,7 @@
     "codecov": "^3.0.2",
     "doxdox": "^2.0.3",
     "istanbul": "^0.4.5",
-    "mocha": "^5.2.0",
+    "mocha": "^6.0.0",
     "prettier-eslint-cli": "^4.7.1"
   },
   "scripts": {
