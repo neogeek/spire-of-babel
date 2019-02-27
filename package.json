@@ -33,7 +33,7 @@
     "babel-preset-env": "^1.7.0",
     "babel-preset-stage-2": "^6.24.1",
     "codecov": "^3.0.2",
-    "doxdox": "^2.0.3",
+    "doxdox": "^3.0.0",
     "istanbul": "^0.4.5",
     "mocha": "^5.2.0",
     "prettier-eslint-cli": "^4.7.1"
