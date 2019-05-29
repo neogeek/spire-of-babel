@@ -11,7 +11,7 @@ var _bundle_include = require("./bundle_include.js");
 Object.defineProperty(exports, "__esModule", {
   value: true
 });
-exports.default = logMessage;
+exports["default"] = logMessage;
 
 function logMessage() {
   var message = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : '';

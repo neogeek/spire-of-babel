@@ -18,13 +18,13 @@ var Widget =
 /*#__PURE__*/
 function () {
   function Widget(name, options) {
-    (0, _classCallCheck2.default)(this, Widget);
+    (0, _classCallCheck2["default"])(this, Widget);
     this.name = name;
     this.options = options;
     this.className = 'widget';
   }
 
-  (0, _createClass2.default)(Widget, [{
+  (0, _createClass2["default"])(Widget, [{
     key: "render",
     value: function render() {
       return "<div class=\"".concat(this.className, "\">").concat(this.name, "</div>");
@@ -39,22 +39,22 @@ console.log(test.render());
 var AdvertWidget =
 /*#__PURE__*/
 function (_Widget) {
-  (0, _inherits2.default)(AdvertWidget, _Widget);
+  (0, _inherits2["default"])(AdvertWidget, _Widget);
 
   function AdvertWidget() {
-    (0, _classCallCheck2.default)(this, AdvertWidget);
+    (0, _classCallCheck2["default"])(this, AdvertWidget);
 
     for (var _len = arguments.length, args = new Array(_len), _key = 0; _key < _len; _key++) {
       args[_key] = arguments[_key];
     }
 
-    return (0, _possibleConstructorReturn2.default)(this, (0, _getPrototypeOf2.default)(AdvertWidget).call(this, args));
+    return (0, _possibleConstructorReturn2["default"])(this, (0, _getPrototypeOf2["default"])(AdvertWidget).call(this, args));
   }
 
-  (0, _createClass2.default)(AdvertWidget, [{
+  (0, _createClass2["default"])(AdvertWidget, [{
     key: "render",
     value: function render() {
-      return (0, _get2.default)((0, _getPrototypeOf2.default)(AdvertWidget.prototype), "render", this).call(this);
+      return (0, _get2["default"])((0, _getPrototypeOf2["default"])(AdvertWidget.prototype), "render", this).call(this);
     }
   }]);
   return AdvertWidget;

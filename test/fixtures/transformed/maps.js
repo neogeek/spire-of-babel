@@ -24,7 +24,7 @@ var _slicedToArray2 = _interopRequireDefault(require("@babel/runtime/helpers/sli
 
   try {
     for (var _iterator = totalReplies[Symbol.iterator](), _step; !(_iteratorNormalCompletion = (_step = _iterator.next()).done); _iteratorNormalCompletion = true) {
-      var _step$value = (0, _slicedToArray2.default)(_step.value, 2),
+      var _step$value = (0, _slicedToArray2["default"])(_step.value, 2),
           key = _step$value[0],
           value = _step$value[1];
 
@@ -35,8 +35,8 @@ var _slicedToArray2 = _interopRequireDefault(require("@babel/runtime/helpers/sli
     _iteratorError = err;
   } finally {
     try {
-      if (!_iteratorNormalCompletion && _iterator.return != null) {
-        _iterator.return();
+      if (!_iteratorNormalCompletion && _iterator["return"] != null) {
+        _iterator["return"]();
       }
     } finally {
       if (_didIteratorError) {
@@ -56,6 +56,6 @@ var _slicedToArray2 = _interopRequireDefault(require("@babel/runtime/helpers/sli
   _totalReplies.set(_user, 1);
 
   console.log(_totalReplies.has(_user));
-  console.log(_totalReplies.delete(_user));
+  console.log(_totalReplies["delete"](_user));
   console.log(_totalReplies.has(_user));
 }

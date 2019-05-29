@@ -11,7 +11,7 @@ var _minify_bundle_include = require("./minify_bundle_include.js");
 Object.defineProperty(exports, "__esModule", {
   value: true
 });
-exports.default = logMessage;
+exports["default"] = logMessage;
 
 function logMessage() {
   var message = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : '';

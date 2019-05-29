@@ -18,8 +18,8 @@ var languages = ['JavaScript', 'HTML', 'CSS'];
   console.log(first, remaining);
 }
 
-for (var _i = 0; _i < languages.length; _i++) {
-  var language = languages[_i];
+for (var _i = 0, _languages = languages; _i < _languages.length; _i++) {
+  var language = _languages[_i];
   console.log(language);
 }
 

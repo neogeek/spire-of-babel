@@ -21,8 +21,8 @@
     _iteratorError = err;
   } finally {
     try {
-      if (!_iteratorNormalCompletion && _iterator.return != null) {
-        _iterator.return();
+      if (!_iteratorNormalCompletion && _iterator["return"] != null) {
+        _iterator["return"]();
       }
     } finally {
       if (_didIteratorError) {
@@ -41,6 +41,6 @@
   _languages.add(language1);
 
   console.log(_languages.has(language1));
-  console.log(_languages.delete(language1));
+  console.log(_languages["delete"](language1));
   console.log(_languages.has(language1));
 }
