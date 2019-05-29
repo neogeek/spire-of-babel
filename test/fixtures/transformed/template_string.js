@@ -1,8 +1,6 @@
-'use strict';
+"use strict";
 
 var first = 'Scott';
 var last = 'Doxey';
-
-var fullName = first + ' ' + last;
-
+var fullName = "".concat(first, " ").concat(last);
 console.log(fullName);

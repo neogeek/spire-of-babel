@@ -1,49 +1,41 @@
 {
   "name": "spire-of-babel",
-  "description": "A one stop solution for working with ES2015 and React.",
-  "version": "1.4.0",
+  "description": "A one stop solution for working with ES6 and React.",
+  "version": "2.0.0",
   "bin": {
     "spire-of-babel": "./bin/spire-of-babel.js"
   },
   "preferGlobal": true,
   "engines": {
-    "node": ">=6.0"
+    "node": ">=8.0"
   },
   "license": "MIT",
   "dependencies": {
-    "@neogeek/eslint-config-standards": "2.0.0",
-    "atob": "2.1.1",
-    "babel-core": "6.26.3",
-    "babel-eslint": "8.2.3",
-    "babel-plugin-syntax-flow": "6.18.0",
-    "babel-plugin-transform-flow-strip-types": "6.22.0",
-    "babel-preset-es2015": "6.24.1",
-    "babel-preset-minify": "0.4.3",
-    "babel-preset-react": "6.24.1",
-    "babelify": "8.0.0",
-    "browserify": "16.2.2",
-    "chalk": "2.4.1",
-    "envify": "4.1.0",
-    "eslint": "4.19.1",
-    "eslint-plugin-flowtype": "2.49.3",
-    "parse-cmd-args": "2.0.0",
-    "update-notifier": "2.5.0"
+    "@babel/core": "7.4.5",
+    "@babel/plugin-transform-runtime": "7.4.4",
+    "@babel/preset-env": "7.4.5",
+    "@babel/preset-flow": "7.0.0",
+    "@babel/preset-react": "7.0.0",
+    "@babel/preset-typescript": "7.3.3",
+    "babelify": "10.0.0",
+    "browserify": "16.2.3"
   },
   "devDependencies": {
-    "babel-preset-env": "^1.7.0",
-    "babel-preset-stage-2": "^6.24.1",
-    "codecov": "^3.0.2",
-    "doxdox": "^2.0.3",
-    "istanbul": "^0.4.5",
-    "mocha": "^5.2.0",
-    "prettier-eslint-cli": "^4.7.1"
+    "@neogeek/eslint-config-standards": "4.2.0",
+    "babel-eslint": "10.0.1",
+    "codecov": "3.5.0",
+    "doxdox": "3.0.0",
+    "eslint": "5.16.0",
+    "mocha": "6.1.4",
+    "nyc": "14.1.1",
+    "prettier-eslint-cli": "4.7.1"
   },
   "scripts": {
     "test": "npm run lint && mocha test/specs/",
     "test:docs": "doxdox 'lib/**/*.js' --layout markdown | diff DOCUMENTATION.md -",
     "lint": "eslint .",
-    "coverage": "istanbul cover _mocha test/specs/ && codecov",
-    "format": "prettier-eslint 'lib/**/*.js' --write --tab-width 4",
+    "coverage": "nyc mocha test/specs/ && codecov",
+    "format": "prettier-eslint \"**/*.js\" --write --tab-width 4",
     "fixtures": "test/transform.sh",
     "docs": "doxdox 'lib/**/*.js' --layout markdown --output DOCUMENTATION.md"
   },

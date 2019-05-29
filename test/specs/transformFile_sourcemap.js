@@ -7,156 +7,34 @@ const spire = require('../../lib/spire-of-babel');
 
 describe('transformFile with babel (sourcemap)', () => {
 
-    it('sourcemap output code', done => {
-
-        spire.transformFile('./test/fixtures/original/sourcemap.js', {
-            'output': './test/fixtures/transformed/sourcemap.js',
-            'sourcemap': true
-        }).then(result => {
-
-            fs.readFile('./test/fixtures/transformed/sourcemap.js', 'utf8', (err, fixture) => {
-
-                if (err) {
-
-                    throw err;
-
-                }
-
-                assert.equal(result.code, fixture);
-
-                done();
-
-            });
-
-        });
-
-    });
-
-    it('sourcemap output map', done => {
-
-        spire.transformFile('./test/fixtures/original/sourcemap.js', {
-            'output': './test/fixtures/transformed/sourcemap.js',
-            'sourcemap': true
-        }).then(result => {
-
-            fs.readFile('./test/fixtures/transformed/sourcemap.js.map', 'utf8', (err, fixture) => {
-
-                if (err) {
-
-                    throw err;
-
-                }
-
-                assert.equal(result.map, fixture);
-
-                done();
-
-            });
-
-        });
-
-    });
-
     it('sourcemap inline code/map', done => {
 
-        spire.transformFile('./test/fixtures/original/sourcemap.js', {'sourcemap': true}).then(result => {
+        spire
+            .transformFile('./test/fixtures/original/sourcemap.js', {
+                'minified': true,
+                'sourceMaps': 'inline'
+            })
+            .then(result => {
 
-            fs.readFile('./test/fixtures/transformed/sourcemap_inline.js', 'utf8', (err, fixture) => {
+                fs.readFile(
+                    './test/fixtures/transformed/sourcemap_inline.js',
+                    'utf8',
+                    (err, fixture) => {
 
-                if (err) {
+                        if (err) {
 
-                    throw err;
+                            throw err;
 
-                }
+                        }
 
-                assert.equal(result.code, fixture);
+                        assert.equal(result.code, fixture);
 
-                done();
+                        done();
 
-            });
-
-        });
-
-    });
-
-    it('bundled sourcemap output code', done => {
-
-        spire.transformFile('./test/fixtures/original/sourcemap_bundle.js', {
-            'bundle': true,
-            'output': './test/fixtures/transformed/sourcemap_bundle.js',
-            'sourcemap': true
-        }).then(result => {
-
-            fs.readFile('./test/fixtures/transformed/sourcemap_bundle.js', 'utf8', (err, fixture) => {
-
-                if (err) {
-
-                    throw err;
-
-                }
-
-                assert.equal(result.code, fixture);
-
-                done();
+                    }
+                );
 
             });
-
-        });
-
-    });
-
-    it('bundled sourcemap output map', done => {
-
-        spire.transformFile('./test/fixtures/original/sourcemap_bundle.js', {
-            'bundle': true,
-            'output': './test/fixtures/transformed/sourcemap_bundle.js',
-            'sourcemap': true
-        }).then(result => {
-
-            const testOutputFile = './test/fixtures/transformed/sourcemap_bundle.js.map';
-
-            fs.readFile(testOutputFile, 'utf8', (err, fixture) => {
-
-                if (err) {
-
-                    throw err;
-
-                }
-
-                assert.equal(result.map, fixture);
-
-                done();
-
-            });
-
-        });
-
-    });
-
-    it('bundled sourcemap inline', done => {
-
-        spire.transformFile('./test/fixtures/original/sourcemap_bundle.js', {
-            'bundle': true,
-            'sourcemap': true
-        }).then(result => {
-
-            const testOutputFile = './test/fixtures/transformed/sourcemap_bundle_inline.js';
-
-            fs.readFile(testOutputFile, 'utf8', (err, fixture) => {
-
-                if (err) {
-
-                    throw err;
-
-                }
-
-                assert.equal(result.code, fixture);
-
-                done();
-
-            });
-
-        });
 
     });
 
