@@ -28,7 +28,7 @@
     "eslint": "5.16.0",
     "mocha": "6.1.4",
     "nyc": "14.1.1",
-    "prettier-eslint-cli": "4.7.1"
+    "prettier-eslint-cli": "5.0.0"
   },
   "scripts": {
     "test": "npm run lint && mocha test/specs/",
