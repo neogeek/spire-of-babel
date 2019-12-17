@@ -24,7 +24,6 @@
     "@neogeek/eslint-config-standards": "4.2.0",
     "babel-eslint": "10.0.3",
     "codecov": "3.6.1",
-    "doxdox": "3.0.0",
     "eslint": "6.7.2",
     "mocha": "6.2.2",
     "nyc": "14.1.1",
@@ -32,12 +31,10 @@
   },
   "scripts": {
     "test": "npm run lint && mocha test/specs/",
-    "test:docs": "doxdox 'lib/**/*.js' --layout markdown | diff DOCUMENTATION.md -",
     "lint": "eslint .",
     "coverage": "nyc mocha test/specs/ && codecov",
     "format": "prettier-eslint \"**/*.js\" --write --tab-width 4",
-    "fixtures": "test/transform.sh",
-    "docs": "doxdox 'lib/**/*.js' --layout markdown --output DOCUMENTATION.md"
+    "fixtures": "test/transform.sh"
   },
   "keywords": [
     "es6",
