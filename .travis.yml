@@ -1,11 +1,7 @@
 language: node_js
 node_js:
     - '10'
-    - '11'
-before_install:
-    - if [[ `npm -v` != 6* ]]; then npm i -g npm@6; fi
+    - '12'
 after_success:
-    - npm run coverage
-    - npm run test:docs
     - bash <(curl -s https://codecov.io/bash)
 sudo: false
