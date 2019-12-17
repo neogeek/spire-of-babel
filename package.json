@@ -23,18 +23,18 @@
   "devDependencies": {
     "@neogeek/eslint-config-standards": "4.2.0",
     "babel-eslint": "10.0.3",
-    "codecov": "3.6.1",
     "eslint": "6.7.2",
-    "mocha": "6.2.2",
-    "nyc": "14.1.1",
+    "jest": "24.9.0",
     "prettier-eslint-cli": "5.0.0"
   },
   "scripts": {
-    "test": "npm run lint && mocha test/specs/",
+    "test": "npm run lint && jest test/specs/",
     "lint": "eslint .",
-    "coverage": "nyc mocha test/specs/ && codecov",
     "format": "prettier-eslint \"**/*.js\" --write --tab-width 4",
     "fixtures": "test/transform.sh"
+  },
+  "jest": {
+    "testRegex": "./test/specs/.+\\.js$"
   },
   "keywords": [
     "es6",
