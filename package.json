@@ -21,7 +21,8 @@
     "browserify": "16.5.0",
     "chalk": "3.0.0",
     "parse-cmd-args": "2.0.0",
-    "update-notifier": "4.0.0"
+    "update-notifier": "4.0.0",
+    "snyk": "^1.319.0"
   },
   "devDependencies": {
     "@neogeek/eslint-config-standards": "4.2.0",
@@ -34,7 +35,9 @@
     "test": "npm run lint && jest test/specs/",
     "lint": "eslint .",
     "format": "prettier-eslint \"**/*.js\" --write --tab-width 4",
-    "fixtures": "test/transform.sh"
+    "fixtures": "test/transform.sh",
+    "snyk-protect": "snyk protect",
+    "prepublish": "npm run snyk-protect"
   },
   "jest": {
     "testRegex": "./test/specs/.+\\.js$"
@@ -58,5 +61,6 @@
   "repository": {
     "type": "git",
     "url": "git://github.com/neogeek/spire-of-babel.git"
-  }
+  },
+  "snyk": true
 }
