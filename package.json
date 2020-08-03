@@ -11,20 +11,20 @@
   },
   "license": "MIT",
   "dependencies": {
-    "@babel/core": "7.7.5",
-    "@babel/plugin-transform-runtime": "7.7.6",
-    "@babel/preset-env": "7.7.6",
-    "@babel/preset-flow": "7.7.4",
-    "@babel/preset-react": "7.7.4",
-    "@babel/preset-typescript": "7.7.4",
+    "@babel/core": "7.11.0",
+    "@babel/plugin-transform-runtime": "7.11.0",
+    "@babel/preset-env": "7.11.0",
+    "@babel/preset-flow": "7.10.4",
+    "@babel/preset-react": "7.10.4",
+    "@babel/preset-typescript": "7.10.4",
     "babelify": "10.0.0",
-    "browserify": "16.5.0",
-    "chalk": "3.0.0",
+    "browserify": "16.5.1",
+    "chalk": "4.1.0",
     "parse-cmd-args": "2.0.0",
-    "update-notifier": "4.0.0"
+    "update-notifier": "4.1.0"
   },
   "devDependencies": {
-    "jest": "24.9.0"
+    "jest": "26.2.2"
   },
   "scripts": {
     "test": "jest test/specs/",

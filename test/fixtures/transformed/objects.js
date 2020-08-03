@@ -36,7 +36,7 @@ var renderPolygon = function renderPolygon(points) {
     'strokeStyle': '#000'
   };
 
-  var settings = _objectSpread({}, defaults, {}, options);
+  var settings = _objectSpread(_objectSpread({}, defaults), options);
 
   console.log(defaults);
   console.log(options);
