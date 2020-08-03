@@ -1,9 +1,0 @@
-{
-  "extends": [
-    "@neogeek/eslint-config-standards/.eslintrc-tests"
-  ],
-  "rules": {
-    "max-classes-per-file": 0,
-    "max-lines-per-function": 0
-  }
-}
