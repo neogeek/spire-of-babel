@@ -1,6 +1,6 @@
 {
   "name": "spire-of-babel",
-  "description": "A one stop solution for working with ES6 and React.",
+  "description": "A one stop solution for working with ES6, React and TypeScript.",
   "version": "2.0.0",
   "bin": {
     "spire-of-babel": "./bin/spire-of-babel.js"
