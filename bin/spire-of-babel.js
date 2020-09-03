@@ -1,7 +1,5 @@
 #!/usr/bin/env node
 
-'use strict';
-
 const chalk = require('chalk');
 const updateNotifier = require('update-notifier');
 
