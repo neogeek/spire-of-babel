@@ -39,7 +39,8 @@
     "babel",
     "browserify",
     "react",
-    "eslint"
+    "eslint",
+    "typescript"
   ],
   "authors": [
     {
