@@ -1,20 +1,14 @@
 class Widget {
-
-    constructor (name, options) {
-
+    constructor(name, options) {
         this.name = name;
         this.options = options;
 
         this.className = 'widget';
-
     }
 
-    render () {
-
+    render() {
         return `<div class="${this.className}">${this.name}</div>`;
-
     }
-
 }
 
 const test = new Widget('test');
@@ -22,19 +16,13 @@ const test = new Widget('test');
 console.log(test.render());
 
 class AdvertWidget extends Widget {
-
-    constructor (...args) {
-
+    constructor(...args) {
         super(args);
-
     }
 
-    render () {
-
+    render() {
         return super.render();
-
     }
-
 }
 
 const advert = new AdvertWidget('advert');

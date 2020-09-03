@@ -11,17 +11,13 @@ greeting = 'Hello, friend?';
 console.log(greeting);
 
 {
-
     let greeting = 'Hello, world.';
 
     console.log(greeting);
-
 }
 
 for (let i = 0; i < 10; i += 1) {
-
     console.log(i);
-
 }
 
 console.log(i === undefined);

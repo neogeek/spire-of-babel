@@ -1,5 +1,4 @@
 {
-
     const languages = new Set();
 
     languages.add('JavaScript');
@@ -10,16 +9,12 @@
     console.log(languages.size);
 
     for (const language of languages) {
-
         console.log(language);
-
     }
-
 }
 
 {
-
-    const language1 = {'name': 'JavaScript'};
+    const language1 = { name: 'JavaScript' };
 
     const languages = new WeakSet();
 
@@ -28,5 +23,4 @@
     console.log(languages.has(language1));
     console.log(languages.delete(language1));
     console.log(languages.has(language1));
-
 }

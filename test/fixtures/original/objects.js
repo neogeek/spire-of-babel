@@ -1,5 +1,4 @@
 {
-
     const firstName = 'Scott';
     const lastName = 'Doxey';
 
@@ -9,29 +8,25 @@
     };
 
     console.log(user);
-
 }
 
 {
-
     const user = {
-        'firstName': 'Scott',
-        'lastName': 'Doxey'
+        firstName: 'Scott',
+        lastName: 'Doxey'
     };
 
-    const {firstName, lastName} = user;
+    const { firstName, lastName } = user;
 
     console.log(firstName);
     console.log(lastName);
-
 }
 
 const renderPolygon = (points, options = {}) => {
-
     const defaults = {
-        'fillStyle': '#eee',
-        'lineWidth': 1,
-        'strokeStyle': '#000'
+        fillStyle: '#eee',
+        lineWidth: 1,
+        strokeStyle: '#000'
     };
 
     const settings = {
@@ -42,20 +37,16 @@ const renderPolygon = (points, options = {}) => {
     console.log(defaults);
     console.log(options);
     console.log(settings);
-
 };
 
-renderPolygon([
+renderPolygon(
     [
-        0,
-        0
+        [0, 0],
+        [100, 100]
     ],
-    [
-        100,
-        100
-    ]
-], {
-    'fillStyle': '#000',
-    'lineWidth': 2,
-    'strokeStyle': '#aaa'
-});
+    {
+        fillStyle: '#000',
+        lineWidth: 2,
+        strokeStyle: '#aaa'
+    }
+);

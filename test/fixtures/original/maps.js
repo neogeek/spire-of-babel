@@ -1,13 +1,12 @@
 {
-
     const user1 = {
-        'isAdmin': false,
-        'name': 'Scott'
+        isAdmin: false,
+        name: 'Scott'
     };
 
     const user2 = {
-        'isAdmin': false,
-        'name': 'Eric'
+        isAdmin: false,
+        name: 'Eric'
     };
 
     const totalReplies = new Map();
@@ -18,22 +17,15 @@
     console.log(totalReplies.get(user1));
     console.log(totalReplies.get(user2));
 
-    for (const [
-        key,
-        value
-    ] of totalReplies) {
-
+    for (const [key, value] of totalReplies) {
         console.log(`${key} = ${value}`);
-
     }
-
 }
 
 {
-
     const user1 = {
-        'isAdmin': false,
-        'name': 'Scott'
+        isAdmin: false,
+        name: 'Scott'
     };
 
     const totalReplies = new WeakMap();
@@ -43,5 +35,4 @@
     console.log(totalReplies.has(user1));
     console.log(totalReplies.delete(user1));
     console.log(totalReplies.has(user1));
-
 }
