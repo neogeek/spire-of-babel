@@ -1,5 +1,10 @@
 # Changelog
 
+## 2.0.0 (September 3, 2020)
+
+- Rebuilt from scratch to support Babel 7 and Browserify 16.
+- Minimum Node.js version is now 10.
+
 ## 1.4.0 (June 8, 2018)
 
 - Minimum Node.js version is now 6.
