@@ -10,27 +10,24 @@ const spire = require('../lib/spire-of-babel');
 const pkg = require('../package');
 
 const args = require('parse-cmd-args')(null, {
-    'requireUserInput': true
+    requireUserInput: true
 });
 
 updateNotifier({
-    'defer': true,
+    defer: true,
     pkg
 }).notify();
 
 const options = {
-    'bundle': args.flags['--bundle'] || args.flags['-b'] || false,
-    'minified': args.flags['--minify'] || args.flags['-m'] || false,
-    'sourceMaps': args.flags['--sourcemap'] || args.flags['-s'] || false
+    bundle: args.flags['--bundle'] || args.flags['-b'] || false,
+    minified: args.flags['--minify'] || args.flags['-m'] || false,
+    sourceMaps: args.flags['--sourcemap'] || args.flags['-s'] || false
 };
 
 if (args.flags['--version'] || args.flags['-v']) {
-
     process.stdout.write(`${pkg.version}\n`);
     process.exit();
-
 } else if (!args.input || args.flags['--help'] || args.flags['-h']) {
-
     process.stdout.write(`
 ${chalk.blue(' Usage:')} spire-of-babel <path> [options]
 
@@ -42,10 +39,8 @@ ${chalk.yellow('  -b, --bundle')}       Use browserify bundler.
 ${chalk.yellow('  -m, --minify')}       Minify output.
 ${chalk.yellow('  -s, --sourcemap')}    Generate sourcemap.`);
     process.exit();
-
 } else {
-
-    spire.transformFile(args.input, options).then(({code}) =>
-        process.stdout.write(code));
-
+    spire
+        .transformFile(args.input, options)
+        .then(({ code }) => process.stdout.write(code));
 }
