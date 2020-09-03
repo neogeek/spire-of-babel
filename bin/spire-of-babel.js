@@ -33,7 +33,7 @@ ${chalk.blue(' Usage:')} spire-of-babel <path> [options]
 ${chalk.yellow('  -h, --help')}         Display this help message.
 ${chalk.yellow('  -v, --version')}      Display the current installed version.
 ${chalk.yellow('  -b, --bundle')}       Use browserify bundler.
-${chalk.yellow('  -s, --sourcemap')}    Generate sourcemap.`);
+${chalk.yellow('  -s, --sourcemap')}    Generate inline sourcemap.`);
     process.exit();
 } else {
     spire

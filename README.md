@@ -26,7 +26,7 @@ Options:
  -h, --help         Display this help message.
  -v, --version      Display the current installed version.
  -b, --bundle       Use browserify bundler.
- -s, --sourcemap    Generate sourcemap.
+ -s, --sourcemap    Generate inline sourcemap.
 ```
 
 ### CLI
