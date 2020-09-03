@@ -12,12 +12,12 @@ function _arrayLikeToArray(arr, len) { if (len == null || len > arr.length) len 
 
 {
   var user1 = {
-    'isAdmin': false,
-    'name': 'Scott'
+    isAdmin: false,
+    name: 'Scott'
   };
   var user2 = {
-    'isAdmin': false,
-    'name': 'Eric'
+    isAdmin: false,
+    name: 'Eric'
   };
   var totalReplies = new Map();
   totalReplies.set(user1, 1);
@@ -44,8 +44,8 @@ function _arrayLikeToArray(arr, len) { if (len == null || len > arr.length) len 
 }
 {
   var _user = {
-    'isAdmin': false,
-    'name': 'Scott'
+    isAdmin: false,
+    name: 'Scott'
   };
 
   var _totalReplies = new WeakMap();

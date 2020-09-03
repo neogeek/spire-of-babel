@@ -30,7 +30,7 @@ function _arrayLikeToArray(arr, len) { if (len == null || len > arr.length) len 
 }
 {
   var language1 = {
-    'name': 'JavaScript'
+    name: 'JavaScript'
   };
 
   var _languages = new WeakSet();

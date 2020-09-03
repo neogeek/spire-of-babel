@@ -19,8 +19,8 @@ function _objectSpread(target) { for (var i = 1; i < arguments.length; i++) { va
 }
 {
   var _user = {
-    'firstName': 'Scott',
-    'lastName': 'Doxey'
+    firstName: 'Scott',
+    lastName: 'Doxey'
   };
   var _firstName = _user.firstName,
       _lastName = _user.lastName;
@@ -31,9 +31,9 @@ function _objectSpread(target) { for (var i = 1; i < arguments.length; i++) { va
 var renderPolygon = function renderPolygon(points) {
   var options = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : {};
   var defaults = {
-    'fillStyle': '#eee',
-    'lineWidth': 1,
-    'strokeStyle': '#000'
+    fillStyle: '#eee',
+    lineWidth: 1,
+    strokeStyle: '#000'
   };
 
   var settings = _objectSpread(_objectSpread({}, defaults), options);
@@ -44,7 +44,7 @@ var renderPolygon = function renderPolygon(points) {
 };
 
 renderPolygon([[0, 0], [100, 100]], {
-  'fillStyle': '#000',
-  'lineWidth': 2,
-  'strokeStyle': '#aaa'
+  fillStyle: '#000',
+  lineWidth: 2,
+  strokeStyle: '#aaa'
 });

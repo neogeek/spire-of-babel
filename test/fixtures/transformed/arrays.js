@@ -24,14 +24,14 @@ for (var _i = 0, _languages = languages; _i < _languages.length; _i++) {
 }
 
 var moreLanguages = [{
-  'name': 'Java',
-  'version': 8
+  name: 'Java',
+  version: 8
 }, {
-  'name': 'Python',
-  'version': 3
+  name: 'Python',
+  version: 3
 }, {
-  'name': 'Ruby',
-  'version': 2
+  name: 'Ruby',
+  version: 2
 }];
 console.log(moreLanguages.find(function (language) {
   return language.version > 1;
