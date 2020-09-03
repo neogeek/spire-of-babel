@@ -36,7 +36,9 @@ ${chalk.blue(' Usage:')} spire-of-babel <path> [options]
 ${chalk.yellow('  -h, --help')}         Display this help message.
 ${chalk.yellow('  -v, --version')}      Display the current installed version.
 ${chalk.yellow('  -b, --bundle')}       Use browserify bundler.
-${chalk.yellow('  -m, --minify')}       Minify output.
+${chalk.yellow(
+    '  -m, --minify'
+)}       Minify output (doesn't work with --bundle flag).
 ${chalk.yellow('  -s, --sourcemap')}    Generate sourcemap.`);
     process.exit();
 } else {

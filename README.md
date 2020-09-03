@@ -26,7 +26,7 @@ Options:
  -h, --help         Display this help message.
  -v, --version      Display the current installed version.
  -b, --bundle       Use browserify bundler.
- -m, --minify       Minify output.
+ -m, --minify       Minify output (doesn't work with --bundle flag).
  -s, --sourcemap    Generate sourcemap.
 ```
 
