@@ -58,10 +58,11 @@ This is an example build process using [NPM scripts](https://docs.npmjs.com/misc
         "react-dom": "16.13.1"
     },
     "devDependencies": {
-        "spire-of-babel": "2.0.0"
+        "spire-of-babel": "2.0.0",
+        "uglify-js": "3.10.3"
     },
     "scripts": {
-        "build": "spire-of-babel ./src/js/app.jsx --bundle > ./static/js/bundle.js"
+        "build": "spire-of-babel ./src/js/app.jsx --bundle | uglifyjs > ./static/js/bundle.min.js"
     }
 }
 ```
