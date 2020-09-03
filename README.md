@@ -8,7 +8,7 @@
 [![NPM Version](http://img.shields.io/npm/v/spire-of-babel.svg?style=flat)](https://www.npmjs.org/package/spire-of-babel)
 [![Latest Documentation](https://doxdox.org/images/badge-flat.svg)](https://doxdox.org/neogeek/spire-of-babel)
 
-Spire of Babel is a zero-config tool takes the guesswork out of setting up a project written in ES6, React and TypeScript. In addition to converting ES6 with [Babel](https://babeljs.io/), Spire of Babel also comes with a [bundler](https://github.com/babel/babelify) for using both `require('')` and `import` styled module loaders, minification, and auto-generated sourcemaps.
+Spire of Babel is a zero-config tool takes the guesswork out of setting up a project written in ES6, React and TypeScript. In addition to converting ES6 with [Babel](https://babeljs.io/), Spire of Babel also comes with a [bundler](https://github.com/babel/babelify) for using both `require('')` and `import` styled module loaders, and auto-generated sourcemaps.
 
 ## Installation
 
@@ -38,24 +38,10 @@ Options:
 $ spire-of-babel es6.js > es5.js
 ```
 
-#### Bundle and Minify
+#### Bundle
 
 ```bash
-$ spire-of-babel ./src/js/app.js --bundle --minify > ./static/js/bundle.min.js
-```
-
-#### Build for Production Use
-
-**Notice:** This only works with the bundle flag.
-
-```bash
-$ NODE_ENV=production spire-of-babel ./src/js/app.jsx --bundle --output ./static/js/bundle.min.js
-```
-
-To reduce the size of the bundle and take advantage of DCE (dead code elimination), use the `--minify` flag.
-
-```bash
-$ NODE_ENV=production spire-of-babel ./src/js/app.jsx --bundle --minify --output ./static/js/bundle.min.js
+$ spire-of-babel ./src/js/app.js --bundle > ./static/js/bundle.min.js
 ```
 
 ### NPM Scripts
@@ -75,7 +61,7 @@ This is an example build process using [NPM scripts](https://docs.npmjs.com/misc
         "spire-of-babel": "2.0.0"
     },
     "scripts": {
-        "build": "spire-of-babel ./src/js/app.jsx --bundle --minify > ./static/js/bundle.min.js"
+        "build": "spire-of-babel ./src/js/app.jsx --bundle > ./static/js/bundle.js"
     }
 }
 ```
@@ -102,9 +88,7 @@ See <https://babeljs.io/docs/plugins/transform-async-generator-functions/> for m
 const spire = require('spire-of-babel');
 
 transform('react.jsx', {
-    bundle: true,
-    minify: true,
-    sourcemap: true
+    bundle: true
 }).then(({ code }) => process.stdout.write(code));
 ```
 
