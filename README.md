@@ -40,7 +40,7 @@ $ spire-of-babel es6.js > es5.js
 #### Bundle
 
 ```bash
-$ spire-of-babel ./src/js/app.js --bundle > ./static/js/bundle.min.js
+$ spire-of-babel ./src/js/app.js --bundle > ./static/js/bundle.js
 ```
 
 ### NPM Scripts
@@ -87,9 +87,11 @@ See <https://babeljs.io/docs/plugins/transform-async-generator-functions/> for m
 ```javascript
 const spire = require('spire-of-babel');
 
-transform('react.jsx', {
-    bundle: true
-}).then(({ code }) => process.stdout.write(code));
+spire
+    .transformFile('react.jsx', {
+        bundle: true
+    })
+    .then(({ code }) => process.stdout.write(code));
 ```
 
 ## Documentation
