@@ -28,6 +28,7 @@
   },
   "scripts": {
     "test": "jest test/specs/",
+    "coverage": "jest test/specs/ --coverage",
     "fixtures": "test/transform.sh"
   },
   "jest": {
