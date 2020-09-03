@@ -9,7 +9,7 @@ for file in test/fixtures/original/*.js; do
 done
 
 node ./bin/spire-of-babel.js test/fixtures/original/bundle.js --bundle > ./test/fixtures/transformed/bundle.js
-node ./bin/spire-of-babel.js test/fixtures/original/sourcemap.js --sourcemap inline > ./test/fixtures/transformed/sourcemap_inline.js
+node ./bin/spire-of-babel.js test/fixtures/original/sourcemap.js --sourcemap > ./test/fixtures/transformed/sourcemap_inline.js
 node ./bin/spire-of-babel.js test/fixtures/original/react.jsx > ./test/fixtures/transformed/react.js
 
 node ./bin/spire-of-babel.js test/fixtures/original/typescript.ts > ./test/fixtures/transformed/typescript.js
