@@ -18,8 +18,6 @@ updateNotifier({
     pkg
 }).notify();
 
-const transform = (input, options) => spire.transformFile(input, options);
-
 const options = {
     'bundle': args.flags['--bundle'] || args.flags['-b'] || false,
     'minified': args.flags['--minify'] || args.flags['-m'] || false,
@@ -47,7 +45,7 @@ ${chalk.yellow('  -s, --sourcemap')}    Generate sourcemap.`);
 
 } else {
 
-    transform(args.input, options).then(({code}) =>
+    spire.transformFile(args.input, options).then(({code}) =>
         process.stdout.write(code));
 
 }
