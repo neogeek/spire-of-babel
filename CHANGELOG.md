@@ -1,5 +1,9 @@
 # Changelog
 
+## 2.0.1 (September 11, 2020)
+
+- Fixed path issue.
+
 ## 2.0.0 (September 3, 2020)
 
 - Rebuilt from scratch to support Babel 7 and Browserify 16.
